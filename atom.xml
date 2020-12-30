@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>f_x_y</title>
+  
+  <subtitle>cv Engineer</subtitle>
+  <link href="http://example.com/atom.xml" rel="self"/>
+  
+  <link href="http://example.com/"/>
+  <updated>2020-12-30T11:13:00.956Z</updated>
+  <id>http://example.com/</id>
+  
+  <author>
+    <name>xiangyou fu</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>vs code插件合集[C</title>
+    <link href="http://example.com/2020/12/30/vs-code%E6%8F%92%E4%BB%B6%E5%90%88%E9%9B%86-C/"/>
+    <id>http://example.com/2020/12/30/vs-code%E6%8F%92%E4%BB%B6%E5%90%88%E9%9B%86-C/</id>
+    <published>2020-12-30T11:12:42.000Z</published>
+    <updated>2020-12-30T11:13:00.956Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;hr&gt;
+&lt;p&gt;title: vs code 的几个实用性插件&lt;br&gt;date: 2020-12-30 14:46:55&lt;br&gt;tags:&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;1.Chinese (Simplified) Language Pack  ==&amp;gt;</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>关于axios</title>
+    <link href="http://example.com/2020/10/30/My-New-Post/"/>
+    <id>http://example.com/2020/10/30/My-New-Post/</id>
+    <published>2020-10-30T10:14:19.000Z</published>
+    <updated>2020-12-30T11:16:09.413Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;参考来源===》》&lt;a href=&quot;http://axios-js.com/zh-cn/docs/&quot;&gt;http://axios-js.com/zh-cn/docs/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;1.Axios 是一个基于 promise 的 HTTP 库，可以用在浏览器和</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>关于vue组件通信</title>
+    <link href="http://example.com/2020/09/04/%E5%85%B3%E4%BA%8Evue%E7%BB%84%E4%BB%B6%E9%80%9A%E8%AE%AF/"/>
+    <id>http://example.com/2020/09/04/%E5%85%B3%E4%BA%8Evue%E7%BB%84%E4%BB%B6%E9%80%9A%E8%AE%AF/</id>
+    <published>2020-09-04T10:14:19.000Z</published>
+    <updated>2020-12-30T11:20:26.568Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;/*&lt;strong&gt;&lt;strong&gt;&lt;strong&gt;**&lt;/strong&gt;&lt;/strong&gt;&lt;/strong&gt;vue子父兄弟组件之间实现数据传递的方式**&lt;strong&gt;&lt;strong&gt;&lt;strong&gt;&lt;strong&gt;**&lt;/strong&gt;&lt;/strong&gt;&lt;/strong</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>ERROR!</title>
+    <link href="http://example.com/2020/06/30/test/"/>
+    <id>http://example.com/2020/06/30/test/</id>
+    <published>2020-06-30T11:12:42.000Z</published>
+    <updated>2020-12-30T11:14:32.592Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;失误导致文章丢失！&lt;/p&gt;
+</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+</feed>
