@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2021-01-01T15:58:43.601Z</updated>
+  <updated>2021-01-01T16:45:53.900Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="http://example.com/2021/01/01/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E7%8E%AF%E5%A2%83%E4%B8%8B%E7%9A%84js/"/>
     <id>http://example.com/2021/01/01/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E7%8E%AF%E5%A2%83%E4%B8%8B%E7%9A%84js/</id>
     <published>2021-01-01T15:41:10.000Z</published>
-    <updated>2021-01-01T15:58:43.601Z</updated>
+    <updated>2021-01-01T16:45:53.900Z</updated>
     
     
       
@@ -46,15 +46,14 @@
     <link href="http://example.com/2020/12/31/vuex%E7%9A%84%E4%BD%BF%E7%94%A8/"/>
     <id>http://example.com/2020/12/31/vuex%E7%9A%84%E4%BD%BF%E7%94%A8/</id>
     <published>2020-12-31T14:24:30.000Z</published>
-    <updated>2020-12-31T14:27:34.020Z</updated>
+    <updated>2021-01-01T16:50:22.843Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;p&gt;/*&lt;strong&gt;&lt;strong&gt;&lt;strong&gt;**&lt;/strong&gt;&lt;/strong&gt;&lt;/strong&gt;vuex统一状态管理工具**&lt;strong&gt;&lt;strong&gt;****&lt;/strong&gt;&lt;/strong&gt;/&lt;/p&gt;
-&lt;p&gt;（两个指令的区别）&lt;br&gt;    vue</summary>
+    <summary type="html">&lt;p&gt;（两个指令的区别）&lt;br&gt;    vue add vuex:该方法添加插件会改变原有项目结构，即对新添加的插件进行初始化操作；&lt;br&gt;    npm install vuex</summary>
         
       
     
@@ -100,7 +99,7 @@
     <link href="http://example.com/2020/10/30/My-New-Post/"/>
     <id>http://example.com/2020/10/30/My-New-Post/</id>
     <published>2020-10-30T10:14:19.000Z</published>
-    <updated>2020-12-31T11:00:32.947Z</updated>
+    <updated>2021-01-01T16:18:52.576Z</updated>
     
     
       
@@ -126,14 +125,14 @@
     <link href="http://example.com/2020/09/04/%E5%85%B3%E4%BA%8Evue%E7%BB%84%E4%BB%B6%E9%80%9A%E8%AE%AF/"/>
     <id>http://example.com/2020/09/04/%E5%85%B3%E4%BA%8Evue%E7%BB%84%E4%BB%B6%E9%80%9A%E8%AE%AF/</id>
     <published>2020-09-04T10:14:19.000Z</published>
-    <updated>2020-12-31T10:58:32.369Z</updated>
+    <updated>2021-01-01T16:42:11.100Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;p&gt;/*&lt;strong&gt;&lt;strong&gt;&lt;strong&gt;**&lt;/strong&gt;&lt;/strong&gt;&lt;/strong&gt;vue子父兄弟组件之间实现数据传递的方式**&lt;strong&gt;&lt;strong&gt;&lt;strong&gt;&lt;strong&gt;**&lt;/strong&gt;&lt;/strong&gt;&lt;/strong</summary>
+    <summary type="html">&lt;h2 id=&quot;vue子父兄弟组件之间实现数据传递的方式&quot;&gt;&lt;a href=&quot;#vue子父兄弟组件之间实现数据传递的方式&quot; class=&quot;headerlink&quot;</summary>
         
       
     

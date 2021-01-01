@@ -579,11 +579,11 @@
 <li>特性===》》从浏览器中创建 XMLHttpRequests，从 node.js 创建 http 请求，支持 Promise API，拦截请求和响应<br>转换请求数据和响应数据，取消请求，自动转换 JSON 数据，客户端支持防御 XSRF</li>
 </ol>
 <p>3.使用：$ npm install axios（服务器安装axios模块api）<br> <script src="https://unpkg.com/axios/dist/axios.min.js"></script>（客户端使用cdn下载库文件）</p>
-<p>4.<br>*<strong>**</strong> get===》发送get请求：**<strong><strong><strong>****</strong></strong></strong><br>// 为给定 ID 的 user 创建请求<br>axios.get(‘/user?ID=12345’)<br>  .then(function (response) {<br>    console.log(response);<br>  })<br>  .catch(function (error) {<br>    console.log(error);<br>  });</p>
-<p>// 上面的请求也可以这样做<br>axios.get(‘/user’, {<br>    params: {<br>      ID: 12345<br>    }<br>  })<br>  .then(function (response) {<br>    console.log(response);<br>  })<br>  .catch(function (error) {<br>    console.log(error);<br>  });<br><strong><strong><strong>* post===》发送post请求：*<strong><strong><strong><strong><strong>*<strong>**</strong><br>axios.post(‘/user’, {<br>    firstName: ‘Fred’,<br>    lastName: ‘Flintstone’<br>  })<br>  .then(function (response) {<br>    console.log(response);<br>  })<br>  .catch(function (error) {<br>    console.log(error);<br>  });<br>*</strong></strong></strong></strong></strong></strong></strong></strong>执行多个并发请求*<strong>****</strong><br>function getUserAccount() {<br>  return axios.get(‘/user/12345’);<br>}</p>
+<p>4.//发送get请求 为给定 ID 的 user 创建请求<br><code>axios.get('/user?ID=12345')   .then(function (response) {     console.log(response);   })   .catch(function (error) {     console.log(error);   });</code></p>
+<p>// 上面的请求也可以这样做<br><code>axios.get('/user', {     params: {       ID: 12345     }   })   .then(function (response) {     console.log(response);   })   .catch(function (error) {     console.log(error);   });</code><br><strong><strong><strong>* post===》发送post请求：*<strong><strong><strong><strong><strong>*<strong>**</strong><br><code>axios.post('/user', {     firstName: 'Fred',     lastName: 'Flintstone'   })   .then(function (response) {     console.log(response);   })   .catch(function (error) {     console.log(error);   });</code><br>*</strong></strong></strong></strong></strong></strong></strong></strong>执行多个并发请求*<strong>****</strong><br>`function getUserAccount() {<br>  return axios.get(‘/user/12345’);<br>}</p>
 <p>function getUserPermissions() {<br>  return axios.get(‘/user/12345/permissions’);<br>}</p>
-<p>axios.all([getUserAccount(), getUserPermissions()])<br>  .then(axios.spread(function (acct, perms) {<br>    // 两个请求现在都执行完成<br>  }));</p>
-<p>5.相关请求方式（别名）有<br>axios.request(config)<br>axios.get(url[, config])<br>axios.delete(url[, config])<br>axios.head(url[, config])<br>axios.options(url[, config])<br>axios.post(url[, data[, config]])<br>axios.put(url[, data[, config]])<br>axios.patch(url[, data[, config]])<br>在使用别名方法时， url、method、data 这些属性都不必在配置中指定。</p>
+<p>axios.all([getUserAccount(), getUserPermissions()])<br>  .then(axios.spread(function (acct, perms) {<br>    // 两个请求现在都执行完成<br>  }));`</p>
+<p>5.相关请求方式（别名）有<br><code>axios.request(config) axios.get(url[, config]) axios.delete(url[, config]) axios.head(url[, config]) axios.options(url[, config]) axios.post(url[, data[, config]]) axios.put(url[, data[, config]]) axios.patch(url[, data[, config]])</code><br>在使用别名方法时， url、method、data 这些属性都不必在配置中指定。</p>
 <p>6.相关配置<br>{<br>   // <code>url</code> 是用于请求的服务器 URL<br>  url: ‘/user’,</p>
 <p>  // <code>method</code> 是创建请求时使用的方法<br>  method: ‘get’, // default</p>
 <p>  // <code>baseURL</code> 将自动加在 <code>url</code> 前面，除非 <code>url</code> 是一个绝对 URL。<br>  // 它可以通过设置一个 <code>baseURL</code> 便于为 axios 实例的方法传递相对 URL<br>  baseURL: ‘<a target="_blank" rel="noopener" href="https://some-domain.com/api/'">https://some-domain.com/api/'</a>,</p>
@@ -614,10 +614,10 @@
 <p>  // <code>statusText</code> 来自服务器响应的 HTTP 状态信息<br>  statusText: ‘OK’,</p>
 <p>  // <code>headers</code> 服务器响应的头<br>  headers: {},</p>
 <p>   // <code>config</code> 是为请求提供的配置信息<br>  config: {},<br> // ‘request’<br>  // <code>request</code> is the request that generated this response<br>  // It is the last ClientRequest instance in node.js (in redirects)<br>  // and an XMLHttpRequest instance the browser<br>  request: {}<br>}</p>
-<p>8.以如下方式接受下面响应；<br>axios.get(‘/user/12345’)<br>  .then(function(response) {<br>    console.log(response.data);<br>    console.log(response.status);<br>    console.log(response.statusText);<br>    console.log(response.headers);<br>    console.log(response.config);<br>  });</p>
-<p>9.进行axios全局配置；<br>axios.defaults.baseURL = ‘<a target="_blank" rel="noopener" href="https://api.example.com&amp;/#39;">https://api.example.com'</a>;<br>axios.defaults.headers.common[‘Authorization’] = AUTH_TOKEN;<br>axios.defaults.headers.post[‘Content-Type’] = ‘application/x-www-form-urlencoded’;</p>
-<p>10.请求和响应的拦截器；<br>// 添加请求拦截器<br>axios.interceptors.request.use(function (config) {<br>    // 在发送请求之前做些什么<br>    return config;<br>  }, function (error) {<br>    // 对请求错误做些什么<br>    return Promise.reject(error);<br>  });</p>
-<p>// 添加响应拦截器<br>axios.interceptors.response.use(function (response) {<br>    // 对响应数据做点什么<br>    return response;<br>  }, function (error) {<br>    // 对响应错误做点什么<br>    return Promise.reject(error);<br>  });</p>
+<p>8.以如下方式接受下面响应；<br><code>axios.get('/user/12345')   .then(function(response) {     console.log(response.data);     console.log(response.status);     console.log(response.statusText);     console.log(response.headers);     console.log(response.config);   });</code></p>
+<p>9.进行axios全局配置；<br><code>axios.defaults.baseURL = 'https://api.example.com'; axios.defaults.headers.common['Authorization'] = AUTH_TOKEN; axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded';</code></p>
+<p>10.请求和响应的拦截器；<br>// 添加请求拦截器<br><code>axios.interceptors.request.use(function (config) {     // 在发送请求之前做些什么     return config;   }, function (error) {     // 对请求错误做些什么     return Promise.reject(error);   });</code></p>
+<p>// 添加响应拦截器<br><code>axios.interceptors.response.use(function (response) {     // 对响应数据做点什么     return response;   }, function (error) {     // 对响应错误做点什么     return Promise.reject(error);   }); </code></p>
 
                 
             </div>

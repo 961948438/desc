@@ -556,7 +556,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    573
+                    721
                 </div>
                 
 
@@ -573,117 +573,19 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>/*<strong><strong><strong>**</strong></strong></strong>vue子父兄弟组件之间实现数据传递的方式**<strong><strong><strong><strong>**</strong></strong></strong></strong>/<br>                                     (区分标签内容传递和data数据传递的区别)<br>1.。兄弟组件之间实现数据传递<br>1） val hub=new Vue()实例化一个vue对象用做事件中心管理组件；<br>2）  hub.$emit(‘tom-event’, 1); 再子组件的methods的方法中，通过$emit(事件名，data)方法触发事件管理中心下的指定事件<br>3） hub.$on(‘jerry-event’,fn）再mounted声明周期钩子函数中给中心管理组件绑定事件和业务处理逻辑<br>4） hub.$off(‘tom-event’); 可以再任意一个组件中销毁事件中心管理组件的绑定事件；<br>/<strong><strong>htm区******</strong></strong></p>
-<div id="app">
-    <div>父组件</div>
-    <div>
-    <button v-on:click="handle">销毁事件</button>
-    </div>
-    <test-tom></test-tom>
-    <test-jerry></test-jerry>
-  </div>
-**************************/
-var hub = new Vue();
-    Vue.component('test-tom', {
-      data: function(){
-        return {
-          num: 0
-        }
-      },
-      template: `
-        <div>
-          <div>TOM:</div>
-          <div>
-            <button v-on:click="handle">点击</button>
-          </div>
-        </div>
-      `,
-      methods: {
-        handle: function(){
-          hub.$emit('jerry-event', 2);
-        }
-      },
-      mounted: function() {
-        // 监听事件
-        hub.$on('tom-event', (val) =&gt; {
-          this.num += val;
-        });
-      }
-    });
-    Vue.component('test-jerry', {
-      data: function(){
-        return {
-          num: 0
-        }
-      },
-      template: `
-        <div>
-          <div>JERRY:</div>
-          <div>
-            <!-- <button v-on:click='handle'>点击</button> -->
-          </div>
-        </div>
-      `,
-      methods: {
-        handle: function(){
-          // 触发兄弟组件的事件
-          hub.$emit('tom-event', 1);
-        }
-      },
-      mounted: function() {
-        // 监听事件
-        hub.$on('jerry-event', (val) =&gt; {
-          this.num += val;
-        });
-      }
-    });
-    var vm = new Vue({
-      el: '#app',
-      data: {
-      },
-      methods: {
-        handle: function(){
-          hub.$off('tom-event');
-          hub.$off('jerry-event');
-        }
-      }
-    });
-
-<p>2.父组件向子组件传递数据的方式；<br>/<strong>****</strong>html区*<strong><strong>*<br><hello-p title="我是父元素传递过来的值" content="我是父元素值过来的" v-on:enlarge-text="hang($event)"></hello-p><br><strong><strong>****</strong></strong>/<br>1）title=”我是父元素传递过来的值” 父组件通过添加属性的方式向子组件传递一个值；<br>2）props: [‘title’, ‘content’], 子组件利用配置参数对象下的props属性接受传递过来的值并存储以便使用<br>/*</strong></strong>以下以局部组件为例子，全局组件方法为vue。components（组件名，配置参数）<br>components: {<br>                ‘hello-p’: {<br>                    props: [‘title’, ‘content’],<br>                    data: function() {<br>                        return {<br>                            msg: ‘hello - p’<br>                        }<br>                    },<br>                    template: <code>&lt;div  v-on:click="$emit('enlarge-text',5)"&gt;{{msg+"-- -- -- -- --"+title}}&lt;/div&gt;</code>,<br>                    methods: {<br>                        fn: function(event) {<br>                            console.log(event)<br>                        }<br>                    }<br>                }<br>}</p>
-<p>3.子组件向父组件传递数据的方式（可以修改props值但是不建议；）；<br>/<strong>*<strong>**</strong>html区*</strong></p>
-<div id="app">
+                <h2 id="vue子父兄弟组件之间实现数据传递的方式"><a href="#vue子父兄弟组件之间实现数据传递的方式" class="headerlink" title="vue子父兄弟组件之间实现数据传递的方式"></a>vue子父兄弟组件之间实现数据传递的方式</h2><p>(区分标签内容传递和data数据传递的区别)</p>
+<h3 id="兄弟组件之间实现数据传递"><a href="#兄弟组件之间实现数据传递" class="headerlink" title="兄弟组件之间实现数据传递"></a>兄弟组件之间实现数据传递</h3><figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alert('Hello World!');</span><br></pre></td></tr></tbody></table></figure>
+<p>1） val hub=new Vue()实例化一个vue对象用做事件中心管理组件；<br>2）  hub.$emit(‘tom-event’, 1); 再子组件的methods的方法中，通过$emit(事件名，data)方法触发事件管理中心下的指定事件<br>3） hub.$on(‘jerry-event’,fn）再mounted声明周期钩子函数中给中心管理组件绑定事件和业务处理逻辑<br>4） hub.$off(‘tom-event’); 可以再任意一个组件中销毁事件中心管理组件的绑定事件；</p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id="app"&gt;</span><br><span class="line">    &lt;div&gt;父组件&lt;/div&gt;</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">    &lt;button v-on:click='handle'&gt;销毁事件&lt;/button&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">    &lt;test-tom&gt;&lt;/test-tom&gt;</span><br><span class="line">    &lt;test-jerry&gt;&lt;/test-jerry&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">var hub = new Vue();</span><br><span class="line">    Vue.component('test-tom', {</span><br><span class="line">      data: function(){</span><br><span class="line">        return {</span><br><span class="line">          num: 0</span><br><span class="line">        }</span><br><span class="line">      },</span><br><span class="line">      template: </span><br><span class="line">        "&lt;div&gt;</span><br><span class="line">          &lt;div&gt;TOM:&lt;/div&gt;</span><br><span class="line">          &lt;div&gt;</span><br><span class="line">            &lt;button v-on:click='handle'&gt;点击&lt;/button&gt;</span><br><span class="line">          &lt;/div&gt;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">        "</span><br><span class="line">      ,</span><br><span class="line">      methods: {</span><br><span class="line">        handle: function(){</span><br><span class="line">          hub.$emit('jerry-event', 2);</span><br><span class="line">        }</span><br><span class="line">      },</span><br><span class="line">      mounted: function() {</span><br><span class="line">        // 监听事件</span><br><span class="line">        hub.$on('tom-event', (val) =&gt; {</span><br><span class="line">          this.num += val;</span><br><span class="line">        });</span><br><span class="line">      }</span><br><span class="line">    });</span><br><span class="line">    Vue.component('test-jerry', {</span><br><span class="line">      data: function(){</span><br><span class="line">        return {</span><br><span class="line">          num: 0</span><br><span class="line">        }</span><br><span class="line">      },</span><br><span class="line">      template: `</span><br><span class="line">        &lt;div&gt;</span><br><span class="line">          &lt;div&gt;JERRY:&lt;/div&gt;</span><br><span class="line">          &lt;div&gt;</span><br><span class="line">            &lt;!-- &lt;button v-on:click='handle'&gt;点击&lt;/button&gt; --&gt;</span><br><span class="line">          &lt;/div&gt;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">      `,</span><br><span class="line">      methods: {</span><br><span class="line">        handle: function(){</span><br><span class="line">          // 触发兄弟组件的事件</span><br><span class="line">          hub.$emit('tom-event', 1);</span><br><span class="line">        }</span><br><span class="line">      },</span><br><span class="line">      mounted: function() {</span><br><span class="line">        // 监听事件</span><br><span class="line">        hub.$on('jerry-event', (val) =&gt; {</span><br><span class="line">          this.num += val;</span><br><span class="line">        });</span><br><span class="line">      }</span><br><span class="line">    });</span><br><span class="line">    var vm = new Vue({</span><br><span class="line">      el: '#app',</span><br><span class="line">      data: {</span><br><span class="line">      },</span><br><span class="line">      methods: {</span><br><span class="line">        handle: function(){</span><br><span class="line">          hub.$off('tom-event');</span><br><span class="line">          hub.$off('jerry-event');</span><br><span class="line">        }</span><br><span class="line">      }</span><br><span class="line">    });</span><br></pre></td></tr></tbody></table></figure>
+<h3 id="父组件向子组件传递数据的方式；"><a href="#父组件向子组件传递数据的方式；" class="headerlink" title="父组件向子组件传递数据的方式；"></a>父组件向子组件传递数据的方式；</h3><p><hello-p title="我是父元素传递过来的值" content="我是父元素值过来的" v-on:enlarge-text="hang($event)"></hello-p><br>1）title=”我是父元素传递过来的值” 父组件通过添加属性的方式向子组件传递一个值；<br>2）props: [‘title’, ‘content’], 子组件利用配置参数对象下的props属性接受传递过来的值并存储以便使用<br>/*****以下以局部组件为例子，全局组件方法为vue。components（组件名，配置参数）</p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">components: {</span><br><span class="line">                'hello-p': {</span><br><span class="line">                    props: ['title', 'content'],</span><br><span class="line">                    data: function() {</span><br><span class="line">                        return {</span><br><span class="line">                            msg: 'hello - p'</span><br><span class="line">                        }</span><br><span class="line">                    },</span><br><span class="line">                    template: `&lt;div  v-on:click="$emit('enlarge-text',5)"&gt;undefined-- -- -- -- --关于vue组件通信&lt;/div&gt;`,</span><br><span class="line">                    methods: {</span><br><span class="line">                        fn: function(event) {</span><br><span class="line">                            console.log(event)</span><br><span class="line">                        }</span><br><span class="line">                    }</span><br><span class="line">                }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<h3 id="子组件向父组件传递数据的方式"><a href="#子组件向父组件传递数据的方式" class="headerlink" title="子组件向父组件传递数据的方式"></a>子组件向父组件传递数据的方式</h3><div id="app">
         <div :style="{fontSize: fontSize + &quot;px&quot;}"></div>
         <menu-item :parr="parr" @enlarge-text="handle($event)"></menu-item>
-    </div>
-************/
+</div>
 1）父组件给子组件绑定一个自定义事件v-on:事件名：v-on:enlarge-text="handle($event)"
 1）子组件通过$emit('触发事件名'，携带data)方法触发一个自定义事件
-Vue.component('menu-item', {
-            props: ['parr'],
-            template: `
-        <div>
-          <ul>
-            <li :key="index" v-for="(item,index) in parr"></li>
-          </ul>
-          <button v-on:click="$emit(&quot;enlarge-text&quot;, 5)">扩大父组件中字体大小</button>
-          <button v-on:click="$emit(&quot;enlarge-text&quot;, 10)">扩大父组件中字体大小</button>
-        </div>
-      `
-        });
-        var vm = new Vue({
-            el: '#app',
-            data: {
-                pmsg: '父组件中内容',
-                parr: ['apple', 'orange', 'banana'],
-                fontSize: 10
-            },
-            methods: {
-                handle: function(val) {
-                    // 扩大字体大小
-                    this.fontSize += val;
-                }
-            }
-        });
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">Vue.component('menu-item', {</span><br><span class="line">            props: ['parr'],</span><br><span class="line">            template: `</span><br><span class="line">        &lt;div&gt;</span><br><span class="line">          &lt;ul&gt;</span><br><span class="line">            &lt;li :key='index' v-for='(item,index) in parr'&gt;&lt;/li&gt;</span><br><span class="line">          &lt;/ul&gt;</span><br><span class="line">          &lt;button v-on:click='$emit("enlarge-text", 5)'&gt;扩大父组件中字体大小&lt;/button&gt;</span><br><span class="line">          &lt;button v-on:click='$emit("enlarge-text", 10)'&gt;扩大父组件中字体大小&lt;/button&gt;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">      `</span><br><span class="line">        });</span><br><span class="line">        var vm = new Vue({</span><br><span class="line">            el: '#app',</span><br><span class="line">            data: {</span><br><span class="line">                pmsg: '父组件中内容',</span><br><span class="line">                parr: ['apple', 'orange', 'banana'],</span><br><span class="line">                fontSize: 10</span><br><span class="line">            },</span><br><span class="line">            methods: {</span><br><span class="line">                handle: function(val) {</span><br><span class="line">                    // 扩大字体大小</span><br><span class="line">                    this.fontSize += val;</span><br><span class="line">                }</span><br><span class="line">            }</span><br><span class="line">});</span><br></pre></td></tr></tbody></table></figure>
                 
             </div>
             <hr/>
