@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2020-12-31T14:27:34.020Z</updated>
+  <updated>2021-01-01T15:58:43.601Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>微信小程序环境下的js</title>
+    <link href="http://example.com/2021/01/01/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E7%8E%AF%E5%A2%83%E4%B8%8B%E7%9A%84js/"/>
+    <id>http://example.com/2021/01/01/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E7%8E%AF%E5%A2%83%E4%B8%8B%E7%9A%84js/</id>
+    <published>2021-01-01T15:41:10.000Z</published>
+    <updated>2021-01-01T15:58:43.601Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;1.json文件里不能注释，非主页面json文件可以覆盖app.json文件&lt;br&gt;                     页面里的配置内容只可以设置window下的一些配置&lt;br&gt;       </summary>
+        
+      
+    
+    
+    
+    <category term="wx api" scheme="http://example.com/categories/wx-api/"/>
+    
+    
+    <category term="wx" scheme="http://example.com/tags/wx/"/>
+    
+  </entry>
   
   <entry>
     <title>vuex的使用</title>

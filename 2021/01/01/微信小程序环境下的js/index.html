@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="vuex的使用, f_x_y">
+    <meta name="keywords" content="微信小程序环境下的js, f_x_y">
     <meta name="description" content="熟练使用CTRL+C和CTRL+V">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>vuex的使用 | f_x_y</title>
+    <title>微信小程序环境下的js | f_x_y</title>
     <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="/mypng.icon.ico">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -401,12 +401,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/3.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/22.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">vuex的使用</h1>
+                    <h1 class="description center-align post-title">微信小程序环境下的js</h1>
                 </div>
             </div>
         </div>
@@ -522,8 +522,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/vue/">
-                                <span class="chip bg-color">vue</span>
+                            <a href="/tags/wx/">
+                                <span class="chip bg-color">wx</span>
                             </a>
                         
                     </div>
@@ -534,8 +534,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/vue/" class="post-category">
-                                vue
+                            <a href="/categories/wx-api/" class="post-category">
+                                wx api
                             </a>
                         
                     </div>
@@ -547,7 +547,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-12-31
+                    2021-01-01
                 </div>
                 
 
@@ -556,7 +556,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    912
+                    938
                 </div>
                 
 
@@ -573,14 +573,7 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>/*<strong><strong><strong>**</strong></strong></strong>vuex统一状态管理工具**<strong><strong>****</strong></strong>/</p>
-<p>（两个指令的区别）<br>    vue add vuex:该方法添加插件会改变原有项目结构，即对新添加的插件进行初始化操作；<br>    npm install vuex 该方法只下载第三方插件或者模块，不做初始化资源的配置；</p>
-<p>使用场景/好处：vuex集中管理共享的数据，易于开发和后期维护<br>            能够高效的实现组件之间的数据共享，提高开发效率<br>            储存再vuex中的数据都是响应式的，能够实时保持数据和页面的同步<br>            组件之间需要共享的数据储存再我们的vuex中，组件私有数据储存在我们的data中即可<br>    坏处：条条框框特别多，当页面应用程序组件树不大时还不如通过（组件树/事件总栈）进行数据访问</p>
-<p>1.vuex是一个专门为vue.js应用程序开发的状态管理模式，它应用集中式储存管理应用的所有组件的状态，并以对应的<br>规则保证状态以可预测的方式发生变化； 通过vuex可以很方便的实现组件之间的数据共享；</p>
-<p>2.vue add vuex 下载我们的插件,默认会生成store文件夹；</p>
-<p>3.import store from ‘./store/index.js’引入模块，该添加插件方法会默认配置</p>
-<p>4.访问store仓库下state数据源的方法有以下两种：<br>    1==》this.$store.state[数据名]<br>    2==》import {mapstate} from “vuex”  //按需导入mapstate方法<br>            computed: {<br>                …mapstate([数据名1，数据名2])  //（…）是展开运算符<br>            }//组件中即可直接使用数据名<br>5.通过mutations属性下定义的方法修改，组件中不可直接修改共享状态state（可以但没必要，不方便管理数据），<br>    1==》mutations: {<br>              login (state) {<br>                state.isLogin = true<br>                 },<br>                 add: function (state) {<br>                   state.count++<br>                },<br>                 sub: function (state,step) {<br>                   state.count -= step<br>                 }<br>               },<br>             在组件中通过this.$store.commit(方法名，参数)通知mutations去修改数据<br>    2==》import {mapMutation} from ‘vuex’<br>              methods: {<br>                  …mapMutation([‘subN’，’方法2’])  //简单理解就是将vuex中的mutation里方法映射过来成为本身组件<br>        subcountt: function (msg) {<br>                        this.subN(msg)//映射为组件本身的方法之后就可以向调用自有方法一样调用mutations里的方法<br>                }<br>                          }<br>6.mutation中不支持直接进行异步操作，在store里执行异步操作依赖于action（虽然action还是通过触发mutation间接变更数据）<br>    1==》在store对象的actions属性下定义我们的异步任务：<br>              addAsync(context,接受携带的数据) {            //context暂时理解为仓库store实例对象，具体不也不知<br>                  setTimeout(() =&gt; {<br>                           context.commit(‘mutations里的方法’) //此处不能直接访问state，通过提交mutation才行，vuex官方说的<br>                    },1000)<br>               }<br>           在我们的组件的mothods里定义好的方法中发起actions<br>              methods： {<br>                  handle: function(){<br>                      this.$store.dispatch(‘addAsync’,携带的数据)//addAsync为action里的异步任务<br>                  }<br>              }<br>    2==》从vuex按需导入我们的mapactions函数，再将指定的actions函数映射为组件自有的methods函数<br>             import {mapactions} from ‘vuex’<br>             methods： {<br>                …mapActions([‘actions中异步任务1’,’actions中的异步任务2’])//将全局中的某些函数映射成为自身方法<br>                subAsyncto: function () {<br>                    this.subAsync()<br>                        //&lt;button @click=”subAsyncto”&gt;async-1<br>                        //差点调用函数自身进入死循环了，此处应该和actions里的异步任务函数区别开来<br>                }</p>
-<p>7.store实例化对象中的getter方法用于对state中的数据进行加工输出，但是该方法并不会改变数据源，使用getter的方法有<br>    getters: {<br>        teststring: function (state) {<br>            return ‘当前的数据(‘+state.msg+’)已经加工过了’<br>        }<br>      }<br>    1==》this.$store.getters.teststring<br>    2==》 import {mapGetters} from ‘vuex’<br>               computed: {<br>                   …mapGetters([‘testing’])<br>                           }</p>
+                <p>1.json文件里不能注释，非主页面json文件可以覆盖app.json文件<br>                     页面里的配置内容只可以设置window下的一些配置<br>        tabbar标签条中只能有2-5个标签，<br>2.微信小程序的开发语言是js但是不同于浏览器运行环境的javascript<br>    ==》首先没有bom和dom对象模型，所以没有对象window和document对象，<br>    ==》小程序运行环境的javascript拥有的额外的全局成员（方法）有：<br>            App()    方法用于定义应用程序对象；<br>            Page()   方法用于定义页面对象；<br>            getApp()   方法用于获取全局应用程序对象<br>            getcurrentPages()   方法用于获取当前页面的调用栈<br>    ==》微信小程序中js的顶级对象是wx，微信小程序端还提供了一些核心的对象；<br>            微信小程序环境的js是支持commonjs规范的（和nodejs的模块开发相似），但是不支持直接export导出对象<br>            在0.10版本之后默认使用 babel 将开发者 ES6 语法代码转换为三端都能很好支持的 ES5 的代<br>3.语法知识：<br>    ==》支持插值表达式，且插值表达式可以放在我们的类中动态管理类class = “ into  “,可以用在任意值的位置<br>    ==》在小程序运行环境下的复选框checked =“false”（不会被当成布尔类型，使得复选框被勾选，），可以以插值表达式<br>             表示一个false，checked = “false“<br>    ==》小程序中的循环语句为：<br>                        <code>todos: [                                   { name: 'java', completed: false },                                   { name: 'php', completed: true },                                   { name: 'vue', completed: false },                                   { name: 'javascript', completed: true },                                   { name: 'phpstudy', completed: false },                                   { name: 'vuex', completed: false }                                 ]             &lt;view wx:for="{{todos}}" wx:key="item"&gt;                     &lt;checkbox checked="{{item.completed}}" &gt;&lt;/checkbox&gt;                   &lt;text&gt;-------{{item.name}}&lt;/text&gt;                 &lt;/view&gt;</code><br>    注意：在当前循环作用域内如有全局对象index和item会冲突访问不到，当前作用域内的index和item<br>             会被当做循环的当前对象和当前索引；<br>    解决方法：  通过wx：for-item =”aaa“即为当前作用域遍历的对象起个别名为aaa，index也可以这样子起别名<br>6.小程序里提供的事件和window对象下的事件的区别；（小程序端没有鼠标概念，只有tap触摸概念）<br>    给元素添加触摸事件的方法：bindtap = “todo”//行内事件也不需要添加小括号，区别于pc端js<br>    默认情况下，小程序的开发也会冒泡事件,但是阻止冒泡的方式是通过catchtap事件，<br>    即bindtap会有事件冒泡机制，但是无法阻止，catchtap不会产生冒泡，<br>7.事件传参的方法也显著区别于浏览器运行环境下的js<br>    不能通过函数传参的方法传递参数，语法不允许，实际上bindtap=”type()”中的type()会被当做一个整体函数名<br>    有点莫名奇妙，但是不得不接受官方，<br>    同时也不可通过事件处理函数中的this指向调用该方法的对象即元素，因为在小程序的运行环境中，this会直接指向当前页面的pages对象，<br>    可以通过dataset属性获取到我们自定义的属性值（dataset相似于浏览器运行环境中的data-开头的自定义数据的集合）<br>    <code>    &lt;button bindtap="type" data-name="张三" data-id="zhansan"&gt;456&lt;/button&gt;     console.log(e.target.dataset)     {id: "zhansan", name: "张三"}     id: "zhansan"     name: "张三"     __proto__: Object    </code><br>    小程序没有双向数据绑定，所有的数据都是单向的，当通过插值表达式从逻辑层拿到数据到界面时，不再监听数据的变化，（不会像vue那样监听数据）<br>    只能再通知小程序这个框架去渲染数据<br>    <code>this.setData({ testmsg: e.target.value})</code></p>
 
                 
             </div>
@@ -607,7 +600,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://example.com/2020/12/31/vuex%E7%9A%84%E4%BD%BF%E7%94%A8/">http://example.com/2020/12/31/vuex%E7%9A%84%E4%BD%BF%E7%94%A8/</a>
+                    <a href="http://example.com/2021/01/01/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E7%8E%AF%E5%A2%83%E4%B8%8B%E7%9A%84js/">http://example.com/2021/01/01/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E7%8E%AF%E5%A2%83%E4%B8%8B%E7%9A%84js/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -645,8 +638,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/vue/">
-                                    <span class="chip bg-color">vue</span>
+                                <a href="/tags/wx/">
+                                    <span class="chip bg-color">wx</span>
                                 </a>
                             
                         </div>
@@ -820,7 +813,7 @@
         repo: '',
         owner: '',
         admin: null,
-        id: '2020-12-31T22-24-30',
+        id: '2021-01-01T23-41-10',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -844,7 +837,7 @@
 <script src="/libs/gitment/gitment.js"></script>
 <script>
 var gitment = new Gitment({
-    id: 'Thu Dec 31 2020 22:24:30 GMT+0800',
+    id: 'Fri Jan 01 2021 23:41:10 GMT+0800',
     owner: '',
     repo: '',
     oauth: {
@@ -869,9 +862,9 @@ gitment.render('gitment-content');
 
 <script type="text/javascript">
     disqus_config = function () {
-        this.page.url = 'http://example.com/2020/12/31/vuex%E7%9A%84%E4%BD%BF%E7%94%A8/';
-        this.page.identifier = '/2020/12/31/vuex%E7%9A%84%E4%BD%BF%E7%94%A8/';
-        this.page.title = 'vuex的使用';
+        this.page.url = 'http://example.com/2021/01/01/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E7%8E%AF%E5%A2%83%E4%B8%8B%E7%9A%84js/';
+        this.page.identifier = '/2021/01/01/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E7%8E%AF%E5%A2%83%E4%B8%8B%E7%9A%84js/';
+        this.page.title = '微信小程序环境下的js';
     };
     let disqus_shortname = '';
 
@@ -1186,9 +1179,10 @@ gitment.render('gitment-content');
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2021/01/01/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E7%8E%AF%E5%A2%83%E4%B8%8B%E7%9A%84js/">
                     <div class="card-image">
@@ -1206,9 +1200,9 @@ gitment.render('gitment-content');
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-01-01
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-01-01
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -1221,6 +1215,7 @@ gitment.render('gitment-content');
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -1239,13 +1234,13 @@ gitment.render('gitment-content');
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/12/30/vs-code%E6%8F%92%E4%BB%B6%E5%90%88%E9%9B%86-C/">
+                <a href="/2020/12/31/vuex%E7%9A%84%E4%BD%BF%E7%94%A8/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="vs code插件合集[C">
+                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="vuex的使用">
                         
-                        <span class="card-title">vs code插件合集[C</span>
+                        <span class="card-title">vuex的使用</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1256,14 +1251,14 @@ gitment.render('gitment-content');
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-12-30
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-12-31
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E4%BE%BF%E5%88%A9%E8%B4%B4/" class="post-category">
-                                    便利贴
+                            <a href="/categories/vue/" class="post-category">
+                                    vue
                                 </a>
                             
                             
@@ -1273,8 +1268,8 @@ gitment.render('gitment-content');
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/vs-code/">
-                        <span class="chip bg-color">vs code</span>
+                    <a href="/tags/vue/">
+                        <span class="chip bg-color">vue</span>
                     </a>
                     
                 </div>
