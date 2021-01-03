@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="关于vue组件通信, f_x_y">
+    <meta name="keywords" content="element ui 的理解, f_x_y">
     <meta name="description" content="熟练使用CTRL+C和CTRL+V">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>关于vue组件通信 | f_x_y</title>
+    <title>element ui 的理解 | f_x_y</title>
     <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="/mypng.icon.ico">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -401,12 +401,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/12.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/7.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">关于vue组件通信</h1>
+                    <h1 class="description center-align post-title">element ui 的理解</h1>
                 </div>
             </div>
         </div>
@@ -522,8 +522,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/vue/">
-                                <span class="chip bg-color">vue</span>
+                            <a href="/tags/vue-ui/">
+                                <span class="chip bg-color">vue ui</span>
                             </a>
                         
                     </div>
@@ -547,7 +547,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-09-04
+                    2021-01-03
                 </div>
                 
 
@@ -556,7 +556,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    719
+                    986
                 </div>
                 
 
@@ -573,19 +573,27 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="vue子父兄弟组件之间实现数据传递的方式"><a href="#vue子父兄弟组件之间实现数据传递的方式" class="headerlink" title="vue子父兄弟组件之间实现数据传递的方式"></a>vue子父兄弟组件之间实现数据传递的方式</h2><p>(区分标签内容传递和data数据传递的区别)</p>
-<h3 id="兄弟组件之间实现数据传递"><a href="#兄弟组件之间实现数据传递" class="headerlink" title="兄弟组件之间实现数据传递"></a>兄弟组件之间实现数据传递</h3><figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alert('Hello World!');</span><br></pre></td></tr></tbody></table></figure>
-<p>1） val hub=new Vue()实例化一个vue对象用做事件中心管理组件；<br>2）  hub.$emit(‘tom-event’, 1); 再子组件的methods的方法中，通过$emit(事件名，data)方法触发事件管理中心下的指定事件<br>3） hub.$on(‘jerry-event’,fn）再mounted声明周期钩子函数中给中心管理组件绑定事件和业务处理逻辑<br>4） hub.$off(‘tom-event’); 可以再任意一个组件中销毁事件中心管理组件的绑定事件；</p>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id="app"&gt;</span><br><span class="line">    &lt;div&gt;父组件&lt;/div&gt;</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">    &lt;button v-on:click='handle'&gt;销毁事件&lt;/button&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">    &lt;test-tom&gt;&lt;/test-tom&gt;</span><br><span class="line">    &lt;test-jerry&gt;&lt;/test-jerry&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">var hub = new Vue();</span><br><span class="line">    Vue.component('test-tom', {</span><br><span class="line">      data: function(){</span><br><span class="line">        return {</span><br><span class="line">          num: 0</span><br><span class="line">        }</span><br><span class="line">      },</span><br><span class="line">      template: </span><br><span class="line">        "&lt;div&gt;</span><br><span class="line">          &lt;div&gt;TOM:{ {num} }&lt;/div&gt;</span><br><span class="line">          &lt;div&gt;</span><br><span class="line">            &lt;button v-on:click='handle'&gt;点击&lt;/button&gt;</span><br><span class="line">          &lt;/div&gt;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">        "</span><br><span class="line">      ,</span><br><span class="line">      methods: {</span><br><span class="line">        handle: function(){</span><br><span class="line">          hub.$emit('jerry-event', 2);</span><br><span class="line">        }</span><br><span class="line">      },</span><br><span class="line">      mounted: function() {</span><br><span class="line">        // 监听事件</span><br><span class="line">        hub.$on('tom-event', (val) =&gt; {</span><br><span class="line">          this.num += val;</span><br><span class="line">        });</span><br><span class="line">      }</span><br><span class="line">    });</span><br><span class="line">    Vue.component('test-jerry', {</span><br><span class="line">      data: function(){</span><br><span class="line">        return {</span><br><span class="line">          num: 0</span><br><span class="line">        }</span><br><span class="line">      },</span><br><span class="line">      template: `</span><br><span class="line">        &lt;div&gt;</span><br><span class="line">          &lt;div&gt;JERRY:{ {num} }&lt;/div&gt;</span><br><span class="line">          &lt;div&gt;</span><br><span class="line">            &lt;!-- &lt;button v-on:click='handle'&gt;点击&lt;/button&gt; --&gt;</span><br><span class="line">          &lt;/div&gt;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">      `,</span><br><span class="line">      methods: {</span><br><span class="line">        handle: function(){</span><br><span class="line">          // 触发兄弟组件的事件</span><br><span class="line">          hub.$emit('tom-event', 1);</span><br><span class="line">        }</span><br><span class="line">      },</span><br><span class="line">      mounted: function() {</span><br><span class="line">        // 监听事件</span><br><span class="line">        hub.$on('jerry-event', (val) =&gt; {</span><br><span class="line">          this.num += val;</span><br><span class="line">        });</span><br><span class="line">      }</span><br><span class="line">    });</span><br><span class="line">    var vm = new Vue({</span><br><span class="line">      el: '#app',</span><br><span class="line">      data: {</span><br><span class="line">      },</span><br><span class="line">      methods: {</span><br><span class="line">        handle: function(){</span><br><span class="line">          hub.$off('tom-event');</span><br><span class="line">          hub.$off('jerry-event');</span><br><span class="line">        }</span><br><span class="line">      }</span><br><span class="line">    });</span><br></pre></td></tr></tbody></table></figure>
-<h3 id="父组件向子组件传递数据的方式；"><a href="#父组件向子组件传递数据的方式；" class="headerlink" title="父组件向子组件传递数据的方式；"></a>父组件向子组件传递数据的方式；</h3><p><hello-p title="我是父元素传递过来的值" content="我是父元素值过来的" v-on:enlarge-text="hang($event)"></hello-p><br>1）title=”我是父元素传递过来的值” 父组件通过添加属性的方式向子组件传递一个值；<br>2）props: [‘title’, ‘content’], 子组件利用配置参数对象下的props属性接受传递过来的值并存储以便使用<br>/*****以下以局部组件为例子，全局组件方法为vue。components（组件名，配置参数）</p>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">components: {</span><br><span class="line">                'hello-p': {</span><br><span class="line">                    props: ['title', 'content'],</span><br><span class="line">                    data: function() {</span><br><span class="line">                        return {</span><br><span class="line">                            msg: 'hello - p'</span><br><span class="line">                        }</span><br><span class="line">                    },</span><br><span class="line">                    template: `&lt;div  v-on:click="$emit('enlarge-text',5)"&gt;</span><br><span class="line">                    { {msg+"-- -- -- -- --"+title} }&lt;/div&gt;`,</span><br><span class="line">                    methods: {</span><br><span class="line">                        fn: function(event) {</span><br><span class="line">                            console.log(event)</span><br><span class="line">                        }</span><br><span class="line">                    }</span><br><span class="line">                }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
-<h3 id="子组件向父组件传递数据的方式"><a href="#子组件向父组件传递数据的方式" class="headerlink" title="子组件向父组件传递数据的方式"></a>子组件向父组件传递数据的方式</h3><div id="app">
-        <div :style="{fontSize: fontSize + &quot;px&quot;}">{ {pmsg} }</div>
-        <menu-item :parr="parr" @enlarge-text="handle($event)"></menu-item>
-</div>
-1）父组件给子组件绑定一个自定义事件v-on:事件名：v-on:enlarge-text="handle($event)"
-1）子组件通过$emit('触发事件名'，携带data)方法触发一个自定义事件
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">Vue.component('menu-item', {</span><br><span class="line">            props: ['parr'],</span><br><span class="line">            template: `</span><br><span class="line">        &lt;div&gt;</span><br><span class="line">          &lt;ul&gt;</span><br><span class="line">            &lt;li :key='index' v-for='(item,index) in parr'&gt;{ {item} }&lt;/li&gt;</span><br><span class="line">          &lt;/ul&gt;</span><br><span class="line">          &lt;button v-on:click='$emit("enlarge-text", 5)'&gt;扩大父组件中字体大小&lt;/button&gt;</span><br><span class="line">          &lt;button v-on:click='$emit("enlarge-text", 10)'&gt;扩大父组件中字体大小&lt;/button&gt;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">      `</span><br><span class="line">        });</span><br><span class="line">        var vm = new Vue({</span><br><span class="line">            el: '#app',</span><br><span class="line">            data: {</span><br><span class="line">                pmsg: '父组件中内容',</span><br><span class="line">                parr: ['apple', 'orange', 'banana'],</span><br><span class="line">                fontSize: 10</span><br><span class="line">            },</span><br><span class="line">            methods: {</span><br><span class="line">                handle: function(val) {</span><br><span class="line">                    // 扩大字体大小</span><br><span class="line">                    this.fontSize += val;</span><br><span class="line">                }</span><br><span class="line">            }</span><br><span class="line">});</span><br></pre></td></tr></tbody></table></figure>
+                <hr>
+<p>好处：对深入vue底层源码和ui组件库的开发有一定的帮助</p>
+<p>1.通过自定事件总栈深入理解vue事件总栈</p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">class Buf {</span><br><span class="line">  constructor () {</span><br><span class="line">    this.callbacks = {}</span><br><span class="line">  }</span><br><span class="line">  $on(name,fn) {</span><br><span class="line">    this.callbacks[name] = this.callbacks[name] || []</span><br><span class="line">    this.callbacks[name].push(fn)</span><br><span class="line">  }</span><br><span class="line">  $emit(name,args){</span><br><span class="line">    if(this.callbacks[name]) {</span><br><span class="line">      this.callbacks[name].forEach(ele =&gt; {</span><br><span class="line">        ele(args)</span><br><span class="line">      });</span><br><span class="line">    }</span><br><span class="line">  }</span><br><span class="line">}</span><br><span class="line">Vue.prototype.$buf = new Buf() //将buff的实例化对象挂载到vue的原型上</span><br></pre></td></tr></tbody></table></figure>
+
+<p>2.通过$parents和$children组件访问属性完成组件间交互</p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">this.$parent.$emit('parentto-child2','我通过父元素找到了child2') </span><br><span class="line">//在当前组件内通过组件访问属性$parent获取父元素组件实例对象，分发一个prentto-child2事件并且传参</span><br><span class="line">this.$children[0].todo() </span><br><span class="line">//通过$children组件访问属性获取到子组件，即可使用子组件下定义的方法</span><br><span class="line">this.$children[0].$emit('link-child1','父元素给child1发的一些信息')</span><br><span class="line">//通过$children拿到的数组不保证顺序的，其不是按template模板结构的顺序排列的</span><br></pre></td></tr></tbody></table></figure>
+<p>3.$attrs和$listeners实现组件间交互<br>//父组件通过属性绑定的方式添加给子组件，但是子组件并未通过props的方式接受数据被放置于$attrs对象下</p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;div&gt;{ {$attrs.msg} }&lt;/div&gt;</span><br><span class="line">&lt;h2 v-on="$listeners"&gt;123&lt;/h2&gt;</span><br><span class="line">//通过$listeners可以监听给该组件绑定并触发事件的组件对象</span><br></pre></td></tr></tbody></table></figure>
+<p>4.通过provide/reject对象实现任意辈分组件间访问</p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">//通过provide可以向外界组件提供数据接口，通过inject注入数据</span><br><span class="line">//该方法也可实现任意组件之间的数据访问，在组件开发时经常使用</span><br><span class="line">provide:function () {</span><br><span class="line">    return {</span><br><span class="line">      fo: '0000ss',</span><br><span class="line">      comp: this</span><br><span class="line">    }</span><br><span class="line">  },</span><br><span class="line">inject:['fo','comp'],</span><br></pre></td></tr></tbody></table></figure>
+<p>5.插槽的用法</p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">//template是slot组件的模版</span><br><span class="line">&lt;slot-com&gt;</span><br><span class="line">            &lt;template v-slot:header&gt;sdafdsa&lt;/template&gt;</span><br><span class="line">            &lt;template&gt;sdafdsafdsafdsafdsa&lt;/template&gt;</span><br><span class="line">            &lt;template v-slot:footer="fc"&gt;{ {fc.msg} }&lt;/template&gt;</span><br><span class="line">&lt;/slot-com&gt;</span><br><span class="line"></span><br><span class="line">&lt;template&gt;</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">        &lt;div class="header"&gt;</span><br><span class="line">            &lt;slot name="header"&gt;&lt;/slot&gt;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">        &lt;div class="content"&gt;</span><br><span class="line">            &lt;slot &gt;&lt;/slot&gt;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">        &lt;div class="footer"&gt;</span><br><span class="line">            &lt;!-- 通过作用域插槽，父元素可以拿到子元素的值 --&gt;</span><br><span class="line">            &lt;slot name="footer" v-bind:msg='msg'&gt;&lt;/slot&gt;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">    export default {</span><br><span class="line">        data: function () {</span><br><span class="line">            return {</span><br><span class="line">                msg: '我是子组件想传递给父组件的数据'</span><br><span class="line">            }</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></tbody></table></figure>
+<p>6熟悉以上用法就可以直接手撸element ui组件库了，深入element ui组件库源码；<br>1）从简单的kinput组件开始封装</p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">        &lt;input :type="type" v-bind:value="value" @input="oninput"&gt;</span><br><span class="line">        &lt;p&gt;</span><br><span class="line">            { {value} }</span><br><span class="line">        &lt;/p&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">    export default {</span><br><span class="line">        data: function () {</span><br><span class="line">            return {</span><br><span class="line">            }</span><br><span class="line">        },</span><br><span class="line">        props: {</span><br><span class="line">            value: {</span><br><span class="line">                type: String,</span><br><span class="line">                default: ''</span><br><span class="line">            },</span><br><span class="line">            type: {</span><br><span class="line">                type: String,</span><br><span class="line">                default: 'text'</span><br><span class="line">            }</span><br><span class="line">        },</span><br><span class="line">        methods: {</span><br><span class="line">            oninput: function (e) {</span><br><span class="line">                this.$emit('input',e.target.value)</span><br><span class="line">            }</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">&lt;style lang="scss" scoped&gt;</span><br><span class="line"></span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></tbody></table></figure>
+<p>2）封装kinput组件的父组件kformitem</p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">        &lt;slot name="default"&gt;&lt;/slot&gt;</span><br><span class="line">        &lt;label v-if="label"&gt;{ {label} }&lt;/label&gt;</span><br><span class="line">        &lt;p v-if="error"&gt;{ {error} }&lt;/p&gt;</span><br><span class="line">             &lt;p&gt;{ {form.rules} }&lt;/p&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">    export default {</span><br><span class="line">        inject: ['form'],</span><br><span class="line">        data:function () {</span><br><span class="line">            return {</span><br><span class="line">                error: ''</span><br><span class="line">            }</span><br><span class="line">        },</span><br><span class="line">        props:{</span><br><span class="line">            label: {</span><br><span class="line">                type: String,</span><br><span class="line">                default: ''</span><br><span class="line">            }</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">&lt;style lang="less" scoped&gt;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></tbody></table></figure>
+<p>3）封装kformitem的父元素表单元素</p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">        &lt;slot name="default"&gt;&lt;/slot&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">    export default {</span><br><span class="line">        provide: function () {</span><br><span class="line">            return {</span><br><span class="line">                form: this</span><br><span class="line">            }</span><br><span class="line">        },</span><br><span class="line">        props: {</span><br><span class="line">           model: {</span><br><span class="line">               type: Object,</span><br><span class="line">               required: true</span><br><span class="line">           },</span><br><span class="line">           rules: {</span><br><span class="line">               type: Object</span><br><span class="line">           }</span><br><span class="line">        } </span><br><span class="line">    }</span><br><span class="line">&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">&lt;style lang="less" scoped&gt;</span><br><span class="line"></span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></tbody></table></figure>
+<p>4）这样一个简单的表单元素功能就封装好了；可以在我们组件中使用了</p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">    &lt;div class="content"&gt;</span><br><span class="line">       &lt;kform v-bind:model='userInfo' v-bind:rules='rules'&gt;</span><br><span class="line">           &lt;kinputitem&gt;</span><br><span class="line">                &lt;kinput v-model="userInfo.username"&gt;&lt;/kinput&gt;</span><br><span class="line">            &lt;/kinputitem&gt;</span><br><span class="line">       &lt;/kform&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">    import kinput from '../components/kinput'</span><br><span class="line">    import kinputitem from '../components/kformitem'</span><br><span class="line">    import kform from '../components/kform'</span><br><span class="line">    export default {</span><br><span class="line">        components: {</span><br><span class="line">            kinput,kinputitem,kform</span><br><span class="line">        },</span><br><span class="line">        data: function () {</span><br><span class="line">            return {</span><br><span class="line">                userInfo: {</span><br><span class="line">                    username: 'todo',</span><br><span class="line">                    password: '',</span><br><span class="line">                },</span><br><span class="line">                rules: {</span><br><span class="line">                    username: [{requried: true, message: '请输入用户名称'}],</span><br><span class="line">                    password: [{requried: true, message: '请输入密码'}]</span><br><span class="line">                }</span><br><span class="line">            }</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">&lt;style lang="less" scoped&gt;</span><br><span class="line">.content{</span><br><span class="line">    padding: 30px 50px;</span><br><span class="line">}</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></tbody></table></figure>
                 
             </div>
             <hr/>
@@ -611,7 +619,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://example.com/2020/09/04/%E5%85%B3%E4%BA%8Evue%E7%BB%84%E4%BB%B6%E9%80%9A%E8%AE%AF/">http://example.com/2020/09/04/%E5%85%B3%E4%BA%8Evue%E7%BB%84%E4%BB%B6%E9%80%9A%E8%AE%AF/</a>
+                    <a href="http://example.com/2021/01/03/element-ui-%E7%9A%84%E7%90%86%E8%A7%A3/">http://example.com/2021/01/03/element-ui-%E7%9A%84%E7%90%86%E8%A7%A3/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -649,8 +657,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/vue/">
-                                    <span class="chip bg-color">vue</span>
+                                <a href="/tags/vue-ui/">
+                                    <span class="chip bg-color">vue ui</span>
                                 </a>
                             
                         </div>
@@ -824,7 +832,7 @@
         repo: '',
         owner: '',
         admin: null,
-        id: '2020-09-04T18-14-19',
+        id: '2021-01-03T23-39-46',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -848,7 +856,7 @@
 <script src="/libs/gitment/gitment.js"></script>
 <script>
 var gitment = new Gitment({
-    id: 'Fri Sep 04 2020 18:14:19 GMT+0800',
+    id: 'Sun Jan 03 2021 23:39:46 GMT+0800',
     owner: '',
     repo: '',
     oauth: {
@@ -873,9 +881,9 @@ gitment.render('gitment-content');
 
 <script type="text/javascript">
     disqus_config = function () {
-        this.page.url = 'http://example.com/2020/09/04/%E5%85%B3%E4%BA%8Evue%E7%BB%84%E4%BB%B6%E9%80%9A%E8%AE%AF/';
-        this.page.identifier = '/2020/09/04/%E5%85%B3%E4%BA%8Evue%E7%BB%84%E4%BB%B6%E9%80%9A%E8%AE%AF/';
-        this.page.title = '关于vue组件通信';
+        this.page.url = 'http://example.com/2021/01/03/element-ui-%E7%9A%84%E7%90%86%E8%A7%A3/';
+        this.page.identifier = '/2021/01/03/element-ui-%E7%9A%84%E7%90%86%E8%A7%A3/';
+        this.page.title = 'element ui 的理解';
     };
     let disqus_shortname = '';
 
@@ -1190,17 +1198,18 @@ gitment.render('gitment-content');
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2020/10/30/My-New-Post/">
+                <a href="/2021/01/03/element-ui-%E7%9A%84%E7%90%86%E8%A7%A3/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="关于axios">
+                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="element ui 的理解">
                         
-                        <span class="card-title">关于axios</span>
+                        <span class="card-title">element ui 的理解</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1210,26 +1219,27 @@ gitment.render('gitment-content');
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-10-30
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-01-03
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/axios/" class="post-category">
-                                    axios
+                            <a href="/categories/vue/" class="post-category">
+                                    vue
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/axios/">
-                        <span class="chip bg-color">axios</span>
+                    <a href="/tags/vue-ui/">
+                        <span class="chip bg-color">vue ui</span>
                     </a>
                     
                 </div>
@@ -1243,13 +1253,13 @@ gitment.render('gitment-content');
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/06/30/test/">
+                <a href="/2021/01/01/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E7%8E%AF%E5%A2%83%E4%B8%8B%E7%9A%84js/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="ERROR!">
+                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="微信小程序环境下的js">
                         
-                        <span class="card-title">ERROR!</span>
+                        <span class="card-title">微信小程序环境下的js</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1260,15 +1270,27 @@ gitment.render('gitment-content');
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-06-30
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-01-01
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            xiangyou fu
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/wx-api/" class="post-category">
+                                    wx api
+                                </a>
+                            
                             
                         </span>
                     </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/wx/">
+                        <span class="chip bg-color">wx</span>
+                    </a>
+                    
                 </div>
                 
             </div>
