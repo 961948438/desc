@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2021-01-03T15:48:04.296Z</updated>
+  <updated>2021-01-04T13:02:40.687Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>vue中组件开发中大量使用的dispatch和broadcast</title>
+    <link href="http://example.com/2021/01/04/vue%E4%B8%AD%E7%BB%84%E4%BB%B6%E5%BC%80%E5%8F%91%E4%B8%AD%E5%A4%A7%E9%87%8F%E4%BD%BF%E7%94%A8%E7%9A%84dispatch%E5%92%8Cbroadcast/"/>
+    <id>http://example.com/2021/01/04/vue%E4%B8%AD%E7%BB%84%E4%BB%B6%E5%BC%80%E5%8F%91%E4%B8%AD%E5%A4%A7%E9%87%8F%E4%BD%BF%E7%94%A8%E7%9A%84dispatch%E5%92%8Cbroadcast/</id>
+    <published>2021-01-04T12:43:37.000Z</published>
+    <updated>2021-01-04T13:02:40.687Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;1.在使用 Element 过程中组件通信大量使用 dispatch 和 broadcast 两个方法，之vue2 组件通信 也提到过 vue2 中&lt;br&gt;取消了 $dispatch 和 $broadcast 两个重要的事件，而 Element</summary>
+        
+      
+    
+    
+    
+    <category term="vue" scheme="http://example.com/categories/vue/"/>
+    
+    
+    <category term="vue" scheme="http://example.com/tags/vue/"/>
+    
+  </entry>
   
   <entry>
     <title>element ui 的理解</title>

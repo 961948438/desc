@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="element ui 的理解, f_x_y">
+    <meta name="keywords" content="vue中组件开发中大量使用的dispatch和broadcast, f_x_y">
     <meta name="description" content="熟练使用CTRL+C和CTRL+V">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>element ui 的理解 | f_x_y</title>
+    <title>vue中组件开发中大量使用的dispatch和broadcast | f_x_y</title>
     <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="/mypng.icon.ico">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -401,12 +401,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/7.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/23.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">element ui 的理解</h1>
+                    <h1 class="description center-align post-title">vue中组件开发中大量使用的dispatch和broadcast</h1>
                 </div>
             </div>
         </div>
@@ -522,8 +522,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/vue-ui/">
-                                <span class="chip bg-color">vue ui</span>
+                            <a href="/tags/vue/">
+                                <span class="chip bg-color">vue</span>
                             </a>
                         
                     </div>
@@ -547,7 +547,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-01-03
+                    2021-01-04
                 </div>
                 
 
@@ -556,7 +556,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    986
+                    361
                 </div>
                 
 
@@ -573,27 +573,13 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <hr>
-<p>好处：对深入vue底层源码和ui组件库的开发有一定的帮助</p>
-<p>1.通过自定事件总栈深入理解vue事件总栈</p>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">class Buf {</span><br><span class="line">  constructor () {</span><br><span class="line">    this.callbacks = {}</span><br><span class="line">  }</span><br><span class="line">  $on(name,fn) {</span><br><span class="line">    this.callbacks[name] = this.callbacks[name] || []</span><br><span class="line">    this.callbacks[name].push(fn)</span><br><span class="line">  }</span><br><span class="line">  $emit(name,args){</span><br><span class="line">    if(this.callbacks[name]) {</span><br><span class="line">      this.callbacks[name].forEach(ele =&gt; {</span><br><span class="line">        ele(args)</span><br><span class="line">      });</span><br><span class="line">    }</span><br><span class="line">  }</span><br><span class="line">}</span><br><span class="line">Vue.prototype.$buf = new Buf() //将buff的实例化对象挂载到vue的原型上</span><br></pre></td></tr></tbody></table></figure>
+                <p>1.在使用 Element 过程中组件通信大量使用 dispatch 和 broadcast 两个方法，之vue2 组件通信 也提到过 vue2 中<br>取消了 $dispatch 和 $broadcast 两个重要的事件，而 Element 重新实现了这两个函数，通过下方可简单认识一下这两个方法</p>
+<p>2.</p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">"use strict";</span><br><span class="line">exports.__esModule = true;</span><br><span class="line">function _broadcast(componentName, eventName, params) {</span><br><span class="line">  this.$children.forEach(function (child) {</span><br><span class="line">    var name = child.$options.componentName;</span><br><span class="line">    if (name === componentName) {</span><br><span class="line">      child.$emit.apply(child, [eventName].concat(params));</span><br><span class="line">    } else {</span><br><span class="line">      _broadcast.apply(child, [componentName, eventName].concat([params]));</span><br><span class="line">    }</span><br><span class="line">  });</span><br><span class="line">}</span><br><span class="line">exports.default = {</span><br><span class="line">  methods: {</span><br><span class="line">    dispatch: function dispatch(componentName, eventName, params) {</span><br><span class="line">      var parent = this.$parent || this.$root;</span><br><span class="line">      var name = parent.$options.componentName;</span><br><span class="line">      while (parent &amp;&amp; (!name || name !== componentName)) {</span><br><span class="line">        parent = parent.$parent;</span><br><span class="line">        if (parent) {</span><br><span class="line">          name = parent.$options.componentName;</span><br><span class="line">        }</span><br><span class="line">      }</span><br><span class="line">      if (parent) {</span><br><span class="line">        parent.$emit.apply(parent, [eventName].concat(params));</span><br><span class="line">      }</span><br><span class="line">    },</span><br><span class="line">    broadcast: function broadcast(componentName, eventName, params) {</span><br><span class="line">      _broadcast.call(this, componentName, eventName, params);</span><br><span class="line">    }</span><br><span class="line">  }</span><br><span class="line">};</span><br></pre></td></tr></tbody></table></figure>
+<p>3分析==》<br>    1）dispatch 和 broadcast 方法都需要 3 个参数，componentName 组件名称， eventName 事件名称， params 传递的参数。</p>
+<pre><code>2）dispatch 方法会寻找所有的父组件，直到找到名称为 componentName 的组件，调用其 $emit()事件。broadcast 方法则是遍历当前组件的所有子组件，找到名称为 componentName 的子组件，然后调用其 $emit() 事件。</code></pre>
+<p>4.vue 组件通信方式总结<br>父组件向子组件传递信息使用 props down<br>子组件向父组件传递信息使用 event up<br>其它关系类型组件通信使用 global event bus<br>大型 SPA 组件之间通信使用 Vuex 管理组件状态<br>使用 Element 下 emitter.js 中的 dispatch 和 broadcast 做事件定向传播</p>
 
-<p>2.通过$parents和$children组件访问属性完成组件间交互</p>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">this.$parent.$emit('parentto-child2','我通过父元素找到了child2') </span><br><span class="line">//在当前组件内通过组件访问属性$parent获取父元素组件实例对象，分发一个prentto-child2事件并且传参</span><br><span class="line">this.$children[0].todo() </span><br><span class="line">//通过$children组件访问属性获取到子组件，即可使用子组件下定义的方法</span><br><span class="line">this.$children[0].$emit('link-child1','父元素给child1发的一些信息')</span><br><span class="line">//通过$children拿到的数组不保证顺序的，其不是按template模板结构的顺序排列的</span><br></pre></td></tr></tbody></table></figure>
-<p>3.$attrs和$listeners实现组件间交互<br>//父组件通过属性绑定的方式添加给子组件，但是子组件并未通过props的方式接受数据被放置于$attrs对象下</p>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;div&gt;{ {$attrs.msg} }&lt;/div&gt;</span><br><span class="line">&lt;h2 v-on="$listeners"&gt;123&lt;/h2&gt;</span><br><span class="line">//通过$listeners可以监听给该组件绑定并触发事件的组件对象</span><br></pre></td></tr></tbody></table></figure>
-<p>4.通过provide/reject对象实现任意辈分组件间访问</p>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">//通过provide可以向外界组件提供数据接口，通过inject注入数据</span><br><span class="line">//该方法也可实现任意组件之间的数据访问，在组件开发时经常使用</span><br><span class="line">provide:function () {</span><br><span class="line">    return {</span><br><span class="line">      fo: '0000ss',</span><br><span class="line">      comp: this</span><br><span class="line">    }</span><br><span class="line">  },</span><br><span class="line">inject:['fo','comp'],</span><br></pre></td></tr></tbody></table></figure>
-<p>5.插槽的用法</p>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">//template是slot组件的模版</span><br><span class="line">&lt;slot-com&gt;</span><br><span class="line">            &lt;template v-slot:header&gt;sdafdsa&lt;/template&gt;</span><br><span class="line">            &lt;template&gt;sdafdsafdsafdsafdsa&lt;/template&gt;</span><br><span class="line">            &lt;template v-slot:footer="fc"&gt;{ {fc.msg} }&lt;/template&gt;</span><br><span class="line">&lt;/slot-com&gt;</span><br><span class="line"></span><br><span class="line">&lt;template&gt;</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">        &lt;div class="header"&gt;</span><br><span class="line">            &lt;slot name="header"&gt;&lt;/slot&gt;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">        &lt;div class="content"&gt;</span><br><span class="line">            &lt;slot &gt;&lt;/slot&gt;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">        &lt;div class="footer"&gt;</span><br><span class="line">            &lt;!-- 通过作用域插槽，父元素可以拿到子元素的值 --&gt;</span><br><span class="line">            &lt;slot name="footer" v-bind:msg='msg'&gt;&lt;/slot&gt;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">    export default {</span><br><span class="line">        data: function () {</span><br><span class="line">            return {</span><br><span class="line">                msg: '我是子组件想传递给父组件的数据'</span><br><span class="line">            }</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></tbody></table></figure>
-<p>6熟悉以上用法就可以直接手撸element ui组件库了，深入element ui组件库源码；<br>1）从简单的kinput组件开始封装</p>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">        &lt;input :type="type" v-bind:value="value" @input="oninput"&gt;</span><br><span class="line">        &lt;p&gt;</span><br><span class="line">            { {value} }</span><br><span class="line">        &lt;/p&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">    export default {</span><br><span class="line">        data: function () {</span><br><span class="line">            return {</span><br><span class="line">            }</span><br><span class="line">        },</span><br><span class="line">        props: {</span><br><span class="line">            value: {</span><br><span class="line">                type: String,</span><br><span class="line">                default: ''</span><br><span class="line">            },</span><br><span class="line">            type: {</span><br><span class="line">                type: String,</span><br><span class="line">                default: 'text'</span><br><span class="line">            }</span><br><span class="line">        },</span><br><span class="line">        methods: {</span><br><span class="line">            oninput: function (e) {</span><br><span class="line">                this.$emit('input',e.target.value)</span><br><span class="line">            }</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">&lt;style lang="scss" scoped&gt;</span><br><span class="line"></span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></tbody></table></figure>
-<p>2）封装kinput组件的父组件kformitem</p>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">        &lt;slot name="default"&gt;&lt;/slot&gt;</span><br><span class="line">        &lt;label v-if="label"&gt;{ {label} }&lt;/label&gt;</span><br><span class="line">        &lt;p v-if="error"&gt;{ {error} }&lt;/p&gt;</span><br><span class="line">             &lt;p&gt;{ {form.rules} }&lt;/p&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">    export default {</span><br><span class="line">        inject: ['form'],</span><br><span class="line">        data:function () {</span><br><span class="line">            return {</span><br><span class="line">                error: ''</span><br><span class="line">            }</span><br><span class="line">        },</span><br><span class="line">        props:{</span><br><span class="line">            label: {</span><br><span class="line">                type: String,</span><br><span class="line">                default: ''</span><br><span class="line">            }</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">&lt;style lang="less" scoped&gt;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></tbody></table></figure>
-<p>3）封装kformitem的父元素表单元素</p>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">        &lt;slot name="default"&gt;&lt;/slot&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">    export default {</span><br><span class="line">        provide: function () {</span><br><span class="line">            return {</span><br><span class="line">                form: this</span><br><span class="line">            }</span><br><span class="line">        },</span><br><span class="line">        props: {</span><br><span class="line">           model: {</span><br><span class="line">               type: Object,</span><br><span class="line">               required: true</span><br><span class="line">           },</span><br><span class="line">           rules: {</span><br><span class="line">               type: Object</span><br><span class="line">           }</span><br><span class="line">        } </span><br><span class="line">    }</span><br><span class="line">&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">&lt;style lang="less" scoped&gt;</span><br><span class="line"></span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></tbody></table></figure>
-<p>4）这样一个简单的表单元素功能就封装好了；可以在我们组件中使用了</p>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">    &lt;div class="content"&gt;</span><br><span class="line">       &lt;kform v-bind:model='userInfo' v-bind:rules='rules'&gt;</span><br><span class="line">           &lt;kinputitem&gt;</span><br><span class="line">                &lt;kinput v-model="userInfo.username"&gt;&lt;/kinput&gt;</span><br><span class="line">            &lt;/kinputitem&gt;</span><br><span class="line">       &lt;/kform&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">    import kinput from '../components/kinput'</span><br><span class="line">    import kinputitem from '../components/kformitem'</span><br><span class="line">    import kform from '../components/kform'</span><br><span class="line">    export default {</span><br><span class="line">        components: {</span><br><span class="line">            kinput,kinputitem,kform</span><br><span class="line">        },</span><br><span class="line">        data: function () {</span><br><span class="line">            return {</span><br><span class="line">                userInfo: {</span><br><span class="line">                    username: 'todo',</span><br><span class="line">                    password: '',</span><br><span class="line">                },</span><br><span class="line">                rules: {</span><br><span class="line">                    username: [{requried: true, message: '请输入用户名称'}],</span><br><span class="line">                    password: [{requried: true, message: '请输入密码'}]</span><br><span class="line">                }</span><br><span class="line">            }</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">&lt;style lang="less" scoped&gt;</span><br><span class="line">.content{</span><br><span class="line">    padding: 30px 50px;</span><br><span class="line">}</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></tbody></table></figure>
                 
             </div>
             <hr/>
@@ -619,7 +605,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://example.com/2021/01/03/element-ui-%E7%9A%84%E7%90%86%E8%A7%A3/">http://example.com/2021/01/03/element-ui-%E7%9A%84%E7%90%86%E8%A7%A3/</a>
+                    <a href="http://example.com/2021/01/04/vue%E4%B8%AD%E7%BB%84%E4%BB%B6%E5%BC%80%E5%8F%91%E4%B8%AD%E5%A4%A7%E9%87%8F%E4%BD%BF%E7%94%A8%E7%9A%84dispatch%E5%92%8Cbroadcast/">http://example.com/2021/01/04/vue%E4%B8%AD%E7%BB%84%E4%BB%B6%E5%BC%80%E5%8F%91%E4%B8%AD%E5%A4%A7%E9%87%8F%E4%BD%BF%E7%94%A8%E7%9A%84dispatch%E5%92%8Cbroadcast/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -657,8 +643,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/vue-ui/">
-                                    <span class="chip bg-color">vue ui</span>
+                                <a href="/tags/vue/">
+                                    <span class="chip bg-color">vue</span>
                                 </a>
                             
                         </div>
@@ -832,7 +818,7 @@
         repo: '',
         owner: '',
         admin: null,
-        id: '2021-01-03T23-39-46',
+        id: '2021-01-04T20-43-37',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -856,7 +842,7 @@
 <script src="/libs/gitment/gitment.js"></script>
 <script>
 var gitment = new Gitment({
-    id: 'Sun Jan 03 2021 23:39:46 GMT+0800',
+    id: 'Mon Jan 04 2021 20:43:37 GMT+0800',
     owner: '',
     repo: '',
     oauth: {
@@ -881,9 +867,9 @@ gitment.render('gitment-content');
 
 <script type="text/javascript">
     disqus_config = function () {
-        this.page.url = 'http://example.com/2021/01/03/element-ui-%E7%9A%84%E7%90%86%E8%A7%A3/';
-        this.page.identifier = '/2021/01/03/element-ui-%E7%9A%84%E7%90%86%E8%A7%A3/';
-        this.page.title = 'element ui 的理解';
+        this.page.url = 'http://example.com/2021/01/04/vue%E4%B8%AD%E7%BB%84%E4%BB%B6%E5%BC%80%E5%8F%91%E4%B8%AD%E5%A4%A7%E9%87%8F%E4%BD%BF%E7%94%A8%E7%9A%84dispatch%E5%92%8Cbroadcast/';
+        this.page.identifier = '/2021/01/04/vue%E4%B8%AD%E7%BB%84%E4%BB%B6%E5%BC%80%E5%8F%91%E4%B8%AD%E5%A4%A7%E9%87%8F%E4%BD%BF%E7%94%A8%E7%9A%84dispatch%E5%92%8Cbroadcast/';
+        this.page.title = 'vue中组件开发中大量使用的dispatch和broadcast';
     };
     let disqus_shortname = '';
 
@@ -1198,9 +1184,10 @@ gitment.render('gitment-content');
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2021/01/04/vue%E4%B8%AD%E7%BB%84%E4%BB%B6%E5%BC%80%E5%8F%91%E4%B8%AD%E5%A4%A7%E9%87%8F%E4%BD%BF%E7%94%A8%E7%9A%84dispatch%E5%92%8Cbroadcast/">
                     <div class="card-image">
@@ -1218,9 +1205,9 @@ gitment.render('gitment-content');
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-01-04
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-01-04
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -1233,6 +1220,7 @@ gitment.render('gitment-content');
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -1251,13 +1239,13 @@ gitment.render('gitment-content');
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/01/01/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E7%8E%AF%E5%A2%83%E4%B8%8B%E7%9A%84js/">
+                <a href="/2021/01/03/element-ui-%E7%9A%84%E7%90%86%E8%A7%A3/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="微信小程序环境下的js">
+                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="element ui 的理解">
                         
-                        <span class="card-title">微信小程序环境下的js</span>
+                        <span class="card-title">element ui 的理解</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1268,14 +1256,14 @@ gitment.render('gitment-content');
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-01-01
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-01-03
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/wx-api/" class="post-category">
-                                    wx api
+                            <a href="/categories/vue/" class="post-category">
+                                    vue
                                 </a>
                             
                             
@@ -1285,8 +1273,8 @@ gitment.render('gitment-content');
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/wx/">
-                        <span class="chip bg-color">wx</span>
+                    <a href="/tags/vue-ui/">
+                        <span class="chip bg-color">vue ui</span>
                     </a>
                     
                 </div>
