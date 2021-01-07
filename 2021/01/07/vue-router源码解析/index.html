@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="vue中组件开发中大量使用的dispatch和broadcast, f_x_y">
+    <meta name="keywords" content="vue-router源码解析, f_x_y">
     <meta name="description" content="熟练使用CTRL+C和CTRL+V">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>vue中组件开发中大量使用的dispatch和broadcast | f_x_y</title>
+    <title>vue-router源码解析 | f_x_y</title>
     <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="/mypng.icon.ico">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -401,12 +401,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/23.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/18.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">vue中组件开发中大量使用的dispatch和broadcast</h1>
+                    <h1 class="description center-align post-title">vue-router源码解析</h1>
                 </div>
             </div>
         </div>
@@ -547,7 +547,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-01-04
+                    2021-01-07
                 </div>
                 
 
@@ -556,7 +556,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    361
+                    300
                 </div>
                 
 
@@ -573,11 +573,7 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>1.在使用 Element 过程中组件通信大量使用 dispatch 和 broadcast 两个方法，之vue2 组件通信 也提到过 vue2 中<br>取消了 $dispatch 和 $broadcast 两个重要的事件，而 Element 重新实现了这两个函数，通过下方可简单认识一下这两个方法</p>
-<p>2.</p>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">"use strict";</span><br><span class="line">exports.__esModule = true;</span><br><span class="line">function _broadcast(componentName, eventName, params) {</span><br><span class="line">  this.$children.forEach(function (child) {</span><br><span class="line">    var name = child.$options.componentName;</span><br><span class="line">    if (name === componentName) {</span><br><span class="line">      child.$emit.apply(child, [eventName].concat(params));</span><br><span class="line">    } else {</span><br><span class="line">      _broadcast.apply(child, [componentName, eventName].concat([params]));</span><br><span class="line">    }</span><br><span class="line">  });</span><br><span class="line">}</span><br><span class="line">exports.default = {</span><br><span class="line">  methods: {</span><br><span class="line">    dispatch: function dispatch(componentName, eventName, params) {</span><br><span class="line">      var parent = this.$parent || this.$root;</span><br><span class="line">      var name = parent.$options.componentName;</span><br><span class="line">      while (parent &amp;&amp; (!name || name !== componentName)) {</span><br><span class="line">        parent = parent.$parent;</span><br><span class="line">        if (parent) {</span><br><span class="line">          name = parent.$options.componentName;</span><br><span class="line">        }</span><br><span class="line">      }</span><br><span class="line">      if (parent) {</span><br><span class="line">        parent.$emit.apply(parent, [eventName].concat(params));</span><br><span class="line">      }</span><br><span class="line">    },</span><br><span class="line">    broadcast: function broadcast(componentName, eventName, params) {</span><br><span class="line">      _broadcast.call(this, componentName, eventName, params);</span><br><span class="line">    }</span><br><span class="line">  }</span><br><span class="line">};</span><br></pre></td></tr></tbody></table></figure>
-<p>3分析<br>    1）dispatch 和 broadcast 方法都需要 3 个参数，componentName 组件名称， eventName 事件名称， params 传递的参数。<br>    2）dispatch 方法会寻找所有的父组件，直到找到名称为 componentName 的组件，调用其 $emit()事件。broadcast 方法则是遍历当前组件的所有子组件，找到名称为 componentName 的子组件，然后调用其 $emit() 事件。<br>4.vue 组件通信方式总结<br>父组件向子组件传递信息使用 props down<br>子组件向父组件传递信息使用 event up<br>其它关系类型组件通信使用 global event bus<br>大型 SPA 组件之间通信使用 Vuex 管理组件状态<br>使用 Element 下 emitter.js 中的 dispatch 和 broadcast 做事件定向传播</p>
-
+                <h3 id="手写vue-router插件"><a href="#手写vue-router插件" class="headerlink" title="手写vue-router插件"></a>手写vue-router插件</h3><h5 id="1-作为一个插件存在，实现VueRouter类和install方法"><a href="#1-作为一个插件存在，实现VueRouter类和install方法" class="headerlink" title="1.作为一个插件存在，实现VueRouter类和install方法"></a>1.作为一个插件存在，实现VueRouter类和install方法</h5><h5 id="2-定义两个全局组件router-link-和router-view"><a href="#2-定义两个全局组件router-link-和router-view" class="headerlink" title="2.定义两个全局组件router-link,和router-view"></a>2.定义两个全局组件router-link,和router-view</h5><h5 id="3-监控url变化"><a href="#3-监控url变化" class="headerlink" title="3.监控url变化"></a>3.监控url变化</h5><h5 id="4-创建响应式的current属性"><a href="#4-创建响应式的current属性" class="headerlink" title="4.创建响应式的current属性"></a>4.创建响应式的current属性</h5><h5 id="5-路由映射表的创建"><a href="#5-路由映射表的创建" class="headerlink" title="5.路由映射表的创建"></a>5.路由映射表的创建</h5><figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br></pre></td><td class="code"><pre><span class="line">// 1.作为一个插件存在，实现VueRouter类和install方法</span><br><span class="line">let Vue;</span><br><span class="line">class XXXVueRouter {</span><br><span class="line">    constructor(options) {</span><br><span class="line">        this.$options = options</span><br><span class="line">        //4.创建响应式的current属性 （可以通过Vue.set()方法设置响应式数据，util设置也可以）</span><br><span class="line">        Vue.util.defineReactive(this,'current','/')</span><br><span class="line">        // Vue.set(this,'current','/')</span><br><span class="line">        //3.此处可以监控url变化</span><br><span class="line">        window.addEventListener('hashchange', () =&gt; {</span><br><span class="line">            console.log(this)</span><br><span class="line">            this.onHashChange()</span><br><span class="line">        }</span><br><span class="line">        )</span><br><span class="line">        window.addEventListener('load', () =&gt; {</span><br><span class="line">            console.log(this)</span><br><span class="line">            this.onHashChange()</span><br><span class="line">        }</span><br><span class="line">        ) </span><br><span class="line">        //5.路由映射表的创建</span><br><span class="line">        this.routeMap = {}</span><br><span class="line">        options.routes.forEach(route =&gt; {</span><br><span class="line">            this.routeMap[route.path] = route</span><br><span class="line">        })</span><br><span class="line">    }</span><br><span class="line">    onHashChange() {</span><br><span class="line">        console.log(window.location.hash);</span><br><span class="line">        this.current = window.location.hash.slice(1)</span><br><span class="line">    }</span><br><span class="line">}</span><br><span class="line">XXXVueRouter.install = function (_Vue) {</span><br><span class="line">    Vue = _Vue;</span><br><span class="line"></span><br><span class="line">    Vue.mixin({</span><br><span class="line">        beforeCreate(){</span><br><span class="line">            if(this.$options.router) {//有router即根实例</span><br><span class="line">                Vue.prototype.$router = this.$options.router</span><br><span class="line">            }</span><br><span class="line">        } </span><br><span class="line">    })</span><br><span class="line">    //2.定义两个全局组件router-link,和router-view</span><br><span class="line">    Vue.component('router-link',{</span><br><span class="line">        props: {</span><br><span class="line">            to: {</span><br><span class="line">                type: String,</span><br><span class="line">                required: true</span><br><span class="line">            }</span><br><span class="line">        },</span><br><span class="line">        render:function (h) {</span><br><span class="line">            //此处不能使用我们的template去渲染元素，因为running-time-only运行时环境下没得编译器</span><br><span class="line">            return h('a',{attrs: {href: '#'+this.to}},this.$slots.default)</span><br><span class="line">        }</span><br><span class="line">    })</span><br><span class="line">    Vue.component('router-view',{</span><br><span class="line">        render:function (createElement) {</span><br><span class="line">            const {routeMap,current} = this.$router</span><br><span class="line">            const component = routeMap[current].component || null</span><br><span class="line">            return createElement(component)</span><br><span class="line">        }</span><br><span class="line">    })</span><br><span class="line">}</span><br><span class="line">export default XXXVueRouter</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
                 
             </div>
             <hr/>
@@ -603,7 +599,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://example.com/2021/01/04/vue%E4%B8%AD%E7%BB%84%E4%BB%B6%E5%BC%80%E5%8F%91%E4%B8%AD%E5%A4%A7%E9%87%8F%E4%BD%BF%E7%94%A8%E7%9A%84dispatch%E5%92%8Cbroadcast/">http://example.com/2021/01/04/vue%E4%B8%AD%E7%BB%84%E4%BB%B6%E5%BC%80%E5%8F%91%E4%B8%AD%E5%A4%A7%E9%87%8F%E4%BD%BF%E7%94%A8%E7%9A%84dispatch%E5%92%8Cbroadcast/</a>
+                    <a href="http://example.com/2021/01/07/vue-router%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%90/">http://example.com/2021/01/07/vue-router%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%90/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -816,7 +812,7 @@
         repo: '',
         owner: '',
         admin: null,
-        id: '2021-01-04T20-43-37',
+        id: '2021-01-07T12-29-44',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -840,7 +836,7 @@
 <script src="/libs/gitment/gitment.js"></script>
 <script>
 var gitment = new Gitment({
-    id: 'Mon Jan 04 2021 20:43:37 GMT+0800',
+    id: 'Thu Jan 07 2021 12:29:44 GMT+0800',
     owner: '',
     repo: '',
     oauth: {
@@ -865,9 +861,9 @@ gitment.render('gitment-content');
 
 <script type="text/javascript">
     disqus_config = function () {
-        this.page.url = 'http://example.com/2021/01/04/vue%E4%B8%AD%E7%BB%84%E4%BB%B6%E5%BC%80%E5%8F%91%E4%B8%AD%E5%A4%A7%E9%87%8F%E4%BD%BF%E7%94%A8%E7%9A%84dispatch%E5%92%8Cbroadcast/';
-        this.page.identifier = '/2021/01/04/vue%E4%B8%AD%E7%BB%84%E4%BB%B6%E5%BC%80%E5%8F%91%E4%B8%AD%E5%A4%A7%E9%87%8F%E4%BD%BF%E7%94%A8%E7%9A%84dispatch%E5%92%8Cbroadcast/';
-        this.page.title = 'vue中组件开发中大量使用的dispatch和broadcast';
+        this.page.url = 'http://example.com/2021/01/07/vue-router%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%90/';
+        this.page.identifier = '/2021/01/07/vue-router%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%90/';
+        this.page.title = 'vue-router源码解析';
     };
     let disqus_shortname = '';
 
@@ -1182,9 +1178,10 @@ gitment.render('gitment-content');
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2021/01/07/vue-router%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%90/">
                     <div class="card-image">
@@ -1202,9 +1199,9 @@ gitment.render('gitment-content');
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-01-07
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-01-07
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -1217,6 +1214,7 @@ gitment.render('gitment-content');
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -1235,13 +1233,13 @@ gitment.render('gitment-content');
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/01/03/element-ui-%E7%9A%84%E7%90%86%E8%A7%A3/">
+                <a href="/2021/01/04/vue%E4%B8%AD%E7%BB%84%E4%BB%B6%E5%BC%80%E5%8F%91%E4%B8%AD%E5%A4%A7%E9%87%8F%E4%BD%BF%E7%94%A8%E7%9A%84dispatch%E5%92%8Cbroadcast/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="element ui 的理解">
+                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="vue中组件开发中大量使用的dispatch和broadcast">
                         
-                        <span class="card-title">element ui 的理解</span>
+                        <span class="card-title">vue中组件开发中大量使用的dispatch和broadcast</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1252,7 +1250,7 @@ gitment.render('gitment-content');
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-01-03
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-01-04
                             </span>
                         <span class="publish-author">
                             
@@ -1269,8 +1267,8 @@ gitment.render('gitment-content');
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/vue-ui/">
-                        <span class="chip bg-color">vue ui</span>
+                    <a href="/tags/vue/">
+                        <span class="chip bg-color">vue</span>
                     </a>
                     
                 </div>
