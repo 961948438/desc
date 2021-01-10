@@ -3,11 +3,11 @@
   <title>f_x_y</title>
   
   <subtitle>cv Engineer</subtitle>
-  <link href="http://example.com/atom.xml" rel="self"/>
+  <link href="http://www.innerjquery.club/atom.xml" rel="self"/>
   
-  <link href="http://example.com/"/>
+  <link href="http://www.innerjquery.club/"/>
   <updated>2021-01-07T04:36:54.533Z</updated>
-  <id>http://example.com/</id>
+  <id>http://www.innerjquery.club/</id>
   
   <author>
     <name>xiangyou fu</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>vue-router源码解析</title>
-    <link href="http://example.com/2021/01/07/vue-router%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%90/"/>
-    <id>http://example.com/2021/01/07/vue-router%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%90/</id>
+    <link href="http://www.innerjquery.club/2021/01/07/vue-router%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%90/"/>
+    <id>http://www.innerjquery.club/2021/01/07/vue-router%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%90/</id>
     <published>2021-01-07T04:29:44.000Z</published>
     <updated>2021-01-07T04:36:54.533Z</updated>
     
@@ -34,17 +34,17 @@
     
     
     
-    <category term="vue" scheme="http://example.com/categories/vue/"/>
+    <category term="vue" scheme="http://www.innerjquery.club/categories/vue/"/>
     
     
-    <category term="vue" scheme="http://example.com/tags/vue/"/>
+    <category term="vue" scheme="http://www.innerjquery.club/tags/vue/"/>
     
   </entry>
   
   <entry>
     <title>vue中组件开发中大量使用的dispatch和broadcast</title>
-    <link href="http://example.com/2021/01/04/vue%E4%B8%AD%E7%BB%84%E4%BB%B6%E5%BC%80%E5%8F%91%E4%B8%AD%E5%A4%A7%E9%87%8F%E4%BD%BF%E7%94%A8%E7%9A%84dispatch%E5%92%8Cbroadcast/"/>
-    <id>http://example.com/2021/01/04/vue%E4%B8%AD%E7%BB%84%E4%BB%B6%E5%BC%80%E5%8F%91%E4%B8%AD%E5%A4%A7%E9%87%8F%E4%BD%BF%E7%94%A8%E7%9A%84dispatch%E5%92%8Cbroadcast/</id>
+    <link href="http://www.innerjquery.club/2021/01/04/vue%E4%B8%AD%E7%BB%84%E4%BB%B6%E5%BC%80%E5%8F%91%E4%B8%AD%E5%A4%A7%E9%87%8F%E4%BD%BF%E7%94%A8%E7%9A%84dispatch%E5%92%8Cbroadcast/"/>
+    <id>http://www.innerjquery.club/2021/01/04/vue%E4%B8%AD%E7%BB%84%E4%BB%B6%E5%BC%80%E5%8F%91%E4%B8%AD%E5%A4%A7%E9%87%8F%E4%BD%BF%E7%94%A8%E7%9A%84dispatch%E5%92%8Cbroadcast/</id>
     <published>2021-01-04T12:43:37.000Z</published>
     <updated>2021-01-04T13:04:08.238Z</updated>
     
@@ -59,17 +59,17 @@
     
     
     
-    <category term="vue" scheme="http://example.com/categories/vue/"/>
+    <category term="vue" scheme="http://www.innerjquery.club/categories/vue/"/>
     
     
-    <category term="vue" scheme="http://example.com/tags/vue/"/>
+    <category term="vue" scheme="http://www.innerjquery.club/tags/vue/"/>
     
   </entry>
   
   <entry>
     <title>element ui 的理解</title>
-    <link href="http://example.com/2021/01/03/element-ui-%E7%9A%84%E7%90%86%E8%A7%A3/"/>
-    <id>http://example.com/2021/01/03/element-ui-%E7%9A%84%E7%90%86%E8%A7%A3/</id>
+    <link href="http://www.innerjquery.club/2021/01/03/element-ui-%E7%9A%84%E7%90%86%E8%A7%A3/"/>
+    <id>http://www.innerjquery.club/2021/01/03/element-ui-%E7%9A%84%E7%90%86%E8%A7%A3/</id>
     <published>2021-01-03T15:39:46.000Z</published>
     <updated>2021-01-03T15:48:04.296Z</updated>
     
@@ -87,17 +87,17 @@
     
     
     
-    <category term="vue" scheme="http://example.com/categories/vue/"/>
+    <category term="vue" scheme="http://www.innerjquery.club/categories/vue/"/>
     
     
-    <category term="vue ui" scheme="http://example.com/tags/vue-ui/"/>
+    <category term="vue ui" scheme="http://www.innerjquery.club/tags/vue-ui/"/>
     
   </entry>
   
   <entry>
     <title>微信小程序环境下的js</title>
-    <link href="http://example.com/2021/01/01/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E7%8E%AF%E5%A2%83%E4%B8%8B%E7%9A%84js/"/>
-    <id>http://example.com/2021/01/01/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E7%8E%AF%E5%A2%83%E4%B8%8B%E7%9A%84js/</id>
+    <link href="http://www.innerjquery.club/2021/01/01/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E7%8E%AF%E5%A2%83%E4%B8%8B%E7%9A%84js/"/>
+    <id>http://www.innerjquery.club/2021/01/01/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E7%8E%AF%E5%A2%83%E4%B8%8B%E7%9A%84js/</id>
     <published>2021-01-01T15:41:10.000Z</published>
     <updated>2021-01-03T15:51:02.317Z</updated>
     
@@ -112,17 +112,17 @@
     
     
     
-    <category term="wx api" scheme="http://example.com/categories/wx-api/"/>
+    <category term="wx api" scheme="http://www.innerjquery.club/categories/wx-api/"/>
     
     
-    <category term="wx" scheme="http://example.com/tags/wx/"/>
+    <category term="wx" scheme="http://www.innerjquery.club/tags/wx/"/>
     
   </entry>
   
   <entry>
     <title>vuex的使用</title>
-    <link href="http://example.com/2020/12/31/vuex%E7%9A%84%E4%BD%BF%E7%94%A8/"/>
-    <id>http://example.com/2020/12/31/vuex%E7%9A%84%E4%BD%BF%E7%94%A8/</id>
+    <link href="http://www.innerjquery.club/2020/12/31/vuex%E7%9A%84%E4%BD%BF%E7%94%A8/"/>
+    <id>http://www.innerjquery.club/2020/12/31/vuex%E7%9A%84%E4%BD%BF%E7%94%A8/</id>
     <published>2020-12-31T14:24:30.000Z</published>
     <updated>2021-01-03T15:50:59.163Z</updated>
     
@@ -137,17 +137,17 @@
     
     
     
-    <category term="vue" scheme="http://example.com/categories/vue/"/>
+    <category term="vue" scheme="http://www.innerjquery.club/categories/vue/"/>
     
     
-    <category term="vue" scheme="http://example.com/tags/vue/"/>
+    <category term="vue" scheme="http://www.innerjquery.club/tags/vue/"/>
     
   </entry>
   
   <entry>
     <title>vs code插件合集[C</title>
-    <link href="http://example.com/2020/12/30/vs-code%E6%8F%92%E4%BB%B6%E5%90%88%E9%9B%86-C/"/>
-    <id>http://example.com/2020/12/30/vs-code%E6%8F%92%E4%BB%B6%E5%90%88%E9%9B%86-C/</id>
+    <link href="http://www.innerjquery.club/2020/12/30/vs-code%E6%8F%92%E4%BB%B6%E5%90%88%E9%9B%86-C/"/>
+    <id>http://www.innerjquery.club/2020/12/30/vs-code%E6%8F%92%E4%BB%B6%E5%90%88%E9%9B%86-C/</id>
     <published>2020-12-30T11:12:42.000Z</published>
     <updated>2020-12-31T11:01:23.421Z</updated>
     
@@ -165,17 +165,17 @@
     
     
     
-    <category term="便利贴" scheme="http://example.com/categories/%E4%BE%BF%E5%88%A9%E8%B4%B4/"/>
+    <category term="便利贴" scheme="http://www.innerjquery.club/categories/%E4%BE%BF%E5%88%A9%E8%B4%B4/"/>
     
     
-    <category term="vs code" scheme="http://example.com/tags/vs-code/"/>
+    <category term="vs code" scheme="http://www.innerjquery.club/tags/vs-code/"/>
     
   </entry>
   
   <entry>
     <title>关于axios</title>
-    <link href="http://example.com/2020/10/30/My-New-Post/"/>
-    <id>http://example.com/2020/10/30/My-New-Post/</id>
+    <link href="http://www.innerjquery.club/2020/10/30/My-New-Post/"/>
+    <id>http://www.innerjquery.club/2020/10/30/My-New-Post/</id>
     <published>2020-10-30T10:14:19.000Z</published>
     <updated>2021-01-01T16:18:52.576Z</updated>
     
@@ -191,17 +191,17 @@
     
     
     
-    <category term="axios" scheme="http://example.com/categories/axios/"/>
+    <category term="axios" scheme="http://www.innerjquery.club/categories/axios/"/>
     
     
-    <category term="axios" scheme="http://example.com/tags/axios/"/>
+    <category term="axios" scheme="http://www.innerjquery.club/tags/axios/"/>
     
   </entry>
   
   <entry>
     <title>关于vue组件通信</title>
-    <link href="http://example.com/2020/09/04/%E5%85%B3%E4%BA%8Evue%E7%BB%84%E4%BB%B6%E9%80%9A%E8%AE%AF/"/>
-    <id>http://example.com/2020/09/04/%E5%85%B3%E4%BA%8Evue%E7%BB%84%E4%BB%B6%E9%80%9A%E8%AE%AF/</id>
+    <link href="http://www.innerjquery.club/2020/09/04/%E5%85%B3%E4%BA%8Evue%E7%BB%84%E4%BB%B6%E9%80%9A%E8%AE%AF/"/>
+    <id>http://www.innerjquery.club/2020/09/04/%E5%85%B3%E4%BA%8Evue%E7%BB%84%E4%BB%B6%E9%80%9A%E8%AE%AF/</id>
     <published>2020-09-04T10:14:19.000Z</published>
     <updated>2021-01-03T15:51:01.344Z</updated>
     
@@ -216,17 +216,17 @@
     
     
     
-    <category term="vue" scheme="http://example.com/categories/vue/"/>
+    <category term="vue" scheme="http://www.innerjquery.club/categories/vue/"/>
     
     
-    <category term="vue" scheme="http://example.com/tags/vue/"/>
+    <category term="vue" scheme="http://www.innerjquery.club/tags/vue/"/>
     
   </entry>
   
   <entry>
     <title>ERROR!</title>
-    <link href="http://example.com/2020/06/30/test/"/>
-    <id>http://example.com/2020/06/30/test/</id>
+    <link href="http://www.innerjquery.club/2020/06/30/test/"/>
+    <id>http://www.innerjquery.club/2020/06/30/test/</id>
     <published>2020-06-30T11:12:42.000Z</published>
     <updated>2020-12-30T11:14:32.592Z</updated>
     
