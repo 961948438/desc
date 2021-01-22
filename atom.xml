@@ -6,7 +6,7 @@
   <link href="http://www.innerjquery.club/atom.xml" rel="self"/>
   
   <link href="http://www.innerjquery.club/"/>
-  <updated>2021-01-07T04:36:54.533Z</updated>
+  <updated>2021-01-22T06:21:35.822Z</updated>
   <id>http://www.innerjquery.club/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>reacc中通过context传递数据</title>
+    <link href="http://www.innerjquery.club/2021/01/22/reacc%E4%B8%AD%E9%80%9A%E8%BF%87context%E4%BC%A0%E9%80%92%E6%95%B0%E6%8D%AE0/"/>
+    <id>http://www.innerjquery.club/2021/01/22/reacc%E4%B8%AD%E9%80%9A%E8%BF%87context%E4%BC%A0%E9%80%92%E6%95%B0%E6%8D%AE0/</id>
+    <published>2021-01-22T06:13:49.000Z</published>
+    <updated>2021-01-22T06:21:35.822Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h4 id=&quot;Context-传递数据&quot;&gt;&lt;a href=&quot;#Context-传递数据&quot; class=&quot;headerlink&quot; title=&quot;Context 传递数据&quot;&gt;&lt;/a&gt;Context</summary>
+        
+      
+    
+    
+    
+    <category term="react" scheme="http://www.innerjquery.club/categories/react/"/>
+    
+    
+    <category term="context" scheme="http://www.innerjquery.club/tags/context/"/>
+    
+  </entry>
   
   <entry>
     <title>vue-router源码解析</title>
