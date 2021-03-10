@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="reacc中通过context传递数据, f_x_y">
+    <meta name="keywords" content="python的time模块, f_x_y">
     <meta name="description" content="熟练使用CTRL+C和CTRL+V">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>reacc中通过context传递数据 | f_x_y</title>
+    <title>python的time模块 | f_x_y</title>
     <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="/mypng.icon.ico">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -401,12 +401,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/19.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/5.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">reacc中通过context传递数据</h1>
+                    <h1 class="description center-align post-title">python的time模块</h1>
                 </div>
             </div>
         </div>
@@ -522,8 +522,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/context/">
-                                <span class="chip bg-color">context</span>
+                            <a href="/tags/python-time%E6%A8%A1%E5%9D%97/">
+                                <span class="chip bg-color">python_time模块</span>
                             </a>
                         
                     </div>
@@ -534,8 +534,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/react/" class="post-category">
-                                react
+                            <a href="/categories/python/" class="post-category">
+                                python
                             </a>
                         
                     </div>
@@ -547,7 +547,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-01-22
+                    2021-03-10
                 </div>
                 
 
@@ -556,7 +556,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    240
+                    976
                 </div>
                 
 
@@ -573,12 +573,33 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h4 id="Context-传递数据"><a href="#Context-传递数据" class="headerlink" title="Context 传递数据"></a>Context 传递数据</h4><p>Context提供了一种在组件之间共享值的方式，而不必显式地通过组件树的逐层传递 props。</p>
-<h5 id="1-创建一个Context对象"><a href="#1-创建一个Context对象" class="headerlink" title="1. 创建一个Context对象"></a>1. 创建一个Context对象</h5><p>const ThemeContext = React.createContext();</p>
-<h5 id="2-Provider（订阅者）：Provider-接收一个-value-属性，传递给消费者组件。"><a href="#2-Provider（订阅者）：Provider-接收一个-value-属性，传递给消费者组件。" class="headerlink" title="2.Provider（订阅者）：Provider 接收一个 value 属性，传递给消费者组件。"></a>2.Provider（订阅者）：Provider 接收一个 value 属性，传递给消费者组件。</h5><p>注意：这个value名字是固定的，不能改变，否则后面的消费者组件中获取不到属性值</p>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;ThemeContext.Provider value={this.state}&gt;</span><br></pre></td></tr></tbody></table></figure>
-<h5 id="3-Consumer（消费者）：这里，React-组件也可以订阅到-context-变更"><a href="#3-Consumer（消费者）：这里，React-组件也可以订阅到-context-变更" class="headerlink" title="3.Consumer（消费者）：这里，React 组件也可以订阅到 context 变更"></a>3.Consumer（消费者）：这里，React 组件也可以订阅到 context 变更</h5><figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;ThemeContext.Consumer&gt;</span><br><span class="line">   {</span><br><span class="line">     value =&gt; &lt;div&gt;{value.name}&lt;/div&gt;</span><br><span class="line">   }</span><br><span class="line">&lt;/ThemeContext.Consumer&gt;</span><br></pre></td></tr></tbody></table></figure>
-<h5 id="4-Context-完整使用代码："><a href="#4-Context-完整使用代码：" class="headerlink" title="4.Context 完整使用代码："></a>4.Context 完整使用代码：</h5><figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">import React, { Component } from 'react';</span><br><span class="line"></span><br><span class="line">// 创建一个Context对象</span><br><span class="line">const ThemeContext = React.createContext();</span><br><span class="line">function ThemeBtn(props) {</span><br><span class="line">  return (</span><br><span class="line">    &lt;ThemeContext.Consumer&gt;</span><br><span class="line">      {</span><br><span class="line">        value =&gt; &lt;div&gt;{value.name}&lt;/div&gt;</span><br><span class="line">      }</span><br><span class="line">    &lt;/ThemeContext.Consumer&gt;</span><br><span class="line">  )</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line">function ToolBar(props) {</span><br><span class="line">  return &lt;ThemeBtn&gt;&lt;/ThemeBtn&gt;</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line">class ContextSimple extends Component {</span><br><span class="line">  constructor(props) {</span><br><span class="line">    super(props);</span><br><span class="line">    this.state = {</span><br><span class="line">      name: '按钮'</span><br><span class="line">    };</span><br><span class="line">  }</span><br><span class="line">  render() {</span><br><span class="line">    return (</span><br><span class="line">      &lt;ThemeContext.Provider value={this.state}&gt;</span><br><span class="line">        &lt;ToolBar&gt;&lt;/ToolBar&gt;</span><br><span class="line">      &lt;/ThemeContext.Provider&gt;</span><br><span class="line">    );</span><br><span class="line">  }</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line">export default ContextSimple;</span><br></pre></td></tr></tbody></table></figure>
+                <h3 id="Python-time模块的时间转换："><a href="#Python-time模块的时间转换：" class="headerlink" title="Python  time模块的时间转换："></a>Python  time模块的时间转换：</h3><h4 id="1-time-函数"><a href="#1-time-函数" class="headerlink" title="1.time()函数"></a>1.time()函数</h4><p>time( )函数用于返回当前时间的时间戳(从1970年1月1日00时00分00秒到现在的浮点秒数)<br>time()函数的语法如下： time.time()<br>1、此语法中第一个 time 表示 time 模块，该函数不需要传递参数<br>2、返回值：返回当前时间的时间戳<br> </p><figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">import time</span><br><span class="line">print("当前时间的时间的时间戳：%f" % time.time())</span><br><span class="line">当前时间的时间的时间戳：1536375255.196752</span><br><span class="line"> </span><br></pre></td></tr></tbody></table></figure><p></p>
+<h4 id="2-localtime-函数"><a href="#2-localtime-函数" class="headerlink" title="2.localtime()函数"></a>2.localtime()函数</h4><p>time.localtime( )函数的作用是格式化时间戳为本地时间(struct_time类型）。<br>如果secs参数未传入，就以当前时间为转换标准<br>localtime() 方法的语法：time.localtime([ secs ])<br>1、参数secs – 指转换为  time.struct_time 类型的对象的秒数<br>2、返回值：该函数无任何返回值</p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">import time</span><br><span class="line">print(time.localtime())</span><br><span class="line">time.struct_time(tm_year=2018, tm_mon=9, tm_mday=8, tm_hour=10, </span><br><span class="line">tm_min=59, tm_sec=39, tm_wday=5, tm_yday=251, tm_isdst=0)</span><br></pre></td></tr></tbody></table></figure>
+<h4 id="3-gmtime-函数"><a href="#3-gmtime-函数" class="headerlink" title="3.gmtime()函数"></a>3.gmtime()函数</h4><p>gmtime( )  函数用于将一个时间戳转换为UTC时区(0时区)的 struct_time。可选参数<br>secs 表示从1970-1-1 到现在的秒数，无参数时默认为本地时间<br>函数返回 time.struct_time 类型的对象 (struct_time 是在 time 模块中定义的表示时间的对象)<br>gmtime([secs]) 的语法如下：time.gmtime([secs])<br>1、参数secs – 指转换为 time.struct_time 类型的对象的秒数<br>2、返回值：该函数无任何返回值</p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">  import time</span><br><span class="line">  time.gmtime()</span><br><span class="line">time.struct_time(tm_year=2018, tm_mon=9, tm_mday=8, tm_hour=8, </span><br><span class="line">tm_min=22, tm_sec=14, tm_wday=5, tm_yday=251, tm_isdst=0)</span><br></pre></td></tr></tbody></table></figure>
+<h4 id="4-mktime-函数"><a href="#4-mktime-函数" class="headerlink" title="4.mktime()函数"></a>4.mktime()函数</h4><p>mktime( )函数用于执行与 gmtime()、localtime() 相反的操作，接收 struct_time 对<br>象作为参数，返回用秒数表示时间的浮点数。如果输入的值不是合法时间，<br>就会触发OverflowError或ValueError<br>以下是 mktime()方法的语法：  time.mktime(t)<br>1、参数t – 这是 struct_time  (结构化时间)或全满 9 个元素的元组。<br>2、返回值：该方法返回一个浮点数，为了兼容time()函数。</p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">import time</span><br><span class="line">t = ( 2018,9,8,16,34,30,5,251,0)</span><br><span class="line">time.mktime(t)  1536395670.0  </span><br><span class="line">time.mktime(time.localtime())</span><br><span class="line">1536395774.0</span><br></pre></td></tr></tbody></table></figure>
+<h4 id="5-asctime-t-函数"><a href="#5-asctime-t-函数" class="headerlink" title="5.asctime([t])函数"></a>5.asctime([t])函数</h4><p>接收一个时间元组并返回一个可读的形式为”Tue Dec 11 18:07:14 2008”<br>（2008年12月11日 周二18时07分14秒）的24个字符的字符串<br>asctime() 方法的语法：time.asctime([t]))<br>1、参数  t – 完整的9位元组元素或 struct_time 表示，由 gmtime() 和 localtime() 函数返回的时间的元组。<br>2、返回值：此方法返回以下形式的24个字符的字符串： ‘Tue Feb 17 23:21:05 2009’.</p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">import time</span><br><span class="line">t = ( 2021,3,10,16,34,30,5,251,0)</span><br><span class="line">time.asctime(t)</span><br><span class="line">'Wed Mar 10 17:03:25 2021'</span><br></pre></td></tr></tbody></table></figure>
+<h4 id="6-ctime-secs-函数"><a href="#6-ctime-secs-函数" class="headerlink" title="6.ctime([ secs ]))函数"></a>6.ctime([ secs ]))函数</h4><p>时间戳转换为time.asctime()的形式。<br>语法如下：time.ctime([ sec ])<br>1、参数sec – 这是将被转换成字符串表示的秒数。<br>2、返回值：此方法不返回任何值。</p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">import time</span><br><span class="line">time.ctime()</span><br><span class="line">'Wed Mar 10 17:05:44 2021'</span><br></pre></td></tr></tbody></table></figure>
+<h4 id="7-sleep-secs-函数"><a href="#7-sleep-secs-函数" class="headerlink" title="7.sleep(secs)函数"></a>7.sleep(secs)函数</h4><p>sleep()函数用于推迟调用线程的运行，可通过参数secs指定进程挂起的时间<br>sleep()方法的语法：time.sleep(t)<br>1、参数t – 这是要暂停执行的秒数。<br>2、返回值：此方法不返回任何值。</p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">import time </span><br><span class="line">def sleep_time(times):</span><br><span class="line">    print(time.ctime())</span><br><span class="line">    time.sleep(times)</span><br><span class="line">    print(time.ctime())</span><br><span class="line">sleep_time(100)</span><br></pre></td></tr></tbody></table></figure>
+
+<h4 id="8-clock函数"><a href="#8-clock函数" class="headerlink" title="8.clock函数"></a>8.clock函数</h4><p> 不建议使用，已经废弃</p>
+<h4 id="9-strftime-format-t-函数"><a href="#9-strftime-format-t-函数" class="headerlink" title="9.strftime(format[, t])函数"></a>9.strftime(format[, t])函数</h4><p>strftime()  方法用于接收时间元组，并返回以可读字符串表示的当地时间。格式由format参数决定。<br>strftime()只能接受struct_time类型的参数<br>strftime()方法的语法：time.strftime(format  [,t]  )</p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">import time</span><br><span class="line">t = (2022, 9, 25, 17, 50, 38, 6, 48, 0)</span><br><span class="line">t = time.mktime(t)</span><br><span class="line">print(time.strftime('%b %d %Y %H:%M:%S', time.gmtime(t)))</span><br><span class="line">print("\n\n",time.strftime('%b %d %Y %H:%M:%S'))</span><br><span class="line">print("\n\n",time.strftime('%H:%M:%S'))</span><br></pre></td></tr></tbody></table></figure>
+<h4 id="10-strPtime-string-format-函数"><a href="#10-strPtime-string-format-函数" class="headerlink" title="10.strPtime(string [, format])函数"></a>10.strPtime(string [, format])函数</h4><p>strptime( )函数用于根据format的格式把一个时间字符串解析为时间元组。<br>语法如下：strptime (string [,format] )</p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">import time</span><br><span class="line">struct_time = time.strptime("8 Sep 18", "%d %b %y")</span><br><span class="line">print('returned tuple: ', struct_time)</span><br></pre></td></tr></tbody></table></figure>
+
+
+
+
+
+
+
+
                 
             </div>
             <hr/>
@@ -604,7 +625,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://www.innerjquery.club/2021/01/22/reacc%E4%B8%AD%E9%80%9A%E8%BF%87context%E4%BC%A0%E9%80%92%E6%95%B0%E6%8D%AE0/">http://www.innerjquery.club/2021/01/22/reacc%E4%B8%AD%E9%80%9A%E8%BF%87context%E4%BC%A0%E9%80%92%E6%95%B0%E6%8D%AE0/</a>
+                    <a href="http://www.innerjquery.club/2021/03/10/python%E7%9A%84time%E6%A8%A1%E5%9D%97/">http://www.innerjquery.club/2021/03/10/python%E7%9A%84time%E6%A8%A1%E5%9D%97/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -642,8 +663,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/context/">
-                                    <span class="chip bg-color">context</span>
+                                <a href="/tags/python-time%E6%A8%A1%E5%9D%97/">
+                                    <span class="chip bg-color">python_time模块</span>
                                 </a>
                             
                         </div>
@@ -817,7 +838,7 @@
         repo: '',
         owner: '',
         admin: null,
-        id: '2021-01-22T14-13-49',
+        id: '2021-03-10T16-46-55',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -841,7 +862,7 @@
 <script src="/libs/gitment/gitment.js"></script>
 <script>
 var gitment = new Gitment({
-    id: 'Fri Jan 22 2021 14:13:49 GMT+0800',
+    id: 'Wed Mar 10 2021 16:46:55 GMT+0800',
     owner: '',
     repo: '',
     oauth: {
@@ -866,9 +887,9 @@ gitment.render('gitment-content');
 
 <script type="text/javascript">
     disqus_config = function () {
-        this.page.url = 'http://www.innerjquery.club/2021/01/22/reacc%E4%B8%AD%E9%80%9A%E8%BF%87context%E4%BC%A0%E9%80%92%E6%95%B0%E6%8D%AE0/';
-        this.page.identifier = '/2021/01/22/reacc%E4%B8%AD%E9%80%9A%E8%BF%87context%E4%BC%A0%E9%80%92%E6%95%B0%E6%8D%AE0/';
-        this.page.title = 'reacc中通过context传递数据';
+        this.page.url = 'http://www.innerjquery.club/2021/03/10/python%E7%9A%84time%E6%A8%A1%E5%9D%97/';
+        this.page.identifier = '/2021/03/10/python%E7%9A%84time%E6%A8%A1%E5%9D%97/';
+        this.page.title = 'python的time模块';
     };
     let disqus_shortname = '';
 
@@ -1183,9 +1204,10 @@ gitment.render('gitment-content');
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2021/03/10/python%E7%9A%84time%E6%A8%A1%E5%9D%97/">
                     <div class="card-image">
@@ -1203,9 +1225,9 @@ gitment.render('gitment-content');
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-03-10
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-03-10
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -1218,6 +1240,7 @@ gitment.render('gitment-content');
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -1236,13 +1259,13 @@ gitment.render('gitment-content');
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/01/07/vue-router%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%90/">
+                <a href="/2021/01/22/reacc%E4%B8%AD%E9%80%9A%E8%BF%87context%E4%BC%A0%E9%80%92%E6%95%B0%E6%8D%AE0/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="vue-router源码解析">
+                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="reacc中通过context传递数据">
                         
-                        <span class="card-title">vue-router源码解析</span>
+                        <span class="card-title">reacc中通过context传递数据</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1253,14 +1276,14 @@ gitment.render('gitment-content');
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-01-07
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-01-22
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/vue/" class="post-category">
-                                    vue
+                            <a href="/categories/react/" class="post-category">
+                                    react
                                 </a>
                             
                             
@@ -1270,8 +1293,8 @@ gitment.render('gitment-content');
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/vue/">
-                        <span class="chip bg-color">vue</span>
+                    <a href="/tags/context/">
+                        <span class="chip bg-color">context</span>
                     </a>
                     
                 </div>

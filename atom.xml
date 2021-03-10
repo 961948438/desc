@@ -6,7 +6,7 @@
   <link href="http://www.innerjquery.club/atom.xml" rel="self"/>
   
   <link href="http://www.innerjquery.club/"/>
-  <updated>2021-01-22T06:21:35.822Z</updated>
+  <updated>2021-03-10T09:16:02.732Z</updated>
   <id>http://www.innerjquery.club/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>python的time模块</title>
+    <link href="http://www.innerjquery.club/2021/03/10/python%E7%9A%84time%E6%A8%A1%E5%9D%97/"/>
+    <id>http://www.innerjquery.club/2021/03/10/python%E7%9A%84time%E6%A8%A1%E5%9D%97/</id>
+    <published>2021-03-10T08:46:55.000Z</published>
+    <updated>2021-03-10T09:16:02.732Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h3 id=&quot;Python-time模块的时间转换：&quot;&gt;&lt;a href=&quot;#Python-time模块的时间转换：&quot; class=&quot;headerlink&quot; title=&quot;Python  time模块的时间转换：&quot;&gt;&lt;/a&gt;Python </summary>
+        
+      
+    
+    
+    
+    <category term="python" scheme="http://www.innerjquery.club/categories/python/"/>
+    
+    
+    <category term="python_time模块" scheme="http://www.innerjquery.club/tags/python-time%E6%A8%A1%E5%9D%97/"/>
+    
+  </entry>
   
   <entry>
     <title>reacc中通过context传递数据</title>
