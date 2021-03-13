@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="第三方模块引用, f_x_y">
+    <meta name="keywords" content="python的多进程, f_x_y">
     <meta name="description" content="熟练使用CTRL+C和CTRL+V">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>第三方模块引用 | f_x_y</title>
+    <title>python的多进程 | f_x_y</title>
     <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="/mypng.icon.ico">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -401,12 +401,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/3.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/2.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">第三方模块引用</h1>
+                    <h1 class="description center-align post-title">python的多进程</h1>
                 </div>
             </div>
         </div>
@@ -522,8 +522,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/python-%E5%85%B6%E4%BB%96%E7%AC%AC%E4%B8%89%E6%96%B9%E6%A8%A1%E5%9D%97/">
-                                <span class="chip bg-color">python_其他第三方模块</span>
+                            <a href="/tags/python-multopprocesssing%E6%A8%A1%E5%9D%97/">
+                                <span class="chip bg-color">python_multopprocesssing模块</span>
                             </a>
                         
                     </div>
@@ -556,7 +556,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    99
+                    2.3k
                 </div>
                 
 
@@ -573,15 +573,29 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="struct-模块"><a href="#struct-模块" class="headerlink" title="struct 模块"></a>struct 模块</h1><h4 id="1-struct模块来解决bytes和其他二进制数据类型的转换。"><a href="#1-struct模块来解决bytes和其他二进制数据类型的转换。" class="headerlink" title="1.  struct模块来解决bytes和其他二进制数据类型的转换。"></a>1.  struct模块来解决bytes和其他二进制数据类型的转换。</h4><ul>
-<li>相关博客链接<br>  <a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_44621343/article/details/112793520">https://blog.csdn.net/weixin_44621343/article/details/112793520</a></li>
-<li>相关博客链接<br>  <a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_44621343/article/details/112793520">https://blog.csdn.net/weixin_44621343/article/details/112793520</a></li>
-</ul>
-<h4 id="1-struct模块来解决bytes和其他二进制数据类型的转换。-1"><a href="#1-struct模块来解决bytes和其他二进制数据类型的转换。-1" class="headerlink" title="1.  struct模块来解决bytes和其他二进制数据类型的转换。"></a>1.  struct模块来解决bytes和其他二进制数据类型的转换。</h4><ul>
-<li>相关博客链接<br>  <a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_44621343/article/details/112793520">https://blog.csdn.net/weixin_44621343/article/details/112793520</a></li>
-<li>相关博客链接<br>  <a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_44621343/article/details/112793520">https://blog.csdn.net/weixin_44621343/article/details/112793520</a></li>
-</ul>
+                <h3 id="进程、线程、协程的概念"><a href="#进程、线程、协程的概念" class="headerlink" title="进程、线程、协程的概念"></a>进程、线程、协程的概念</h3><ol>
+<li><p>进程的概念：正在进行的一个过程或者说一个任务，而负责执行任务的则是CPU，进程本身是<br>一个抽象的概念,即进程就是一个过程、一个任务。<br>CPU描述的是一个程序的执行过程.<br>进程之间是如何做到并发的：CPU在各个任务之间来回的进行切换，并在切换的过程当中保存当前<br>进程的执行状态（保存蛋糕的执行过程）。<br>进程与程序的区别：程序相当于菜谱，而进程相当于做菜的整个过程。<br>需要强调的是：同一个程序执行两次(双击),那也是两个进程，比如打开暴风影音，虽然都是同一个软件，但是一个可以播放a，一个可以播放b.<br>核的概念：<a target="_blank" rel="noopener" href="https://zhidao.baidu.com/question/541410131.html">https://zhidao.baidu.com/question/541410131.html</a><br>处理器，就是说有几个处理器。。。也就说一个CPU里面会有几个处理器，这样就可以同时处理几个要求了。</p>
+</li>
+<li><p>线程的概念：一个进程里面至少有一个控制线程，进程的概念只是一种抽象的概念，真正在CPU上面调度的是进程<br>里面的线程,就好比真正在地铁这个进程里面工作的实际上是地铁里面的线程,北京地铁里面至少要有<br>一个线程，线程是真正干活的，线程用的是进程里面包含的一堆资源,线程仅仅是一个调度单位，不包含资源。<br>协程的概念：协程 ，又称为微线程，它是实现多任务的另一种方式，只不过是比线程更小的执行单元。因为它自带CPU的上下文，这样只要在合适的时机，我们可以把一个协程切换到另一个协程。</p>
+</li>
+<li><p>通俗的理解： 在一个线程中的某个函数中，我们可以在任何地方保存当前函数的一些临时变量等信息，然后切换到另外一个函数中执行，注意不是通过调用函数的方式做到的 ，并且切换的次数以及什么时候再切换到原来的函数都由开发者自己确定。<br>协程与线程的差异：<br>在实现多任务时, 线程切换__从系统层面__远不止保存和恢复CPU上下文这么简单。操作系统为了程序运行的高效性，每个线程都有自己缓存Cache等等数据，操作系统还会帮你做这些数据的恢复操作，所以线程的切换非常耗性能。但是__协程的切换只是单纯地操作CPU的上下文__，所以一秒钟切换个上百万次系统都抗的住。</p>
+</li>
+</ol>
+<h3 id="在python中使用Process进程类"><a href="#在python中使用Process进程类" class="headerlink" title="在python中使用Process进程类"></a>在python中使用Process进程类</h3><h4 id="1-进程创建的两种方式"><a href="#1-进程创建的两种方式" class="headerlink" title="1. 进程创建的两种方式"></a>1. 进程创建的两种方式</h4><figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 开启进程的第一种方式: --&gt;</span><br><span class="line">from multiprocessing import Process</span><br><span class="line">import time</span><br><span class="line"></span><br><span class="line">def task(name):</span><br><span class="line">    print(f'{name} is running')</span><br><span class="line">    time.sleep(2)</span><br><span class="line">    print(f'{name} is gone')</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">if __name__ == '__main__':</span><br><span class="line">    # 在windows环境下, 开启进程必须在 __name__ == '__main__' 下面</span><br><span class="line">    p = Process(target=task,args=('常鑫',))  # 创建一个进程对象</span><br><span class="line">    p.start()</span><br><span class="line">    &lt;!--   只是向操作系统发出一个开辟子进程的信号,然后就执行下一行了. --&gt;</span><br><span class="line">    &lt;!-- 这个信号操作系统接收到之后,会从内存中开辟一个子进程空间,然后在将主进程所有数据copy加载到子进程,然后在调用cpu去执行.</span><br><span class="line">    开辟子进程开销是很大的. --&gt;</span><br><span class="line">    print('==主开始')</span><br><span class="line">    time.sleep(3)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    &lt;!-- 所以永远会先执行主进程的代码. --&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&lt;!-- 开启进程的第二种方式: --&gt;</span><br><span class="line"></span><br><span class="line">from multiprocessing import Process</span><br><span class="line">import time</span><br><span class="line"></span><br><span class="line">class MyProcess(Process):</span><br><span class="line"></span><br><span class="line">    def __init__(self,name):</span><br><span class="line">        super().__init__()</span><br><span class="line">        self.name = name</span><br><span class="line"></span><br><span class="line">    def run1(self):</span><br><span class="line">        print(f'{self.name} is running')</span><br><span class="line">        time.sleep(2)</span><br><span class="line">        print(f'{self.name} is gone')</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">if __name__ == '__main__':</span><br><span class="line">    p = MyProcess('常鑫')</span><br><span class="line">    p.start()</span><br><span class="line">    print('===主')</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&lt;!-- 简单应用: --&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">from multiprocessing import Process</span><br><span class="line">import time</span><br><span class="line"></span><br><span class="line">def task(name):</span><br><span class="line">    print(f'{name} is running')</span><br><span class="line">    time.sleep(1)</span><br><span class="line">    print(f'{name} is gone')</span><br><span class="line"></span><br><span class="line">def task1(name):</span><br><span class="line">    print(f'{name} is running')</span><br><span class="line">    time.sleep(2)</span><br><span class="line">    print(f'{name} is gone')</span><br><span class="line"></span><br><span class="line">def task2(name):</span><br><span class="line">    print(f'{name} is running')</span><br><span class="line">    time.sleep(3)</span><br><span class="line">    print(f'{name} is gone')</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">if __name__ == '__main__':</span><br><span class="line">    # 在windows环境下, 开启进程必须在 __name__ == '__main__' 下面</span><br><span class="line">    # p1 = Process(target=task,args=('常鑫',))  # 创建一个进程对象</span><br><span class="line">    # p2 = Process(target=task,args=('李远点业',))  # 创建一个进程对象</span><br><span class="line">    # 一个进程串行的执行三个任务</span><br><span class="line">    start_time = time.time()</span><br><span class="line">    task('常鑫')</span><br><span class="line">    task1('李远点业')</span><br><span class="line">    task2('海狗')</span><br><span class="line">    print(f'结束时间{time.time() - start_time}')</span><br><span class="line">    三个进程 并发或者并行的执行三个任务</span><br><span class="line">    start_time = time.time()</span><br><span class="line">    p1 = Process(target=task, args=('常鑫',))  # 创建一个进程对象</span><br><span class="line">    p2 = Process(target=task1, args=('李远点业',))  # 创建一个进程对象</span><br><span class="line">    p1.start()</span><br><span class="line">    p2.start()</span><br><span class="line">    task2('海狗')</span><br><span class="line">    print(f'结束时间{time.time()-start_time}')</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
 
+<h4 id="2-获取进程pid"><a href="#2-获取进程pid" class="headerlink" title="2. 获取进程pid"></a>2. 获取进程pid</h4><figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">import os</span><br><span class="line">import time</span><br><span class="line">print(f'子进程:{os.getpid()}')</span><br><span class="line">print(f'主(父)进程:{os.getppid()}')</span><br><span class="line">time.sleep(50)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">from multiprocessing import Process</span><br><span class="line">import time</span><br><span class="line">import os</span><br><span class="line"></span><br><span class="line">def task(name):</span><br><span class="line">    print(f'子进程:{os.getpid()}')</span><br><span class="line">    print(f'主进程:{os.getppid()}')</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">if __name__ == '__main__':</span><br><span class="line">    p = Process(target=task,args=('常鑫',))  # 创建一个进程对象</span><br><span class="line">    p.start()</span><br><span class="line">    # print('==主开始')</span><br><span class="line">    print(f'====主{os.getpid()}')</span><br></pre></td></tr></tbody></table></figure>
+
+<h4 id="3-验证进程之间的空间隔离"><a href="#3-验证进程之间的空间隔离" class="headerlink" title="3. 验证进程之间的空间隔离"></a>3. 验证进程之间的空间隔离</h4><figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">#encoding=utf-8</span><br><span class="line">from multiprocessing import Process</span><br><span class="line">import os</span><br><span class="line">import time</span><br><span class="line">name = 'sa'</span><br><span class="line"></span><br><span class="line">def task():</span><br><span class="line">    global name</span><br><span class="line">    name = 'assb'</span><br><span class="line">    print(f'子进程{name}')</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">if __name__ == '__main__':</span><br><span class="line">    p = Process(target=task)  # 创建一个进程对象</span><br><span class="line">    p.start()</span><br><span class="line">    # print('==主开始')</span><br><span class="line">    time.sleep(3)</span><br><span class="line">    print(f'主:{name}')</span><br><span class="line"></span><br><span class="line">lst = ['丽丽',]</span><br><span class="line"></span><br><span class="line">def task():</span><br><span class="line">    lst.append('怼姐')</span><br><span class="line">    print(f'子进程{lst}')</span><br><span class="line"></span><br><span class="line">if __name__ == '__main__':</span><br><span class="line">    p = Process(target=task)  # 创建一个进程对象</span><br><span class="line">    p.start()</span><br><span class="line">    # print('==主开始')</span><br><span class="line">    time.sleep(3)</span><br><span class="line">    print(f'主:{lst}')</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
+
+<h4 id="4-join方法让主进程等待子进程结束之后-在执行主进程"><a href="#4-join方法让主进程等待子进程结束之后-在执行主进程" class="headerlink" title="4. join方法让主进程等待子进程结束之后,在执行主进程"></a>4. join方法让主进程等待子进程结束之后,在执行主进程</h4><ol>
+<li>join让主进程等待子进程结束之后,在执行主进程.</li>
+<li>join 多个连接的join方法是2一起通知主进程的，只针对主进程,如果join下面多次join 他是不阻塞的.<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">from multiprocessing import Process</span><br><span class="line">import time</span><br><span class="line"></span><br><span class="line">def task(name):</span><br><span class="line">    print(f'{name} is running')</span><br><span class="line">    time.sleep(2)</span><br><span class="line">    print(f'{name} is gone')</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">if __name__ == '__main__':</span><br><span class="line"></span><br><span class="line">    p = Process(target=task,args=('ad',))  # 创建一个进程对象</span><br><span class="line">    p.start()</span><br><span class="line">    p.join()</span><br><span class="line">    print('==instart')</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">多个子进程使用join</span><br><span class="line"></span><br><span class="line">from multiprocessing import Process</span><br><span class="line">import time</span><br><span class="line"></span><br><span class="line">def task(name,sec):</span><br><span class="line">    print(f'{name}is running')</span><br><span class="line">    time.sleep(sec)</span><br><span class="line">    print(f'{name} is gone')</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">if __name__ == '__main__':</span><br><span class="line">    start_time = time.time()</span><br><span class="line">    p1 = Process(target=task,args=('常鑫',1))</span><br><span class="line">    p2 = Process(target=task,args=('李业',2))</span><br><span class="line">    p3 = Process(target=task,args=('海狗',3))</span><br><span class="line">    p1.start()</span><br><span class="line">    p2.start()</span><br><span class="line">    p3.start()</span><br><span class="line">    print(f'==主{time.time()-start_time}')  # 0.02 这只是主进程结束的时间,与其他进程毫无关系</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">验证1</span><br><span class="line"></span><br><span class="line">from multiprocessing import Process</span><br><span class="line">import time</span><br><span class="line"></span><br><span class="line">def task(name,sec):</span><br><span class="line">    print(f'{name}is running')</span><br><span class="line">    time.sleep(sec)</span><br><span class="line">    print(f'{name} is gone')</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">if __name__ == '__main__':</span><br><span class="line">    start_time = time.time()</span><br><span class="line">    p1 = Process(target=task,args=('常鑫',1))</span><br><span class="line">    p2 = Process(target=task,args=('李业',2))</span><br><span class="line">    p3 = Process(target=task,args=('海狗',3))</span><br><span class="line"></span><br><span class="line">    p1.start()</span><br><span class="line">    p2.start()</span><br><span class="line">    p3.start()</span><br><span class="line">    # join 只针对主进程,如果join下面多次join 他是不阻塞的.</span><br><span class="line">    p1.join()</span><br><span class="line">    p2.join()</span><br><span class="line">    p3.join()</span><br><span class="line"></span><br><span class="line">    print(f'==主{time.time()-start_time}')</span><br><span class="line"></span><br><span class="line">验证2</span><br><span class="line"></span><br><span class="line">from multiprocessing import Process</span><br><span class="line">import time</span><br><span class="line"></span><br><span class="line">def task(name,sec):</span><br><span class="line">    print(f'{name}is running')</span><br><span class="line">    time.sleep(sec)</span><br><span class="line">    print(f'{name} is gone')</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">if __name__ == '__main__':</span><br><span class="line">    start_time = time.time()</span><br><span class="line">    p1 = Process(target=task,args=('常鑫',3))</span><br><span class="line">    p2 = Process(target=task,args=('李业',2))</span><br><span class="line">    p3 = Process(target=task,args=('海狗',1))</span><br><span class="line"></span><br><span class="line">    p1.start()</span><br><span class="line">    p2.start()</span><br><span class="line">    p3.start()</span><br><span class="line">    # join就是阻塞</span><br><span class="line"></span><br><span class="line">    p1.join()  # 等2s</span><br><span class="line">    print(f'==主1:{time.time()-start_time}')</span><br><span class="line">    p2.join()</span><br><span class="line">    print(f'===主2:{time.time()-start_time}')</span><br><span class="line">    p3.join()</span><br><span class="line">    print(f'==主3:{time.time()-start_time}')  #</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"> 优化上面的代码</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">from multiprocessing import Process</span><br><span class="line">import time</span><br><span class="line"></span><br><span class="line">def task(sec):</span><br><span class="line">    print(f'is running')</span><br><span class="line">    time.sleep(sec)</span><br><span class="line">    print(f' is gone')</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">if __name__ == '__main__':</span><br><span class="line">    start_time = time.time()</span><br><span class="line">    p1 = Process(target=task,args=(1,))</span><br><span class="line">    p2 = Process(target=task,args=(2,))</span><br><span class="line">    p3 = Process(target=task,args=(3,))</span><br><span class="line">    </span><br><span class="line">    p1.start()</span><br><span class="line">    p2.start()</span><br><span class="line">    p3.start()</span><br><span class="line">    # join 只针对主进程,如果join下面多次join 他是不阻塞的.</span><br><span class="line">    p1.join()</span><br><span class="line">    p2.join()</span><br><span class="line">    p3.join()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    错误示范:</span><br><span class="line">    for i in range(1,4):</span><br><span class="line">        p = Process(target=task,args=(i,))</span><br><span class="line">        p.start()</span><br><span class="line">        p.join()</span><br><span class="line">    '''</span><br><span class="line">    p1 = Process(target=task,args=(1,))</span><br><span class="line">    p1.start()</span><br><span class="line">    p1.join()</span><br><span class="line">    p2 = Process(target=task,args=(2,))</span><br><span class="line">    p2.start()</span><br><span class="line">    p2.join()</span><br><span class="line">    p3 = Process(target=task,args=(3,))</span><br><span class="line">    p3.start()</span><br><span class="line">    p3.join()</span><br><span class="line">    </span><br><span class="line">    '''</span><br><span class="line"></span><br><span class="line">    正确示范:</span><br><span class="line">    l1 = []</span><br><span class="line">    for i in range(1, 4):</span><br><span class="line">        p = Process(target=task,args=(i,))</span><br><span class="line">        l1.append(p)</span><br><span class="line">        p.start()</span><br><span class="line">    </span><br><span class="line">    for i in l1:</span><br><span class="line">        i.join()</span><br><span class="line">    </span><br><span class="line">    print(f'==主{time.time()-start_time}')</span><br><span class="line"></span><br><span class="line">    join就是阻塞,主进程有join,主进程下面的代码一律不执行,直到进程执行完毕之后,在执行.</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
+
+</li>
+</ol>
+<h4 id="5-进程的其他参数"><a href="#5-进程的其他参数" class="headerlink" title="5. 进程的其他参数"></a>5. 进程的其他参数</h4><figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">from multiprocessing import Process</span><br><span class="line">import time</span><br><span class="line"></span><br><span class="line">def task(name):</span><br><span class="line">    print(f'{name} is running')</span><br><span class="line">    time.sleep(2)</span><br><span class="line">    print(f'{name} is gone')</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">if __name__ == '__main__':</span><br><span class="line">    # 在windows环境下, 开启进程必须在 __name__ == '__main__' 下面</span><br><span class="line">    # p = Process(target=task,args=('常鑫',))  # 创建一个进程对象</span><br><span class="line">    p = Process(target=task,args=('常鑫',),name='alex')  # 创建一个进程对象</span><br><span class="line">    p.start()</span><br><span class="line">    # time.sleep(1)</span><br><span class="line">    # p.terminate()  # 杀死子进程  ***</span><br><span class="line">    # p.join()  # ***</span><br><span class="line">    # time.sleep(0.5)</span><br><span class="line">    # print(p.is_alive())   # ***</span><br><span class="line">    # print(p.name)</span><br><span class="line">    p.name = 'sb'</span><br><span class="line">    print(p.name)</span><br><span class="line">    print('==主开始')</span><br></pre></td></tr></tbody></table></figure>
+
+<h4 id="6-守护进程"><a href="#6-守护进程" class="headerlink" title="6. 守护进程"></a>6. 守护进程</h4><figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">    # 守护进程:</span><br><span class="line">    # 古时候 太监守护这个皇帝,如果皇帝驾崩了,太监直接也就死了.</span><br><span class="line">    # 子进程守护着主进程,只要主进程结束,子进程跟着就结束,</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">from multiprocessing import Process</span><br><span class="line">import time</span><br><span class="line"></span><br><span class="line">def task(name):</span><br><span class="line">    print(f'{name} is running')</span><br><span class="line">    time.sleep(2)</span><br><span class="line">    print(f'{name} is gone')</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">if __name__ == '__main__':</span><br><span class="line">    # 在windows环境下, 开启进程必须在 __name__ == '__main__' 下面</span><br><span class="line">    p = Process(target=task,args=('常鑫',))  # 创建一个进程对象</span><br><span class="line">    p.daemon = True  # 将p子进程设置成守护进程,只要主进程结束,守护进程马上结束.</span><br><span class="line">    p.start()</span><br><span class="line">    # p.daemon = True  # 一定要在子进程开启之前设置</span><br><span class="line">    time.sleep(1)</span><br><span class="line">    print('===主')</span><br></pre></td></tr></tbody></table></figure>
                 
             </div>
             <hr/>
@@ -607,7 +621,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://www.innerjquery.club/2021/03/13/%E7%AC%AC%E4%B8%89%E6%96%B9%E6%A8%A1%E5%9D%97%E5%BC%95%E7%94%A8/">http://www.innerjquery.club/2021/03/13/%E7%AC%AC%E4%B8%89%E6%96%B9%E6%A8%A1%E5%9D%97%E5%BC%95%E7%94%A8/</a>
+                    <a href="http://www.innerjquery.club/2021/03/13/multopprocesssing%E6%A8%A1%E5%9D%97/">http://www.innerjquery.club/2021/03/13/multopprocesssing%E6%A8%A1%E5%9D%97/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -645,8 +659,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/python-%E5%85%B6%E4%BB%96%E7%AC%AC%E4%B8%89%E6%96%B9%E6%A8%A1%E5%9D%97/">
-                                    <span class="chip bg-color">python_其他第三方模块</span>
+                                <a href="/tags/python-multopprocesssing%E6%A8%A1%E5%9D%97/">
+                                    <span class="chip bg-color">python_multopprocesssing模块</span>
                                 </a>
                             
                         </div>
@@ -820,7 +834,7 @@
         repo: '',
         owner: '',
         admin: null,
-        id: '2021-03-13T15-08-50',
+        id: '2021-03-13T20-30-34',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -844,7 +858,7 @@
 <script src="/libs/gitment/gitment.js"></script>
 <script>
 var gitment = new Gitment({
-    id: 'Sat Mar 13 2021 15:08:50 GMT+0800',
+    id: 'Sat Mar 13 2021 20:30:34 GMT+0800',
     owner: '',
     repo: '',
     oauth: {
@@ -869,9 +883,9 @@ gitment.render('gitment-content');
 
 <script type="text/javascript">
     disqus_config = function () {
-        this.page.url = 'http://www.innerjquery.club/2021/03/13/%E7%AC%AC%E4%B8%89%E6%96%B9%E6%A8%A1%E5%9D%97%E5%BC%95%E7%94%A8/';
-        this.page.identifier = '/2021/03/13/%E7%AC%AC%E4%B8%89%E6%96%B9%E6%A8%A1%E5%9D%97%E5%BC%95%E7%94%A8/';
-        this.page.title = '第三方模块引用';
+        this.page.url = 'http://www.innerjquery.club/2021/03/13/multopprocesssing%E6%A8%A1%E5%9D%97/';
+        this.page.identifier = '/2021/03/13/multopprocesssing%E6%A8%A1%E5%9D%97/';
+        this.page.title = 'python的多进程';
     };
     let disqus_shortname = '';
 
@@ -1186,9 +1200,10 @@ gitment.render('gitment-content');
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2021/03/13/multopprocesssing%E6%A8%A1%E5%9D%97/">
                     <div class="card-image">
@@ -1206,9 +1221,9 @@ gitment.render('gitment-content');
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-03-13
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-03-13
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -1221,6 +1236,7 @@ gitment.render('gitment-content');
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -1239,13 +1255,13 @@ gitment.render('gitment-content');
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/03/13/mongodb%E5%92%8Cpymongo%E6%A8%A1%E5%9D%97/">
+                <a href="/2021/03/13/%E7%AC%AC%E4%B8%89%E6%96%B9%E6%A8%A1%E5%9D%97%E5%BC%95%E7%94%A8/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="mongodb和pymongo模块">
+                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="第三方模块引用">
                         
-                        <span class="card-title">mongodb和pymongo模块</span>
+                        <span class="card-title">第三方模块引用</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1262,8 +1278,8 @@ gitment.render('gitment-content');
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Database/" class="post-category">
-                                    Database
+                            <a href="/categories/python/" class="post-category">
+                                    python
                                 </a>
                             
                             
@@ -1273,8 +1289,8 @@ gitment.render('gitment-content');
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/DB-mongo/">
-                        <span class="chip bg-color">DB-mongo</span>
+                    <a href="/tags/python-%E5%85%B6%E4%BB%96%E7%AC%AC%E4%B8%89%E6%96%B9%E6%A8%A1%E5%9D%97/">
+                        <span class="chip bg-color">python_其他第三方模块</span>
                     </a>
                     
                 </div>

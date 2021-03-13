@@ -6,7 +6,7 @@
   <link href="http://www.innerjquery.club/atom.xml" rel="self"/>
   
   <link href="http://www.innerjquery.club/"/>
-  <updated>2021-03-13T07:13:21.234Z</updated>
+  <updated>2021-03-13T12:52:17.913Z</updated>
   <id>http://www.innerjquery.club/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>python的多进程</title>
+    <link href="http://www.innerjquery.club/2021/03/13/multopprocesssing%E6%A8%A1%E5%9D%97/"/>
+    <id>http://www.innerjquery.club/2021/03/13/multopprocesssing%E6%A8%A1%E5%9D%97/</id>
+    <published>2021-03-13T12:30:34.000Z</published>
+    <updated>2021-03-13T12:52:17.913Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h3 id=&quot;进程、线程、协程的概念&quot;&gt;&lt;a href=&quot;#进程、线程、协程的概念&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="python" scheme="http://www.innerjquery.club/categories/python/"/>
+    
+    
+    <category term="python_multopprocesssing模块" scheme="http://www.innerjquery.club/tags/python-multopprocesssing%E6%A8%A1%E5%9D%97/"/>
+    
+  </entry>
   
   <entry>
     <title>第三方模块引用</title>
@@ -497,28 +522,6 @@
     
     
     <category term="vue" scheme="http://www.innerjquery.club/tags/vue/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>ERROR!</title>
-    <link href="http://www.innerjquery.club/2020/06/30/test/"/>
-    <id>http://www.innerjquery.club/2020/06/30/test/</id>
-    <published>2020-06-30T11:12:42.000Z</published>
-    <updated>2021-03-13T03:32:37.087Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;失误！&lt;/p&gt;
-</summary>
-        
-      
-    
-    
-    
     
   </entry>
   
