@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="python_collections模块, f_x_y">
+    <meta name="keywords" content="socket原理, f_x_y">
     <meta name="description" content="熟练使用CTRL+C和CTRL+V">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>python_collections模块 | f_x_y</title>
+    <title>socket原理 | f_x_y</title>
     <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="/mypng.icon.ico">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -401,12 +401,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/8.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/10.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">python_collections模块</h1>
+                    <h1 class="description center-align post-title">socket原理</h1>
                 </div>
             </div>
         </div>
@@ -522,8 +522,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/python-collections%E6%A8%A1%E5%9D%97/">
-                                <span class="chip bg-color">python_collections模块</span>
+                            <a href="/tags/python-socket%E6%A8%A1%E5%9D%97/">
+                                <span class="chip bg-color">python_socket模块</span>
                             </a>
                         
                     </div>
@@ -547,7 +547,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-03-12
+                    2021-03-13
                 </div>
                 
 
@@ -556,7 +556,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    330
+                    87
                 </div>
                 
 
@@ -573,7 +573,9 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="collctions模块给我们提供了一些python的特殊的数据类型"><a href="#collctions模块给我们提供了一些python的特殊的数据类型" class="headerlink" title="collctions模块给我们提供了一些python的特殊的数据类型"></a>collctions模块给我们提供了一些python的特殊的数据类型</h3><h4 id="1-namedtuple-命令元组生成可以使用名字来访问元素内容的tuple"><a href="#1-namedtuple-命令元组生成可以使用名字来访问元素内容的tuple" class="headerlink" title="1.namedtuple: 命令元组生成可以使用名字来访问元素内容的tuple"></a>1.namedtuple: 命令元组生成可以使用名字来访问元素内容的tuple</h4><h4 id="2-deque-双端队列，可以快速的从另外一侧追加和推出对象"><a href="#2-deque-双端队列，可以快速的从另外一侧追加和推出对象" class="headerlink" title="2.deque: 双端队列，可以快速的从另外一侧追加和推出对象"></a>2.deque: 双端队列，可以快速的从另外一侧追加和推出对象</h4><h4 id="3-Counter-计数器，主要用来计数"><a href="#3-Counter-计数器，主要用来计数" class="headerlink" title="3.Counter: 计数器，主要用来计数"></a>3.Counter: 计数器，主要用来计数</h4><h4 id="4-OrderedDict-有序字典"><a href="#4-OrderedDict-有序字典" class="headerlink" title="4.OrderedDict: 有序字典"></a>4.OrderedDict: 有序字典</h4><h4 id="5-defaultdict-带有默认值的字典"><a href="#5-defaultdict-带有默认值的字典" class="headerlink" title="5.defaultdict: 带有默认值的字典"></a>5.defaultdict: 带有默认值的字典</h4><figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line">from collections import namedtuple,deque</span><br><span class="line">Point = namedtuple('tu',["a","b","c"]) # 第一个参数是元组的名字,第二参数是元组中元素的[名字,名字]</span><br><span class="line">p = Point({"keu":(1,2,3,4)}, 20,10)</span><br><span class="line">print(p)</span><br><span class="line">tu = (1,2,32,34,4)</span><br><span class="line">print(tu)</span><br><span class="line"></span><br><span class="line">lst = deque([1,2,3,4,5,6,7])</span><br><span class="line">lst.append(8)</span><br><span class="line">lst.appendleft(0)</span><br><span class="line">lst.pop()</span><br><span class="line">lst.popleft()</span><br><span class="line">print(lst[4])</span><br><span class="line"></span><br><span class="line">队列:先进先出</span><br><span class="line">栈:先进后出  --  栈顶</span><br><span class="line"></span><br><span class="line">lst = [1,2,3,4]</span><br><span class="line">lst.append(5)</span><br><span class="line">lst.pop(0)</span><br><span class="line"></span><br><span class="line">'''5.defaultdict: 带有默认值的字典'''</span><br><span class="line">from collections import defaultdict</span><br><span class="line">dic = defaultdict(list)</span><br><span class="line">dic["k1"].append(12)</span><br><span class="line">print(dic)</span><br><span class="line"></span><br><span class="line">li = [11,22,33,44,55,77,88,99,90]</span><br><span class="line">result = {"key1":[],"key2":[]}</span><br><span class="line">result = {}</span><br><span class="line">for row in li:</span><br><span class="line">    if row &gt; 66:</span><br><span class="line">        if 'key1' not in result:</span><br><span class="line">            result['key1'] = []</span><br><span class="line">        result['key1'].append(row)</span><br><span class="line">    else:</span><br><span class="line">        if 'key2' not in result:</span><br><span class="line">            result['key2'] = []</span><br><span class="line">        result['key2'].append(row)</span><br><span class="line">print(result)</span><br><span class="line"></span><br><span class="line">from collections import defaultdict</span><br><span class="line">dic = defaultdict(set)</span><br><span class="line">li = [11,22,33,44,55,77,88,99,90]</span><br><span class="line">for i in li:</span><br><span class="line">    if i &gt; 66:</span><br><span class="line">        dic["k1"].add(i)</span><br><span class="line">    else:</span><br><span class="line">        dic["k2"].add(i)</span><br><span class="line">print(dic)</span><br><span class="line"></span><br><span class="line">from collections import Counter</span><br><span class="line">s = "1112233344aaa"</span><br><span class="line">s = [1,1,2,2,3,3]</span><br><span class="line">s = (1,2,3,3,4,5,6,7,78)</span><br><span class="line">print(dict(Counter(s)))  # ***</span><br><span class="line">'''统计元素出现的次数'''</span><br></pre></td></tr></tbody></table></figure>
+                <h2 id="一、Socket原理讲解"><a href="#一、Socket原理讲解" class="headerlink" title="一、Socket原理讲解"></a>一、Socket原理讲解</h2><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/pashanhu6402/article/details/96428887">https://blog.csdn.net/pashanhu6402/article/details/96428887</a></p>
+<h5 id="1、什么是TCP-IP、UDP？"><a href="#1、什么是TCP-IP、UDP？" class="headerlink" title="1、什么是TCP/IP、UDP？"></a>1、什么是TCP/IP、UDP？</h5><h5 id="2、Socket在tcp-ip五层协议-iso七层协议的哪里？"><a href="#2、Socket在tcp-ip五层协议-iso七层协议的哪里？" class="headerlink" title="2、Socket在tcp/ip五层协议/iso七层协议的哪里？"></a>2、Socket在tcp/ip五层协议/iso七层协议的哪里？</h5><h5 id="3、Socket是什么呢？"><a href="#3、Socket是什么呢？" class="headerlink" title="3、Socket是什么呢？"></a>3、Socket是什么呢？</h5><h5 id="4、如何使用使用它们吗？"><a href="#4、如何使用使用它们吗？" class="headerlink" title="4、如何使用使用它们吗？"></a>4、如何使用使用它们吗？</h5><h2 id="二、python套接字socket用法"><a href="#二、python套接字socket用法" class="headerlink" title="二、python套接字socket用法"></a>二、python套接字socket用法</h2><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_29350991/article/details/110232175">https://blog.csdn.net/qq_29350991/article/details/110232175</a></p>
+<h5 id="1、套接字的简介"><a href="#1、套接字的简介" class="headerlink" title="1、套接字的简介"></a>1、套接字的简介</h5><h5 id="2、Socket的类型"><a href="#2、Socket的类型" class="headerlink" title="2、Socket的类型"></a>2、Socket的类型</h5><h5 id="3、Socket函数"><a href="#3、Socket函数" class="headerlink" title="3、Socket函数"></a>3、Socket函数</h5><h5 id="4、Socket的编程思想"><a href="#4、Socket的编程思想" class="headerlink" title="4、Socket的编程思想"></a>4、Socket的编程思想</h5>
                 
             </div>
             <hr/>
@@ -599,7 +601,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://www.innerjquery.club/2021/03/12/python-collections%E6%A8%A1%E5%9D%97/">http://www.innerjquery.club/2021/03/12/python-collections%E6%A8%A1%E5%9D%97/</a>
+                    <a href="http://www.innerjquery.club/2021/03/13/socket%E5%8E%9F%E7%90%86/">http://www.innerjquery.club/2021/03/13/socket%E5%8E%9F%E7%90%86/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -637,8 +639,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/python-collections%E6%A8%A1%E5%9D%97/">
-                                    <span class="chip bg-color">python_collections模块</span>
+                                <a href="/tags/python-socket%E6%A8%A1%E5%9D%97/">
+                                    <span class="chip bg-color">python_socket模块</span>
                                 </a>
                             
                         </div>
@@ -812,7 +814,7 @@
         repo: '',
         owner: '',
         admin: null,
-        id: '2021-03-12T12-09-32',
+        id: '2021-03-13T11-15-09',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -836,7 +838,7 @@
 <script src="/libs/gitment/gitment.js"></script>
 <script>
 var gitment = new Gitment({
-    id: 'Fri Mar 12 2021 12:09:32 GMT+0800',
+    id: 'Sat Mar 13 2021 11:15:09 GMT+0800',
     owner: '',
     repo: '',
     oauth: {
@@ -861,9 +863,9 @@ gitment.render('gitment-content');
 
 <script type="text/javascript">
     disqus_config = function () {
-        this.page.url = 'http://www.innerjquery.club/2021/03/12/python-collections%E6%A8%A1%E5%9D%97/';
-        this.page.identifier = '/2021/03/12/python-collections%E6%A8%A1%E5%9D%97/';
-        this.page.title = 'python_collections模块';
+        this.page.url = 'http://www.innerjquery.club/2021/03/13/socket%E5%8E%9F%E7%90%86/';
+        this.page.identifier = '/2021/03/13/socket%E5%8E%9F%E7%90%86/';
+        this.page.title = 'socket原理';
     };
     let disqus_shortname = '';
 
@@ -1178,9 +1180,10 @@ gitment.render('gitment-content');
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2021/03/13/socket%E5%8E%9F%E7%90%86/">
                     <div class="card-image">
@@ -1198,9 +1201,9 @@ gitment.render('gitment-content');
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-03-13
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-03-13
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -1213,6 +1216,7 @@ gitment.render('gitment-content');
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -1231,13 +1235,13 @@ gitment.render('gitment-content');
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/03/12/python-logging%E6%A8%A1%E5%9D%97/">
+                <a href="/2021/03/12/python-collections%E6%A8%A1%E5%9D%97/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="python_logging模块">
+                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="python_collections模块">
                         
-                        <span class="card-title">python_logging模块</span>
+                        <span class="card-title">python_collections模块</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1265,8 +1269,8 @@ gitment.render('gitment-content');
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/python-logging%E6%A8%A1%E5%9D%97/">
-                        <span class="chip bg-color">python_logging模块</span>
+                    <a href="/tags/python-collections%E6%A8%A1%E5%9D%97/">
+                        <span class="chip bg-color">python_collections模块</span>
                     </a>
                     
                 </div>
