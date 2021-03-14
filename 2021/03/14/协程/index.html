@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="微信小程序环境下的js, f_x_y">
+    <meta name="keywords" content="python的多任务协程, f_x_y">
     <meta name="description" content="熟练使用CTRL+C和CTRL+V">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>微信小程序环境下的js | f_x_y</title>
+    <title>python的多任务协程 | f_x_y</title>
     <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="/mypng.icon.ico">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -401,12 +401,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/22.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/12.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">微信小程序环境下的js</h1>
+                    <h1 class="description center-align post-title">python的多任务协程</h1>
                 </div>
             </div>
         </div>
@@ -522,8 +522,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/wx-api/">
-                                <span class="chip bg-color">wx api</span>
+                            <a href="/tags/python-gevent%E5%8D%8F%E7%A8%8B%E6%A8%A1%E5%9D%97/">
+                                <span class="chip bg-color">python_gevent协程模块</span>
                             </a>
                         
                     </div>
@@ -534,8 +534,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/js/" class="post-category">
-                                js
+                            <a href="/categories/python/" class="post-category">
+                                python
                             </a>
                         
                     </div>
@@ -547,7 +547,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-01-01
+                    2021-03-14
                 </div>
                 
 
@@ -556,7 +556,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    941
+                    1.4k
                 </div>
                 
 
@@ -573,7 +573,72 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>1.json文件里不能注释，非主页面json文件可以覆盖app.json文件<br>                     页面里的配置内容只可以设置window下的一些配置<br>        tabbar标签条中只能有2-5个标签，<br>2.微信小程序的开发语言是js但是不同于浏览器运行环境的javascript<br>    ==》首先没有bom和dom对象模型，所以没有对象window和document对象，<br>    ==》小程序运行环境的javascript拥有的额外的全局成员（方法）有：<br>            App()    方法用于定义应用程序对象；<br>            Page()   方法用于定义页面对象；<br>            getApp()   方法用于获取全局应用程序对象<br>            getcurrentPages()   方法用于获取当前页面的调用栈<br>    ==》微信小程序中js的顶级对象是wx，微信小程序端还提供了一些核心的对象；<br>            微信小程序环境的js是支持commonjs规范的（和nodejs的模块开发相似），但是不支持直接export导出对象<br>            在0.10版本之后默认使用 babel 将开发者 ES6 语法代码转换为三端都能很好支持的 ES5 的代<br>3.语法知识：<br>    ==》支持插值表达式，且插值表达式可以放在我们的类中动态管理类class = “ into<br>    { {addclass} }”,可以用在任意值的位置<br>    ==》在小程序运行环境下的复选框checked =“false”（不会被当成布尔类型，使得复选框被勾选，），可以以插值表达式<br>             表示一个false，checked = “{ {false} }”<br>    ==》小程序中的循环语句为：<br>    </p><figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">   todos: [</span><br><span class="line">       { name: 'java', completed: false },</span><br><span class="line">       { name: 'php', completed: true },</span><br><span class="line">       { name: 'vue', completed: false },</span><br><span class="line">       { name: 'javascript', completed: true ,</span><br><span class="line">       { name: 'phpstudy', completed: false },</span><br><span class="line">       { name: 'vuex', completed: false }</span><br><span class="line">    ]</span><br><span class="line">&lt;view wx:for="{ { todos } }" wx:key="item"&gt;</span><br><span class="line">    &lt;checkbox checked="{ { item.completed } }" &gt;&lt;/checkbox&gt;</span><br><span class="line">      &lt;text&gt;-------{ {item.name} }&lt;/text&gt;</span><br><span class="line">&lt;/view&gt;</span><br><span class="line">	</span><br></pre></td></tr></tbody></table></figure><br>    注意：在当前循环作用域内如有全局对象index和item会冲突访问不到，当前作用域内的index和item<br>             会被当做循环的当前对象和当前索引；<br>    解决方法：  通过wx：for-item =”aaa“即为当前作用域遍历的对象起个别名为aaa，index也可以这样子起别名<br>6.小程序里提供的事件和window对象下的事件的区别；（小程序端没有鼠标概念，只有tap触摸概念）<br>    给元素添加触摸事件的方法：bindtap = “todo”//行内事件也不需要添加小括号，区别于pc端js<br>    默认情况下，小程序的开发也会冒泡事件,但是阻止冒泡的方式是通过catchtap事件，<br>    即bindtap会有事件冒泡机制，但是无法阻止，catchtap不会产生冒泡，<br>7.事件传参的方法也显著区别于浏览器运行环境下的js<br>    不能通过函数传参的方法传递参数，语法不允许，实际上bindtap=”type()”中的type()会被当做一个整体函数名<br>    有点莫名奇妙，但是不得不接受官方，<br>    同时也不可通过事件处理函数中的this指向调用该方法的对象即元素，因为在小程序的运行环境中，this会直接指向当前页面的pages对象，<br>    可以通过dataset属性获取到我们自定义的属性值（dataset相似于浏览器运行环境中的data-开头的自定义数据的集合）<br>    <figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">   &lt;button bindtap="type" data-name="张三" data-id="zhansan"&gt;456&lt;/button&gt;</span><br><span class="line">console.log(e.target.dataset)</span><br><span class="line">{id: "zhansan", name: "张三"}</span><br><span class="line">id: "zhansan"</span><br><span class="line">name: "张三"</span><br><span class="line">__proto__: Object</span><br><span class="line">   </span><br></pre></td></tr></tbody></table></figure><br>    小程序没有双向数据绑定，所有的数据都是单向的，当通过插值表达式从逻辑层拿到数据到界面时，不再监听数据的变化，（不会像vue那样监听数据）<br>    只能再通知小程序这个框架去渲染数据<br>    <code>this.setData({ testmsg: e.target.value})</code><p></p>
+                <h3 id="一、协程：一个线程并发的处理任务"><a href="#一、协程：一个线程并发的处理任务" class="headerlink" title="一、协程：一个线程并发的处理任务."></a>一、协程：一个线程并发的处理任务.</h3><ol>
+<li><p>协程的本质就是：单个线程并发的处理多个任务,程序自己保持快速的切换让cpu以为我们的线程没有堵塞io，进而不切换走</p>
+</li>
+<li><p>任务处理的方式：</p>
+<ol>
+<li>串行: 一个线程执行一个任务,执行完毕之后,执行下一个任务.</li>
+<li>并行: 多个cpu执行多个任务, 4个cpu 执行4个任务.</li>
+<li>并发: 一个cpu执行多个任务,看起来像是同时运行.</li>
+<li>并发真正的核心: 切换并且保持状态.</li>
+</ol>
+</li>
+<li><p>多线程的并发:  3个线程处理10个任务,如果线程1处理的这个任务,遇到阻塞,cpu被操作系统切换到另一个线程,</p>
+<p><img src="/.club//Users\Administrator\Desktop\assets\1566879383130.png" alt="1566879383130"></p>
+</li>
+<li><p>一个线程能否并发的处理任务??? 一个线程处理三个任务.</p>
+<p><img src="/.club//Users\Administrator\Desktop\assets\1566879595563.png" alt="1566879595563"></p>
+</li>
+<li><p>单个cpu: 10个任务,让你给我并发的执行这个10个任务:</p>
+<ol>
+<li>方式一:开启多进程并发执行, 操作系统切换+保持状态.</li>
+<li>方式二:开启多线程并发执行,操作系统切换+保持状态.</li>
+<li>方式三:开启协程并发的执行, 自己的程序 把控着cpu 在3个任务之间来回切换+保持状态.<br>对3详细解释: 协程他切换速度非常快,蒙蔽操作系统的眼睛,让操作系统认为cpu一直在运行你这一个线程(协程.)</li>
+</ol>
+</li>
+<li><p>协程方式最好,为什么?</p>
+<ol>
+<li>开销小.]</li>
+<li>运行速度快.</li>
+<li>协程会长期霸占cpu只执行我程序里面的所有任务.</li>
+</ol>
+</li>
+<li><p>并发的本质:就是切换+保持状态.</p>
+</li>
+<li><p>协程处理IO密集型, 计算密集型,还是串行好.</p>
+</li>
+<li><p>什么是协程? 单个线程并发的处理多个任务. 程序控制协程的切换+保持状态.</p>
+</li>
+<li><p>协程的特点:</p>
+<ol>
+<li><strong>必须在只有一个单线程里实现并发</strong></li>
+<li><strong>修改共享数据不需加锁</strong></li>
+<li><strong>用户程序里自己保存多个控制流的上下文栈(保持状态)</strong></li>
+<li><strong>附加：一个协程遇到IO操作自动切换到其它协程</strong></li>
+</ol>
+</li>
+<li><p>工作中:<br>一般在工作中我们都是进程+线程+协程的方式来实现并发，以达到最好的并发效果，如果是4核的cpu，一般起5个进程，每个进程中20个线程（5倍cpu数量），每个线程可以起500个协程，大规模爬取页面的时候，等待网络延迟的时间的时候，我们就可以用协程去实现并发。 并发数量 = 5 * 20 * 500 = 50000个并发，这是一般一个4cpu的机器最大的并发数。nginx在负载均衡的时候最大承载量就是5w个<br>单线程里的这20个任务的代码通常会既有计算操作又有阻塞操作，我们完全可以在执行任务1时遇到阻塞，就利用阻塞的时间去执行任务2。。。。如此，才能提高效率，这就用到了Gevent模块。</p>
+</li>
+</ol>
+<h3 id="二、greenlet模块实现任务切换和状态保持"><a href="#二、greenlet模块实现任务切换和状态保持" class="headerlink" title="二、greenlet模块实现任务切换和状态保持"></a>二、greenlet模块实现任务切换和状态保持</h3><ol>
+<li><p>greenlet遇到IO不会主动切换，它只会等待任务的执行完成</p>
+</li>
+<li><p>greenlet不是真的协程</p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line"># 切换</span><br><span class="line"># def func1():</span><br><span class="line">#     print('in func1')</span><br><span class="line">#</span><br><span class="line"># def func2():</span><br><span class="line">#     print('in func2')</span><br><span class="line">#     func1()</span><br><span class="line">#     print('end')</span><br><span class="line">#</span><br><span class="line"># func2()</span><br><span class="line"></span><br><span class="line"># 切换 + 保持状态</span><br><span class="line"></span><br><span class="line"># def gen():</span><br><span class="line">#     while 1:</span><br><span class="line">#         yield 1</span><br><span class="line">#</span><br><span class="line"># def func():</span><br><span class="line">#     obj = gen()</span><br><span class="line">#     for i in range(10):</span><br><span class="line">#         next(obj)</span><br><span class="line"># func()</span><br><span class="line"></span><br><span class="line"># 上面的例子遇到IO不能自动切换</span><br><span class="line"># import time</span><br><span class="line"># def gen():</span><br><span class="line">#     while 1:</span><br><span class="line">#         yield 1</span><br><span class="line">#         time.sleep(0.5)</span><br><span class="line">#</span><br><span class="line"># def func():</span><br><span class="line">#     obj = gen()</span><br><span class="line">#     for i in range(10):</span><br><span class="line">#         next(obj)</span><br><span class="line"># func()</span><br><span class="line"></span><br><span class="line">#</span><br><span class="line"># 切换 +保持状态(遇到IO不会主动切换)</span><br><span class="line"></span><br><span class="line"># from greenlet import greenlet</span><br><span class="line"># import time</span><br><span class="line"># def eat(name):</span><br><span class="line">#     print('%s eat 1' %name)  # 2</span><br><span class="line">#     # g2.switch('taibai')  # 3</span><br><span class="line">#     time.sleep(3)</span><br><span class="line">#     print('%s eat 2' %name)  # 6</span><br><span class="line">#     g2.switch()  # 7</span><br><span class="line">#</span><br><span class="line"># def play(name):</span><br><span class="line">#     print('%s play 1' %name)  # 4</span><br><span class="line">#     g1.switch()  # 5</span><br><span class="line">#     print('%s play 2' %name)  # 8</span><br><span class="line">#</span><br><span class="line"># g1=greenlet(eat)</span><br><span class="line"># g2=greenlet(play)</span><br><span class="line">#</span><br><span class="line"># g1.switch('taibai')  # 1 切换到eat任务</span><br></pre></td></tr></tbody></table></figure>
+
+</li>
+</ol>
+<h3 id="三、gevent第三方模块实现任务切换和状态保持"><a href="#三、gevent第三方模块实现任务切换和状态保持" class="headerlink" title="三、gevent第三方模块实现任务切换和状态保持"></a>三、gevent第三方模块实现任务切换和状态保持</h3><ol>
+<li><p>使用gevent实现协程</p>
+</li>
+<li><p>geven模拟的阻塞,不是真正的阻塞</p>
+</li>
+<li><p>gevent是一个基于协程的Python网络库,基于greenlet实现协程。当我们在进行频繁的网络交互访问时，网络IO会大大影响程序的性能(下面会看到)，但这些IO我们不必要等待，多任务时完全可以先执行其他任务等待IO结束，在处理返回结果。gevent就是基于这种思想设计实现。</p>
+</li>
+<li><p>monkey.patch_all()方法修改python标准库。gevent神奇之处在于它会自动检测网络IO，并进行子程序切换。由于切换是在IO操作时自动完成，所以gevent需要修改Python自带的一些标准库，这一过程在启动时通过monkey.patch完成。</p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line">mport time</span><br><span class="line"></span><br><span class="line"># 协程</span><br><span class="line"># 模拟的阻塞,不是真正的阻塞</span><br><span class="line"># import gevent</span><br><span class="line"># from threading import current_thread</span><br><span class="line"># def eat(name):</span><br><span class="line">#     print('%s eat 1' %name)</span><br><span class="line">#     print(current_thread().name)</span><br><span class="line">#     # gevent.sleep(2)</span><br><span class="line">#     time.sleep(2)</span><br><span class="line">#     print('%s eat 2' %name)</span><br><span class="line">#</span><br><span class="line"># def play(name):</span><br><span class="line">#     print('%s play 1' %name)</span><br><span class="line">#     print(current_thread().name)</span><br><span class="line">#     # gevent.sleep(1)</span><br><span class="line">#     time.sleep(1)</span><br><span class="line">#     print('%s play 2' %name)</span><br><span class="line">#</span><br><span class="line">#</span><br><span class="line"># g1 = gevent.spawn(eat,'egon')</span><br><span class="line"># g2 = gevent.spawn(play,name='egon')</span><br><span class="line"># print(f'主{current_thread().name}')</span><br><span class="line"># g1.join()</span><br><span class="line"># g2.join()</span><br><span class="line"></span><br><span class="line"># 最终版本:</span><br><span class="line">import gevent</span><br><span class="line">from gevent import monkey</span><br><span class="line">monkey.patch_all()  # 打补丁: 将下面的所有的任务的阻塞都打上标记</span><br><span class="line">def eat(name):</span><br><span class="line">    print('%s eat 1' %name)</span><br><span class="line">    time.sleep(2)</span><br><span class="line">    print('%s eat 2' %name)</span><br><span class="line"></span><br><span class="line">def play(name):</span><br><span class="line">    print('%s play 1' %name)</span><br><span class="line">    time.sleep(1)</span><br><span class="line">    print('%s play 2' %name)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">g1 = gevent.spawn(eat,'egon')</span><br><span class="line">g2 = gevent.spawn(play,name='egon')</span><br><span class="line"></span><br><span class="line"># g1.join()</span><br><span class="line"># g2.join()</span><br><span class="line">gevent.joinall([g1,g2])</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure></li>
+</ol>
 
                 
             </div>
@@ -600,7 +665,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://www.innerjquery.club/2021/01/01/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E7%8E%AF%E5%A2%83%E4%B8%8B%E7%9A%84js/">http://www.innerjquery.club/2021/01/01/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E7%8E%AF%E5%A2%83%E4%B8%8B%E7%9A%84js/</a>
+                    <a href="http://www.innerjquery.club/2021/03/14/%E5%8D%8F%E7%A8%8B/">http://www.innerjquery.club/2021/03/14/%E5%8D%8F%E7%A8%8B/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -638,8 +703,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/wx-api/">
-                                    <span class="chip bg-color">wx api</span>
+                                <a href="/tags/python-gevent%E5%8D%8F%E7%A8%8B%E6%A8%A1%E5%9D%97/">
+                                    <span class="chip bg-color">python_gevent协程模块</span>
                                 </a>
                             
                         </div>
@@ -813,7 +878,7 @@
         repo: '',
         owner: '',
         admin: null,
-        id: '2021-01-01T23-41-10',
+        id: '2021-03-14T12-53-33',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -837,7 +902,7 @@
 <script src="/libs/gitment/gitment.js"></script>
 <script>
 var gitment = new Gitment({
-    id: 'Fri Jan 01 2021 23:41:10 GMT+0800',
+    id: 'Sun Mar 14 2021 12:53:33 GMT+0800',
     owner: '',
     repo: '',
     oauth: {
@@ -862,9 +927,9 @@ gitment.render('gitment-content');
 
 <script type="text/javascript">
     disqus_config = function () {
-        this.page.url = 'http://www.innerjquery.club/2021/01/01/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E7%8E%AF%E5%A2%83%E4%B8%8B%E7%9A%84js/';
-        this.page.identifier = '/2021/01/01/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E7%8E%AF%E5%A2%83%E4%B8%8B%E7%9A%84js/';
-        this.page.title = '微信小程序环境下的js';
+        this.page.url = 'http://www.innerjquery.club/2021/03/14/%E5%8D%8F%E7%A8%8B/';
+        this.page.identifier = '/2021/03/14/%E5%8D%8F%E7%A8%8B/';
+        this.page.title = 'python的多任务协程';
     };
     let disqus_shortname = '';
 
@@ -1179,17 +1244,18 @@ gitment.render('gitment-content');
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2021/01/03/element-ui-%E7%9A%84%E7%90%86%E8%A7%A3/">
+                <a href="/2021/03/14/%E5%8D%8F%E7%A8%8B/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="element ui 的理解">
+                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="python的多任务协程">
                         
-                        <span class="card-title">element ui 的理解</span>
+                        <span class="card-title">python的多任务协程</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1199,26 +1265,27 @@ gitment.render('gitment-content');
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-01-03
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-03-14
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/js/" class="post-category">
-                                    js
+                            <a href="/categories/python/" class="post-category">
+                                    python
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/vue-ui/">
-                        <span class="chip bg-color">vue ui</span>
+                    <a href="/tags/python-gevent%E5%8D%8F%E7%A8%8B%E6%A8%A1%E5%9D%97/">
+                        <span class="chip bg-color">python_gevent协程模块</span>
                     </a>
                     
                 </div>
@@ -1232,13 +1299,13 @@ gitment.render('gitment-content');
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/12/31/vuex%E7%9A%84%E4%BD%BF%E7%94%A8/">
+                <a href="/2021/03/13/threading%E6%A8%A1%E5%9D%97/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="vuex的使用">
+                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="python的多任务线程">
                         
-                        <span class="card-title">vuex的使用</span>
+                        <span class="card-title">python的多任务线程</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1249,14 +1316,14 @@ gitment.render('gitment-content');
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-12-31
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-03-13
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/js/" class="post-category">
-                                    js
+                            <a href="/categories/python/" class="post-category">
+                                    python
                                 </a>
                             
                             
@@ -1266,8 +1333,8 @@ gitment.render('gitment-content');
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/vue/">
-                        <span class="chip bg-color">vue</span>
+                    <a href="/tags/python-threading%E6%A8%A1%E5%9D%97/">
+                        <span class="chip bg-color">python_threading模块</span>
                     </a>
                     
                 </div>

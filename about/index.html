@@ -461,7 +461,7 @@
                     <div class="post-statis col l4 hide-on-med-and-down" data-aos="zoom-in-right">
                         
 <div class="statis">
-    <span class="count"><a href="/">21</a></span>
+    <span class="count"><a href="/">23</a></span>
     <span class="name">文章</span>
 </div>
 
@@ -475,7 +475,7 @@
 
 
 <div class="statis">
-    <span class="count"><a href="/tags">17</a></span>
+    <span class="count"><a href="/tags">19</a></span>
     <span class="name">标签</span>
 </div>
 
@@ -491,7 +491,7 @@
                                 <div class="post-statis hide-on-large-only" data-aos="zoom-in-right">
                                     
 <div class="statis">
-    <span class="count"><a href="/">21</a></span>
+    <span class="count"><a href="/">23</a></span>
     <span class="name">文章</span>
 </div>
 
@@ -505,7 +505,7 @@
 
 
 <div class="statis">
-    <span class="count"><a href="/tags">17</a></span>
+    <span class="count"><a href="/tags">19</a></span>
     <span class="name">标签</span>
 </div>
 
@@ -657,7 +657,7 @@
                 name: '文章篇数',
                 type: 'line',
                 color: ['#6772e5'],
-                data: [0,0,0,1,0,0,1,1,0,3,5,0,10],
+                data: [0,0,0,1,0,0,1,1,0,3,5,0,12],
                 markPoint: {
                     symbolSize: 45,
                     color: ['#fa755a','#3ecf8e','#82d3f4'],
@@ -699,7 +699,7 @@
                 type: 'pie',
                 radius: '50%',
                 color: ['#6772e5', '#ff9e0f', '#fa755a', '#3ecf8e', '#82d3f4', '#ab47bc', '#525f7f', '#f51c47', '#26A69A'],
-                data: [{"name":"js","value":8},{"name":"python","value":8},{"name":"Database","value":3},{"name":"vs code插件","value":1}],
+                data: [{"name":"js","value":8},{"name":"python","value":10},{"name":"Database","value":3},{"name":"vs code插件","value":1}],
                 itemStyle: {
                     emphasis: {
                         shadowBlur: 10,
@@ -723,7 +723,7 @@
         xAxis: [
             {
                 type: 'category',
-                data: ["vue","js_axios","python_udp_tcp原理","vue ui","DB-mongo","python_multopprocesssing模块","python_logging模块","python_collections模块","python_hashlib模块","python_time模块"]
+                data: ["vue","js_axios","python_udp_tcp原理","vue ui","DB-mongo","python_collections模块","python_logging模块","python_hashlib模块","python_time模块","react_context"]
             }
         ],
         yAxis: [
@@ -844,6 +844,28 @@
         </div>
         
         
+        <div class="col s12 m6 l6" data-aos="fade-up">
+            <div class="skillbar">
+                <div class="skillbar-title"
+                     style="background: linear-gradient(to right, #FFEB3B 0%, #FFF176 100%); width: 85%">
+                    <span>django</span>
+                </div>
+                <div class="skill-bar-percent">85%</div>
+            </div>
+        </div>
+        
+        
+        <div class="col s12 m6 l6" data-aos="fade-up">
+            <div class="skillbar">
+                <div class="skillbar-title"
+                     style="background: linear-gradient(to right, #FFEB3B 0%, #FFF176 100%); width: 65%">
+                    <span>flask</span>
+                </div>
+                <div class="skill-bar-percent">65%</div>
+            </div>
+        </div>
+        
+        
     </div>
 
     
@@ -878,20 +900,14 @@
             
             
             
-            <a href="/tags/python-multopprocesssing%E6%A8%A1%E5%9D%97/">
-                <span class="chip center-align waves-effect waves-light chip-default">python_multopprocesssing模块</span>
+            <a href="/tags/python-collections%E6%A8%A1%E5%9D%97/">
+                <span class="chip center-align waves-effect waves-light chip-default">python_collections模块</span>
             </a>
             
             
             
             <a href="/tags/python-logging%E6%A8%A1%E5%9D%97/">
                 <span class="chip center-align waves-effect waves-light chip-default">python_logging模块</span>
-            </a>
-            
-            
-            
-            <a href="/tags/python-collections%E6%A8%A1%E5%9D%97/">
-                <span class="chip center-align waves-effect waves-light chip-default">python_collections模块</span>
             </a>
             
             
@@ -926,14 +942,20 @@
             
             
             
+            <a href="/tags/vs-code/">
+                <span class="chip center-align waves-effect waves-light chip-default">vs code</span>
+            </a>
+            
+            
+            
             <a href="/tags/vue/">
                 <span class="chip center-align waves-effect waves-light chip-default">vue</span>
             </a>
             
             
             
-            <a href="/tags/vs-code/">
-                <span class="chip center-align waves-effect waves-light chip-default">vs code</span>
+            <a href="/tags/python-gevent%E5%8D%8F%E7%A8%8B%E6%A8%A1%E5%9D%97/">
+                <span class="chip center-align waves-effect waves-light chip-default">python_gevent协程模块</span>
             </a>
             
             
@@ -950,8 +972,20 @@
             
             
             
+            <a href="/tags/python-multopprocesssing%E6%A8%A1%E5%9D%97/">
+                <span class="chip center-align waves-effect waves-light chip-default">python_multopprocesssing模块</span>
+            </a>
+            
+            
+            
             <a href="/tags/DB-mysql/">
                 <span class="chip center-align waves-effect waves-light chip-default">DB-mysql</span>
+            </a>
+            
+            
+            
+            <a href="/tags/python-threading%E6%A8%A1%E5%9D%97/">
+                <span class="chip center-align waves-effect waves-light chip-default">python_threading模块</span>
             </a>
             
             
@@ -1326,7 +1360,8 @@ $(function () {
     
     <script src="/libs/instantpage/instantpage.js" type="module"></script>
     
-
+    <!-- 雪花特效 --> 
+    
 </body>
 
 </html>

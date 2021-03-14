@@ -6,7 +6,7 @@
   <link href="http://www.innerjquery.club/atom.xml" rel="self"/>
   
   <link href="http://www.innerjquery.club/"/>
-  <updated>2021-03-13T12:52:17.913Z</updated>
+  <updated>2021-03-14T09:10:07.318Z</updated>
   <id>http://www.innerjquery.club/</id>
   
   <author>
@@ -17,11 +17,62 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>python的多进程</title>
+    <title>python的多任务协程</title>
+    <link href="http://www.innerjquery.club/2021/03/14/%E5%8D%8F%E7%A8%8B/"/>
+    <id>http://www.innerjquery.club/2021/03/14/%E5%8D%8F%E7%A8%8B/</id>
+    <published>2021-03-14T04:53:33.000Z</published>
+    <updated>2021-03-14T09:10:07.318Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h3 id=&quot;一、协程：一个线程并发的处理任务&quot;&gt;&lt;a href=&quot;#一、协程：一个线程并发的处理任务&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="python" scheme="http://www.innerjquery.club/categories/python/"/>
+    
+    
+    <category term="python_gevent协程模块" scheme="http://www.innerjquery.club/tags/python-gevent%E5%8D%8F%E7%A8%8B%E6%A8%A1%E5%9D%97/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>python的多任务线程</title>
+    <link href="http://www.innerjquery.club/2021/03/13/threading%E6%A8%A1%E5%9D%97/"/>
+    <id>http://www.innerjquery.club/2021/03/13/threading%E6%A8%A1%E5%9D%97/</id>
+    <published>2021-03-13T15:39:46.000Z</published>
+    <updated>2021-03-14T06:37:09.113Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h3 id=&quot;1-线程的理论知识&quot;&gt;&lt;a href=&quot;#1-线程的理论知识&quot; class=&quot;headerlink&quot; title=&quot;1. 线程的理论知识&quot;&gt;&lt;/a&gt;1. 线程的理论知识&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;什么是线程一条流水线的工作流程.进程:</summary>
+        
+      
+    
+    
+    
+    <category term="python" scheme="http://www.innerjquery.club/categories/python/"/>
+    
+    
+    <category term="python_threading模块" scheme="http://www.innerjquery.club/tags/python-threading%E6%A8%A1%E5%9D%97/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>python的多任务进程</title>
     <link href="http://www.innerjquery.club/2021/03/13/multopprocesssing%E6%A8%A1%E5%9D%97/"/>
     <id>http://www.innerjquery.club/2021/03/13/multopprocesssing%E6%A8%A1%E5%9D%97/</id>
     <published>2021-03-13T12:30:34.000Z</published>
-    <updated>2021-03-13T12:52:17.913Z</updated>
+    <updated>2021-03-14T04:58:27.977Z</updated>
     
     
       
@@ -471,57 +522,6 @@
     
     
     <category term="vs code" scheme="http://www.innerjquery.club/tags/vs-code/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>关于axios</title>
-    <link href="http://www.innerjquery.club/2020/10/30/My-New-Post/"/>
-    <id>http://www.innerjquery.club/2020/10/30/My-New-Post/</id>
-    <published>2020-10-30T10:14:19.000Z</published>
-    <updated>2021-03-13T03:33:21.925Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;参考来源===》》&lt;a href=&quot;http://axios-js.com/zh-cn/docs/&quot;&gt;http://axios-js.com/zh-cn/docs/&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;1.Axios 是一个基于 promise 的 HTTP 库，可以用在浏览器和</summary>
-        
-      
-    
-    
-    
-    <category term="js" scheme="http://www.innerjquery.club/categories/js/"/>
-    
-    
-    <category term="js_axios" scheme="http://www.innerjquery.club/tags/js-axios/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>关于vue组件通信</title>
-    <link href="http://www.innerjquery.club/2020/09/04/%E5%85%B3%E4%BA%8Evue%E7%BB%84%E4%BB%B6%E9%80%9A%E8%AE%AF/"/>
-    <id>http://www.innerjquery.club/2020/09/04/%E5%85%B3%E4%BA%8Evue%E7%BB%84%E4%BB%B6%E9%80%9A%E8%AE%AF/</id>
-    <published>2020-09-04T10:14:19.000Z</published>
-    <updated>2021-03-13T03:33:46.632Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;vue子父兄弟组件之间实现数据传递的方式&quot;&gt;&lt;a href=&quot;#vue子父兄弟组件之间实现数据传递的方式&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="js" scheme="http://www.innerjquery.club/categories/js/"/>
-    
-    
-    <category term="vue" scheme="http://www.innerjquery.club/tags/vue/"/>
     
   </entry>
   
