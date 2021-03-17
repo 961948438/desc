@@ -6,7 +6,7 @@
   <link href="http://www.innerjquery.club/atom.xml" rel="self"/>
   
   <link href="http://www.innerjquery.club/"/>
-  <updated>2021-03-14T09:10:07.318Z</updated>
+  <updated>2021-03-17T05:16:04.334Z</updated>
   <id>http://www.innerjquery.club/</id>
   
   <author>
@@ -17,11 +17,61 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>img的上传、预览和FileReader类</title>
+    <link href="http://www.innerjquery.club/2021/03/17/img%E7%9A%84%E4%B8%8A%E4%BC%A0%E3%80%81%E9%A2%84%E8%A7%88%E5%92%8CFileReader%E7%B1%BB/"/>
+    <id>http://www.innerjquery.club/2021/03/17/img%E7%9A%84%E4%B8%8A%E4%BC%A0%E3%80%81%E9%A2%84%E8%A7%88%E5%92%8CFileReader%E7%B1%BB/</id>
+    <published>2021-03-17T04:59:56.000Z</published>
+    <updated>2021-03-17T05:16:04.334Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h3 id=&quot;原生js实现图片上传预览&quot;&gt;&lt;a href=&quot;#原生js实现图片上传预览&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="js" scheme="http://www.innerjquery.club/categories/js/"/>
+    
+    
+    <category term="js 原生" scheme="http://www.innerjquery.club/tags/js-%E5%8E%9F%E7%94%9F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>web前端面试题</title>
+    <link href="http://www.innerjquery.club/2021/03/14/web%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E9%A2%98/"/>
+    <id>http://www.innerjquery.club/2021/03/14/web%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E9%A2%98/</id>
+    <published>2021-03-14T13:01:12.000Z</published>
+    <updated>2021-03-15T10:32:50.741Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h3 id=&quot;一、原生js和Jquery&quot;&gt;&lt;a href=&quot;#一、原生js和Jquery&quot; class=&quot;headerlink&quot; title=&quot;一、原生js和Jquery&quot;&gt;&lt;/a&gt;一、原生js和Jquery&lt;/h3&gt;&lt;h4 id=&quot;1-面向对象和面向过程的区别&quot;&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="web 前端面试题" scheme="http://www.innerjquery.club/categories/web-%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E9%A2%98/"/>
+    
+    
+    <category term="vue 前端面试题" scheme="http://www.innerjquery.club/tags/vue-%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E9%A2%98/"/>
+    
+  </entry>
+  
+  <entry>
     <title>python的多任务协程</title>
     <link href="http://www.innerjquery.club/2021/03/14/%E5%8D%8F%E7%A8%8B/"/>
     <id>http://www.innerjquery.club/2021/03/14/%E5%8D%8F%E7%A8%8B/</id>
     <published>2021-03-14T04:53:33.000Z</published>
-    <updated>2021-03-14T09:10:07.318Z</updated>
+    <updated>2021-03-14T12:46:28.879Z</updated>
     
     
       
@@ -97,7 +147,7 @@
     <link href="http://www.innerjquery.club/2021/03/13/%E7%AC%AC%E4%B8%89%E6%96%B9%E6%A8%A1%E5%9D%97%E5%BC%95%E7%94%A8/"/>
     <id>http://www.innerjquery.club/2021/03/13/%E7%AC%AC%E4%B8%89%E6%96%B9%E6%A8%A1%E5%9D%97%E5%BC%95%E7%94%A8/</id>
     <published>2021-03-13T07:08:50.000Z</published>
-    <updated>2021-03-13T07:13:21.234Z</updated>
+    <updated>2021-03-15T13:48:37.430Z</updated>
     
     
       
@@ -468,60 +518,6 @@
     
     
     <category term="vue" scheme="http://www.innerjquery.club/tags/vue/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>UDP_TCP_protocol</title>
-    <link href="http://www.innerjquery.club/2020/12/30/UDP_TCP_protocol/"/>
-    <id>http://www.innerjquery.club/2020/12/30/UDP_TCP_protocol/</id>
-    <published>2020-12-30T11:12:42.000Z</published>
-    <updated>2021-03-12T14:38:06.518Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h3 id=&quot;一-内容大纲&quot;&gt;&lt;a href=&quot;#一-内容大纲&quot; class=&quot;headerlink&quot; title=&quot;一. 内容大纲&quot;&gt;&lt;/a&gt;一. 内容大纲&lt;/h3&gt;&lt;ol&gt;
-&lt;li&gt;C/S</summary>
-        
-      
-    
-    
-    
-    <category term="python" scheme="http://www.innerjquery.club/categories/python/"/>
-    
-    
-    <category term="python_udp_tcp原理" scheme="http://www.innerjquery.club/tags/python-udp-tcp%E5%8E%9F%E7%90%86/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>vs code插件合集[C</title>
-    <link href="http://www.innerjquery.club/2020/12/30/vs-code%E6%8F%92%E4%BB%B6%E5%90%88%E9%9B%86-C/"/>
-    <id>http://www.innerjquery.club/2020/12/30/vs-code%E6%8F%92%E4%BB%B6%E5%90%88%E9%9B%86-C/</id>
-    <published>2020-12-30T11:12:42.000Z</published>
-    <updated>2021-03-13T03:32:21.207Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;hr&gt;
-&lt;p&gt;title: vs code 的几个实用性插件&lt;br&gt;date: 2020-12-30 14:46:55&lt;br&gt;tags:&lt;/p&gt;
-&lt;hr&gt;
-&lt;p&gt;1.Chinese (Simplified) Language Pack  ==&amp;gt;</summary>
-        
-      
-    
-    
-    
-    <category term="vs code插件" scheme="http://www.innerjquery.club/categories/vs-code%E6%8F%92%E4%BB%B6/"/>
-    
-    
-    <category term="vs code" scheme="http://www.innerjquery.club/tags/vs-code/"/>
     
   </entry>
   
