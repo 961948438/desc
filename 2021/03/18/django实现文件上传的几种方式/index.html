@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="微信小程序环境下的js, f_x_y">
+    <meta name="keywords" content="django实现文件上传的几种方式, f_x_y">
     <meta name="description" content="熟练使用CTRL+C和CTRL+V">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>微信小程序环境下的js | f_x_y</title>
+    <title>django实现文件上传的几种方式 | f_x_y</title>
     <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="/mypng.icon.ico">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -401,12 +401,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/22.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/11.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">微信小程序环境下的js</h1>
+                    <h1 class="description center-align post-title">django实现文件上传的几种方式</h1>
                 </div>
             </div>
         </div>
@@ -522,8 +522,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/wx-api/">
-                                <span class="chip bg-color">wx api</span>
+                            <a href="/tags/python-hashlib%E6%A8%A1%E5%9D%97/">
+                                <span class="chip bg-color">python_hashlib模块</span>
                             </a>
                         
                     </div>
@@ -534,8 +534,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/js/" class="post-category">
-                                js
+                            <a href="/categories/python/" class="post-category">
+                                python
                             </a>
                         
                     </div>
@@ -547,7 +547,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-01-01
+                    2021-03-18
                 </div>
                 
 
@@ -556,7 +556,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    941
+                    862
                 </div>
                 
 
@@ -573,7 +573,41 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>1.json文件里不能注释，非主页面json文件可以覆盖app.json文件<br>                     页面里的配置内容只可以设置window下的一些配置<br>        tabbar标签条中只能有2-5个标签，<br>2.微信小程序的开发语言是js但是不同于浏览器运行环境的javascript<br>    ==》首先没有bom和dom对象模型，所以没有对象window和document对象，<br>    ==》小程序运行环境的javascript拥有的额外的全局成员（方法）有：<br>            App()    方法用于定义应用程序对象；<br>            Page()   方法用于定义页面对象；<br>            getApp()   方法用于获取全局应用程序对象<br>            getcurrentPages()   方法用于获取当前页面的调用栈<br>    ==》微信小程序中js的顶级对象是wx，微信小程序端还提供了一些核心的对象；<br>            微信小程序环境的js是支持commonjs规范的（和nodejs的模块开发相似），但是不支持直接export导出对象<br>            在0.10版本之后默认使用 babel 将开发者 ES6 语法代码转换为三端都能很好支持的 ES5 的代<br>3.语法知识：<br>    ==》支持插值表达式，且插值表达式可以放在我们的类中动态管理类class = “ into<br>    { {addclass} }”,可以用在任意值的位置<br>    ==》在小程序运行环境下的复选框checked =“false”（不会被当成布尔类型，使得复选框被勾选，），可以以插值表达式<br>             表示一个false，checked = “{ {false} }”<br>    ==》小程序中的循环语句为：<br>    </p><figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">   todos: [</span><br><span class="line">       { name: 'java', completed: false },</span><br><span class="line">       { name: 'php', completed: true },</span><br><span class="line">       { name: 'vue', completed: false },</span><br><span class="line">       { name: 'javascript', completed: true ,</span><br><span class="line">       { name: 'phpstudy', completed: false },</span><br><span class="line">       { name: 'vuex', completed: false }</span><br><span class="line">    ]</span><br><span class="line">&lt;view wx:for="{ { todos } }" wx:key="item"&gt;</span><br><span class="line">    &lt;checkbox checked="{ { item.completed } }" &gt;&lt;/checkbox&gt;</span><br><span class="line">      &lt;text&gt;-------{ {item.name} }&lt;/text&gt;</span><br><span class="line">&lt;/view&gt;</span><br><span class="line">	</span><br></pre></td></tr></tbody></table></figure><br>    注意：在当前循环作用域内如有全局对象index和item会冲突访问不到，当前作用域内的index和item<br>             会被当做循环的当前对象和当前索引；<br>    解决方法：  通过wx：for-item =”aaa“即为当前作用域遍历的对象起个别名为aaa，index也可以这样子起别名<br>6.小程序里提供的事件和window对象下的事件的区别；（小程序端没有鼠标概念，只有tap触摸概念）<br>    给元素添加触摸事件的方法：bindtap = “todo”//行内事件也不需要添加小括号，区别于pc端js<br>    默认情况下，小程序的开发也会冒泡事件,但是阻止冒泡的方式是通过catchtap事件，<br>    即bindtap会有事件冒泡机制，但是无法阻止，catchtap不会产生冒泡，<br>7.事件传参的方法也显著区别于浏览器运行环境下的js<br>    不能通过函数传参的方法传递参数，语法不允许，实际上bindtap=”type()”中的type()会被当做一个整体函数名<br>    有点莫名奇妙，但是不得不接受官方，<br>    同时也不可通过事件处理函数中的this指向调用该方法的对象即元素，因为在小程序的运行环境中，this会直接指向当前页面的pages对象，<br>    可以通过dataset属性获取到我们自定义的属性值（dataset相似于浏览器运行环境中的data-开头的自定义数据的集合）<br>    <figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">   &lt;button bindtap="type" data-name="张三" data-id="zhansan"&gt;456&lt;/button&gt;</span><br><span class="line">console.log(e.target.dataset)</span><br><span class="line">{id: "zhansan", name: "张三"}</span><br><span class="line">id: "zhansan"</span><br><span class="line">name: "张三"</span><br><span class="line">__proto__: Object</span><br><span class="line">   </span><br></pre></td></tr></tbody></table></figure><br>    小程序没有双向数据绑定，所有的数据都是单向的，当通过插值表达式从逻辑层拿到数据到界面时，不再监听数据的变化，（不会像vue那样监听数据）<br>    只能再通知小程序这个框架去渲染数据<br>    <code>this.setData({ testmsg: e.target.value})</code><p></p>
+                <h3 id="django实现文件上传的几种方式"><a href="#django实现文件上传的几种方式" class="headerlink" title="django实现文件上传的几种方式"></a>django实现文件上传的几种方式</h3><h4 id="方式一、通过Django的Form方式上传文件"><a href="#方式一、通过Django的Form方式上传文件" class="headerlink" title="方式一、通过Django的Form方式上传文件"></a>方式一、通过Django的Form方式上传文件</h4><ol>
+<li><p>前台html创建Form，根据格式要求完善form内标签属性；提交后台后，后台获取前台传来的数据进行处理：文件路径保存至数据库，文件内容保存至本地文件夹中；后台处理完成后刷新前台页面。</p>
+</li>
+<li><p>静态html页面设置：写一个form表单，三个关键标签：text、file、submit，分别存新的文件名、文件内容、提交按钮，由于是文件上传因此form中enctype需要设置成multipart/form-data。</p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;form action="/upload.html" method="post" enctype="multipart/form-data"&gt;</span><br><span class="line">  &lt;input type="text" name="fileName"&gt;</span><br><span class="line">  &lt;input type="file" name="fileContent"&gt;</span><br><span class="line">  &lt;input type="submit" value="提交"&gt;</span><br><span class="line">&lt;/form&gt;</span><br></pre></td></tr></tbody></table></figure>
+<p>3、views后台设置：</p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">  from django.shortcuts import render,redirect</span><br><span class="line">import os</span><br><span class="line"> </span><br><span class="line">def Upload(request):</span><br><span class="line">   if request.method=="GET":</span><br><span class="line">      </span><br><span class="line">        return render(request,"upload.html")</span><br><span class="line">    elif request.method=="POST":</span><br><span class="line">        # 获取普通input标签值，即文件名</span><br><span class="line">        filname=request.POST.get('fileName')</span><br><span class="line">        # 获取file类型的input标签值，即文件内容</span><br><span class="line">        file=request.FILES.get('fileContent')</span><br><span class="line"> </span><br><span class="line">        # 获取文件后缀名</span><br><span class="line">        postfix=file.name.split('.')[1]</span><br><span class="line">        # 设置本地文件路径</span><br><span class="line">        file_path=os.path.join('static',filname+'.'+postfix)</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line">        # 将上传的文件写入本地目录</span><br><span class="line">        f=open(file_path,"wb")</span><br><span class="line">        for chunk in file.chunks():</span><br><span class="line">            f.write(chunk)</span><br><span class="line">        f.close()</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line">        return redirect("upload.html")</span><br></pre></td></tr></tbody></table></figure></li>
+<li><p>配置文件</p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">from Upload import views</span><br><span class="line"> </span><br><span class="line">urlpatterns = [</span><br><span class="line">  </span><br><span class="line">    path('upload.html',views.Upload),</span><br><span class="line">]</span><br></pre></td></tr></tbody></table></figure></li>
+<li><p>原理：</p>
+<ul>
+<li>当Get请求时，即浏览器打开该网页时，显示上传页面；</li>
+<li>当POST请求时，即点击“提交”按钮时：</li>
+</ul>
+<ul>
+<li>获取界面传过来的新的文件名及文件内容。</li>
+<li>分块读取文件内容，并写入到本地目录。</li>
+</ul>
+</li>
+<li><p>页面上动态显示刚刚上传的图片，需做如下改造：</p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">新建数据库表，用来存储图片路径</span><br><span class="line">class image(models.Model):</span><br><span class="line">  # 路径</span><br><span class="line">  file_Path=models.CharField(max_length=32)</span><br><span class="line"></span><br><span class="line">在上传成功时将文件路径保存至数据库，即在views的视图方法的POST中的保存文件后面添加代码：</span><br><span class="line"></span><br><span class="line"> models.image.objects.create(file_Path=file_path)</span><br><span class="line"></span><br><span class="line">页面刷新时展现图片，即在视图方法的GET中读取数据库中添加的图片路径，并将其返给html页面：</span><br><span class="line"> if request.method=="GET":</span><br><span class="line">      # 获取所有图片</span><br><span class="line">      imgs=models.image.objects.all()</span><br><span class="line">      return render(request,"upload.html",{"imgs":imgs})</span><br><span class="line">  html页面中增加:</span><br><span class="line">  &lt;div class="imgs"&gt;</span><br><span class="line">    { % for obj in imgs % }</span><br><span class="line">        &lt;img src="{{ obj.file_Path }}"&gt;</span><br><span class="line">    { % endfor % }</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">  由于Django对静态文件浏览的限制，需要在配置中添加：</span><br><span class="line">  STATIC_URL = '/static/'</span><br><span class="line"> </span><br><span class="line">  STATICFILES_DIRS = [</span><br><span class="line">      os.path.join(BASE_DIR,"static"),</span><br><span class="line">  ]</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
+
+</li>
+</ol>
+<h4 id="方式二、通过ajax"><a href="#方式二、通过ajax" class="headerlink" title="方式二、通过ajax"></a>方式二、通过ajax</h4><ol>
+<li><p>前端处理：</p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;input type="file" name="img" id="img1"&gt;</span><br><span class="line">&lt;p&gt;&lt;input type="button" value="上传图片" id="upload1"&gt;&lt;/p&gt;</span><br></pre></td></tr></tbody></table></figure></li>
+<li><p>利用formdata表单数据对象添加数据：</p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">document.querySelector('#upload1').addEventListener('click',function(e){</span><br><span class="line">      e.preventDefault()</span><br><span class="line">      imgele =  document.querySelector('#img1')</span><br><span class="line">      img = imgele.files[0]</span><br><span class="line">      // console.log(img.name)</span><br><span class="line">      var formdata = new FormData();</span><br><span class="line">      formdata.append('myfiles',img)</span><br><span class="line">      console.log(formdata)</span><br><span class="line">      axios.post('http://localhost:8000/app/img/upload',formdata).then(function(result){</span><br><span class="line">        console.log(result)</span><br><span class="line">      }).catch(function(error){</span><br><span class="line">        console.log(error)</span><br><span class="line">      })</span><br><span class="line">    })</span><br></pre></td></tr></tbody></table></figure></li>
+<li><p>FormData对象的作用(formdata本质就是一个js对象)<br>a、模拟HTML表单，相当于将HTML表单映射为表单对象，自动将表单对象中的数据拼接成请求参数的格式<br>b、异步上传二进制文件（比如图片、视频和音频）<br>FormData对象与ajax有关<br>FormData对象不能用于get请求<br>formData.get(key)<br>formData.set(key,value)<br>formData.delete(key)<br>formData.append(key,value)<br>var formData=new FormData()<br>formData.append(key,value)</p>
+</li>
+<li><p>django后端处理：</p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">def imgss(request):</span><br><span class="line">print('*' * 50)</span><br><span class="line"># print(request.POST.get('myfiles'))</span><br><span class="line">img = request.FILES['myfiles']</span><br><span class="line">print('*' * 50)</span><br><span class="line">with open("upload/imgs/"+img.name,'ab') as fp:</span><br><span class="line">  for chunk in img.chunks():</span><br><span class="line">          fp.write(chunk)</span><br><span class="line">return HttpResponse("is ok")</span><br></pre></td></tr></tbody></table></figure>
+</li>
+</ol>
 
                 
             </div>
@@ -600,7 +634,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://www.innerjquery.club/2021/01/01/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E7%8E%AF%E5%A2%83%E4%B8%8B%E7%9A%84js/">http://www.innerjquery.club/2021/01/01/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E7%8E%AF%E5%A2%83%E4%B8%8B%E7%9A%84js/</a>
+                    <a href="http://www.innerjquery.club/2021/03/18/django%E5%AE%9E%E7%8E%B0%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E5%BC%8F/">http://www.innerjquery.club/2021/03/18/django%E5%AE%9E%E7%8E%B0%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E5%BC%8F/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -638,8 +672,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/wx-api/">
-                                    <span class="chip bg-color">wx api</span>
+                                <a href="/tags/python-hashlib%E6%A8%A1%E5%9D%97/">
+                                    <span class="chip bg-color">python_hashlib模块</span>
                                 </a>
                             
                         </div>
@@ -813,7 +847,7 @@
         repo: '',
         owner: '',
         admin: null,
-        id: '2021-01-01T23-41-10',
+        id: '2021-03-18T23-37-31',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -837,7 +871,7 @@
 <script src="/libs/gitment/gitment.js"></script>
 <script>
 var gitment = new Gitment({
-    id: 'Fri Jan 01 2021 23:41:10 GMT+0800',
+    id: 'Thu Mar 18 2021 23:37:31 GMT+0800',
     owner: '',
     repo: '',
     oauth: {
@@ -862,9 +896,9 @@ gitment.render('gitment-content');
 
 <script type="text/javascript">
     disqus_config = function () {
-        this.page.url = 'http://www.innerjquery.club/2021/01/01/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E7%8E%AF%E5%A2%83%E4%B8%8B%E7%9A%84js/';
-        this.page.identifier = '/2021/01/01/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E7%8E%AF%E5%A2%83%E4%B8%8B%E7%9A%84js/';
-        this.page.title = '微信小程序环境下的js';
+        this.page.url = 'http://www.innerjquery.club/2021/03/18/django%E5%AE%9E%E7%8E%B0%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E5%BC%8F/';
+        this.page.identifier = '/2021/03/18/django%E5%AE%9E%E7%8E%B0%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E5%BC%8F/';
+        this.page.title = 'django实现文件上传的几种方式';
     };
     let disqus_shortname = '';
 
@@ -1179,17 +1213,18 @@ gitment.render('gitment-content');
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2021/01/03/element-ui-%E7%9A%84%E7%90%86%E8%A7%A3/">
+                <a href="/2021/03/18/django%E5%AE%9E%E7%8E%B0%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E5%BC%8F/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="element ui 的理解">
+                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="django实现文件上传的几种方式">
                         
-                        <span class="card-title">element ui 的理解</span>
+                        <span class="card-title">django实现文件上传的几种方式</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1199,26 +1234,27 @@ gitment.render('gitment-content');
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-01-03
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-03-18
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/js/" class="post-category">
-                                    js
+                            <a href="/categories/python/" class="post-category">
+                                    python
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/vue-ui/">
-                        <span class="chip bg-color">vue ui</span>
+                    <a href="/tags/python-hashlib%E6%A8%A1%E5%9D%97/">
+                        <span class="chip bg-color">python_hashlib模块</span>
                     </a>
                     
                 </div>
@@ -1232,13 +1268,13 @@ gitment.render('gitment-content');
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/12/31/vuex%E7%9A%84%E4%BD%BF%E7%94%A8/">
+                <a href="/2021/03/18/axios%E7%9A%84%E9%85%8D%E7%BD%AE%E4%B8%8E%E6%8B%A6%E6%88%AA%E5%99%A8/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="vuex的使用">
+                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="axios的配置与拦截器">
                         
-                        <span class="card-title">vuex的使用</span>
+                        <span class="card-title">axios的配置与拦截器</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1249,7 +1285,7 @@ gitment.render('gitment-content');
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-12-31
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-03-18
                             </span>
                         <span class="publish-author">
                             
@@ -1266,8 +1302,8 @@ gitment.render('gitment-content');
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/vue/">
-                        <span class="chip bg-color">vue</span>
+                    <a href="/tags/axios/">
+                        <span class="chip bg-color">axios</span>
                     </a>
                     
                 </div>

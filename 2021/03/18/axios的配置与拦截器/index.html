@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="微信小程序环境下的js, f_x_y">
+    <meta name="keywords" content="axios的配置与拦截器, f_x_y">
     <meta name="description" content="熟练使用CTRL+C和CTRL+V">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>微信小程序环境下的js | f_x_y</title>
+    <title>axios的配置与拦截器 | f_x_y</title>
     <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="/mypng.icon.ico">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -401,12 +401,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/22.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/13.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">微信小程序环境下的js</h1>
+                    <h1 class="description center-align post-title">axios的配置与拦截器</h1>
                 </div>
             </div>
         </div>
@@ -522,8 +522,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/wx-api/">
-                                <span class="chip bg-color">wx api</span>
+                            <a href="/tags/axios/">
+                                <span class="chip bg-color">axios</span>
                             </a>
                         
                     </div>
@@ -547,7 +547,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-01-01
+                    2021-03-18
                 </div>
                 
 
@@ -556,7 +556,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    941
+                    1.2k
                 </div>
                 
 
@@ -573,8 +573,28 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>1.json文件里不能注释，非主页面json文件可以覆盖app.json文件<br>                     页面里的配置内容只可以设置window下的一些配置<br>        tabbar标签条中只能有2-5个标签，<br>2.微信小程序的开发语言是js但是不同于浏览器运行环境的javascript<br>    ==》首先没有bom和dom对象模型，所以没有对象window和document对象，<br>    ==》小程序运行环境的javascript拥有的额外的全局成员（方法）有：<br>            App()    方法用于定义应用程序对象；<br>            Page()   方法用于定义页面对象；<br>            getApp()   方法用于获取全局应用程序对象<br>            getcurrentPages()   方法用于获取当前页面的调用栈<br>    ==》微信小程序中js的顶级对象是wx，微信小程序端还提供了一些核心的对象；<br>            微信小程序环境的js是支持commonjs规范的（和nodejs的模块开发相似），但是不支持直接export导出对象<br>            在0.10版本之后默认使用 babel 将开发者 ES6 语法代码转换为三端都能很好支持的 ES5 的代<br>3.语法知识：<br>    ==》支持插值表达式，且插值表达式可以放在我们的类中动态管理类class = “ into<br>    { {addclass} }”,可以用在任意值的位置<br>    ==》在小程序运行环境下的复选框checked =“false”（不会被当成布尔类型，使得复选框被勾选，），可以以插值表达式<br>             表示一个false，checked = “{ {false} }”<br>    ==》小程序中的循环语句为：<br>    </p><figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">   todos: [</span><br><span class="line">       { name: 'java', completed: false },</span><br><span class="line">       { name: 'php', completed: true },</span><br><span class="line">       { name: 'vue', completed: false },</span><br><span class="line">       { name: 'javascript', completed: true ,</span><br><span class="line">       { name: 'phpstudy', completed: false },</span><br><span class="line">       { name: 'vuex', completed: false }</span><br><span class="line">    ]</span><br><span class="line">&lt;view wx:for="{ { todos } }" wx:key="item"&gt;</span><br><span class="line">    &lt;checkbox checked="{ { item.completed } }" &gt;&lt;/checkbox&gt;</span><br><span class="line">      &lt;text&gt;-------{ {item.name} }&lt;/text&gt;</span><br><span class="line">&lt;/view&gt;</span><br><span class="line">	</span><br></pre></td></tr></tbody></table></figure><br>    注意：在当前循环作用域内如有全局对象index和item会冲突访问不到，当前作用域内的index和item<br>             会被当做循环的当前对象和当前索引；<br>    解决方法：  通过wx：for-item =”aaa“即为当前作用域遍历的对象起个别名为aaa，index也可以这样子起别名<br>6.小程序里提供的事件和window对象下的事件的区别；（小程序端没有鼠标概念，只有tap触摸概念）<br>    给元素添加触摸事件的方法：bindtap = “todo”//行内事件也不需要添加小括号，区别于pc端js<br>    默认情况下，小程序的开发也会冒泡事件,但是阻止冒泡的方式是通过catchtap事件，<br>    即bindtap会有事件冒泡机制，但是无法阻止，catchtap不会产生冒泡，<br>7.事件传参的方法也显著区别于浏览器运行环境下的js<br>    不能通过函数传参的方法传递参数，语法不允许，实际上bindtap=”type()”中的type()会被当做一个整体函数名<br>    有点莫名奇妙，但是不得不接受官方，<br>    同时也不可通过事件处理函数中的this指向调用该方法的对象即元素，因为在小程序的运行环境中，this会直接指向当前页面的pages对象，<br>    可以通过dataset属性获取到我们自定义的属性值（dataset相似于浏览器运行环境中的data-开头的自定义数据的集合）<br>    <figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">   &lt;button bindtap="type" data-name="张三" data-id="zhansan"&gt;456&lt;/button&gt;</span><br><span class="line">console.log(e.target.dataset)</span><br><span class="line">{id: "zhansan", name: "张三"}</span><br><span class="line">id: "zhansan"</span><br><span class="line">name: "张三"</span><br><span class="line">__proto__: Object</span><br><span class="line">   </span><br></pre></td></tr></tbody></table></figure><br>    小程序没有双向数据绑定，所有的数据都是单向的，当通过插值表达式从逻辑层拿到数据到界面时，不再监听数据的变化，（不会像vue那样监听数据）<br>    只能再通知小程序这个框架去渲染数据<br>    <code>this.setData({ testmsg: e.target.value})</code><p></p>
+                <h4 id="一、简单用法"><a href="#一、简单用法" class="headerlink" title="一、简单用法"></a>一、简单用法</h4><ol>
+<li>发起get请求</li>
+</ol>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">axios.get('/user?ID=12345')</span><br><span class="line">  .then(function (response) {</span><br><span class="line">    // handle success</span><br><span class="line">    console.log(response);</span><br><span class="line">  })</span><br><span class="line">  .catch(function (error) {</span><br><span class="line">    // handle error</span><br><span class="line">    console.log(error);</span><br><span class="line">  })</span><br><span class="line">  .then(function () {</span><br><span class="line">    // always executed</span><br><span class="line">  });</span><br><span class="line"></span><br><span class="line">// Optionally the request above could also be done as</span><br><span class="line">axios.get('/user', {</span><br><span class="line">    params: {</span><br><span class="line">      ID: 12345</span><br><span class="line">    }</span><br><span class="line">  })</span><br><span class="line">  .then(function (response) {</span><br><span class="line">    console.log(response);</span><br><span class="line">  })</span><br><span class="line">  .catch(function (error) {</span><br><span class="line">    console.log(error);</span><br><span class="line">  })</span><br><span class="line">  .then(function () {</span><br><span class="line">    // always executed</span><br><span class="line">  });  </span><br><span class="line"></span><br><span class="line">// Want to use async/await? Add the `async` keyword to your outer function/method.</span><br><span class="line">async function getUser() {</span><br><span class="line">  try {</span><br><span class="line">    const response = await axios.get('/user?ID=12345');</span><br><span class="line">    console.log(response);</span><br><span class="line">  } catch (error) {</span><br><span class="line">    console.error(error);</span><br><span class="line">  }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
 
+<ol start="2">
+<li>通过配置配置参数发起get请求或者响应</li>
+</ol>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">axios({</span><br><span class="line">  method: 'post',</span><br><span class="line">  url: '/user/12345',</span><br><span class="line">  data: {</span><br><span class="line">    firstName: 'Fred',</span><br><span class="line">    lastName: 'Flintstone'</span><br><span class="line">  }</span><br><span class="line">});</span><br><span class="line">// GET request for remote image</span><br><span class="line">axios({</span><br><span class="line">  method:'get',</span><br><span class="line">  url:'http://bit.ly/2mTM3nY',</span><br><span class="line">  responseType:'stream'</span><br><span class="line">})</span><br><span class="line">  .then(function (response) {</span><br><span class="line">    response.data.pipe(fs.createWriteStream('ada_lovelace.jpg'))</span><br><span class="line">  });</span><br></pre></td></tr></tbody></table></figure>
+<ol start="3">
+<li><p>发起delete请求、head请求、put请求等等<br>axios#request(config)<br>axios#get(url[, config])<br>axios#delete(url[, config])<br>axios#head(url[, config])<br>axios#options(url[, config])<br>axios#post(url[, data[, config]])<br>axios#put(url[, data[, config]])<br>axios#patch(url[, data[, config]])<br>axios#getUri([config])<br>配置参数的选项有</p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br></pre></td><td class="code"><pre><span class="line">{</span><br><span class="line">// `url` is the server URL that will be used for the request</span><br><span class="line">url: '/user',</span><br><span class="line"></span><br><span class="line">// `method` is the request method to be used when making the request</span><br><span class="line">method: 'get', // default</span><br><span class="line"></span><br><span class="line">// `baseURL` will be prepended to `url` unless `url` is absolute.</span><br><span class="line">// It can be convenient to set `baseURL` for an instance of axios to pass relative URLs</span><br><span class="line">// to methods of that instance.</span><br><span class="line">baseURL: 'https://some-domain.com/api/',</span><br><span class="line"></span><br><span class="line">// `transformRequest` allows changes to the request data before it is sent to the server</span><br><span class="line">// This is only applicable for request methods 'PUT', 'POST', and 'PATCH'</span><br><span class="line">// The last function in the array must return a string or an instance of Buffer, ArrayBuffer,</span><br><span class="line">// FormData or Stream</span><br><span class="line">// You may modify the headers object.</span><br><span class="line">transformRequest: [function (data, headers) {</span><br><span class="line">  // Do whatever you want to transform the data</span><br><span class="line"></span><br><span class="line">  return data;</span><br><span class="line">}],</span><br><span class="line"></span><br><span class="line">// `transformResponse` allows changes to the response data to be made before</span><br><span class="line">// it is passed to then/catch</span><br><span class="line">transformResponse: [function (data) {</span><br><span class="line">  // Do whatever you want to transform the data</span><br><span class="line"></span><br><span class="line">  return data;</span><br><span class="line">}],</span><br><span class="line"></span><br><span class="line">// `headers` are custom headers to be sent</span><br><span class="line">headers: {'X-Requested-With': 'XMLHttpRequest'},</span><br><span class="line"></span><br><span class="line">// `params` are the URL parameters to be sent with the request</span><br><span class="line">// Must be a plain object or a URLSearchParams object</span><br><span class="line">params: {</span><br><span class="line">  ID: 12345</span><br><span class="line">},</span><br><span class="line"></span><br><span class="line">// `paramsSerializer` is an optional function in charge of serializing `params`</span><br><span class="line">// (e.g. https://www.npmjs.com/package/qs, http://api.jquery.com/jquery.param/)</span><br><span class="line">paramsSerializer: function (params) {</span><br><span class="line">  return Qs.stringify(params, {arrayFormat: 'brackets'})</span><br><span class="line">},</span><br><span class="line"></span><br><span class="line">// `data` is the data to be sent as the request body</span><br><span class="line">// Only applicable for request methods 'PUT', 'POST', and 'PATCH'</span><br><span class="line">// When no `transformRequest` is set, must be of one of the following types:</span><br><span class="line">// - string, plain object, ArrayBuffer, ArrayBufferView, URLSearchParams</span><br><span class="line">// - Browser only: FormData, File, Blob</span><br><span class="line">// - Node only: Stream, Buffer</span><br><span class="line">data: {</span><br><span class="line">  firstName: 'Fred'</span><br><span class="line">},</span><br><span class="line"></span><br><span class="line">// `timeout` specifies the number of milliseconds before the request times out.</span><br><span class="line">// If the request takes longer than `timeout`, the request will be aborted.</span><br><span class="line">timeout: 1000, // default is `0` (no timeout)</span><br><span class="line"></span><br><span class="line">// `withCredentials` indicates whether or not cross-site Access-Control requests</span><br><span class="line">// should be made using credentials</span><br><span class="line">withCredentials: false, // default</span><br><span class="line"></span><br><span class="line">// `adapter` allows custom handling of requests which makes testing easier.</span><br><span class="line">// Return a promise and supply a valid response (see lib/adapters/README.md).</span><br><span class="line">adapter: function (config) {</span><br><span class="line">  /* ... */</span><br><span class="line">},</span><br><span class="line"></span><br><span class="line">// `auth` indicates that HTTP Basic auth should be used, and supplies credentials.</span><br><span class="line">// This will set an `Authorization` header, overwriting any existing</span><br><span class="line">// `Authorization` custom headers you have set using `headers`.</span><br><span class="line">auth: {</span><br><span class="line">  username: 'janedoe',</span><br><span class="line">  password: 's00pers3cret'</span><br><span class="line">},</span><br><span class="line"></span><br><span class="line">// `responseType` indicates the type of data that the server will respond with</span><br><span class="line">// options are 'arraybuffer', 'blob', 'document', 'json', 'text', 'stream'</span><br><span class="line">responseType: 'json', // default</span><br><span class="line"></span><br><span class="line">// `responseEncoding` indicates encoding to use for decoding responses</span><br><span class="line">// Note: Ignored for `responseType` of 'stream' or client-side requests</span><br><span class="line">responseEncoding: 'utf8', // default</span><br><span class="line"></span><br><span class="line">// `xsrfCookieName` is the name of the cookie to use as a value for xsrf token</span><br><span class="line">xsrfCookieName: 'XSRF-TOKEN', // default</span><br><span class="line"></span><br><span class="line">// `xsrfHeaderName` is the name of the http header that carries the xsrf token value</span><br><span class="line">xsrfHeaderName: 'X-XSRF-TOKEN', // default</span><br><span class="line"></span><br><span class="line">// `onUploadProgress` allows handling of progress events for uploads</span><br><span class="line">onUploadProgress: function (progressEvent) {</span><br><span class="line">  // Do whatever you want with the native progress event</span><br><span class="line">},</span><br><span class="line"></span><br><span class="line">// `onDownloadProgress` allows handling of progress events for downloads</span><br><span class="line">onDownloadProgress: function (progressEvent) {</span><br><span class="line">  // Do whatever you want with the native progress event</span><br><span class="line">},</span><br><span class="line"></span><br><span class="line">// `maxContentLength` defines the max size of the http response content in bytes allowed</span><br><span class="line">maxContentLength: 2000,</span><br><span class="line"></span><br><span class="line">// `validateStatus` defines whether to resolve or reject the promise for a given</span><br><span class="line">// HTTP response status code. If `validateStatus` returns `true` (or is set to `null`</span><br><span class="line">// or `undefined`), the promise will be resolved; otherwise, the promise will be</span><br><span class="line">// rejected.</span><br><span class="line">validateStatus: function (status) {</span><br><span class="line">  return status &gt;= 200 &amp;&amp; status &lt; 300; // default</span><br><span class="line">},</span><br><span class="line"></span><br><span class="line">// `maxRedirects` defines the maximum number of redirects to follow in node.js.</span><br><span class="line">// If set to 0, no redirects will be followed.</span><br><span class="line">maxRedirects: 5, // default</span><br><span class="line"></span><br><span class="line">// `socketPath` defines a UNIX Socket to be used in node.js.</span><br><span class="line">// e.g. '/var/run/docker.sock' to send requests to the docker daemon.</span><br><span class="line">// Only either `socketPath` or `proxy` can be specified.</span><br><span class="line">// If both are specified, `socketPath` is used.</span><br><span class="line">socketPath: null, // default</span><br><span class="line"></span><br><span class="line">// `httpAgent` and `httpsAgent` define a custom agent to be used when performing http</span><br><span class="line">// and https requests, respectively, in node.js. This allows options to be added like</span><br><span class="line">// `keepAlive` that are not enabled by default.</span><br><span class="line">httpAgent: new http.Agent({ keepAlive: true }),</span><br><span class="line">httpsAgent: new https.Agent({ keepAlive: true }),</span><br><span class="line"></span><br><span class="line">// 'proxy' defines the hostname and port of the proxy server.</span><br><span class="line">// You can also define your proxy using the conventional `http_proxy` and</span><br><span class="line">// `https_proxy` environment variables. If you are using environment variables</span><br><span class="line">// for your proxy configuration, you can also define a `no_proxy` environment</span><br><span class="line">// variable as a comma-separated list of domains that should not be proxied.</span><br><span class="line">// Use `false` to disable proxies, ignoring environment variables.</span><br><span class="line">// `auth` indicates that HTTP Basic auth should be used to connect to the proxy, and</span><br><span class="line">// supplies credentials.</span><br><span class="line">// This will set an `Proxy-Authorization` header, overwriting any existing</span><br><span class="line">// `Proxy-Authorization` custom headers you have set using `headers`.</span><br><span class="line">proxy: {</span><br><span class="line">  host: '127.0.0.1',</span><br><span class="line">  port: 9000,</span><br><span class="line">  auth: {</span><br><span class="line">    username: 'mikeymike',</span><br><span class="line">    password: 'rapunz3l'</span><br><span class="line">  }</span><br><span class="line">},</span><br><span class="line"></span><br><span class="line">// `cancelToken` specifies a cancel token that can be used to cancel the request</span><br><span class="line">// (see Cancellation section below for details)</span><br><span class="line">cancelToken: new CancelToken(function (cancel) {</span><br><span class="line">})</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure></li>
+<li><p>响应通常包含如下信息</p>
+</li>
+</ol>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">{</span><br><span class="line">  // `data` is the response that was provided by the server</span><br><span class="line">  data: {},</span><br><span class="line"></span><br><span class="line">  // `status` is the HTTP status code from the server response</span><br><span class="line">  status: 200,</span><br><span class="line"></span><br><span class="line">  // `statusText` is the HTTP status message from the server response</span><br><span class="line">  statusText: 'OK',</span><br><span class="line"></span><br><span class="line">  // `headers` the headers that the server responded with</span><br><span class="line">  // All header names are lower cased</span><br><span class="line">  headers: {},</span><br><span class="line"></span><br><span class="line">  // `config` is the config that was provided to `axios` for the request</span><br><span class="line">  config: {},</span><br><span class="line"></span><br><span class="line">  // `request` is the request that generated this response</span><br><span class="line">  // It is the last ClientRequest instance in node.js (in redirects)</span><br><span class="line">  // and an XMLHttpRequest instance the browser</span><br><span class="line">  request: {}</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<ol start="5">
+<li>配置全局默认信息：</li>
+</ol>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">axios.defaults.baseURL = 'https://api.example.com';</span><br><span class="line">axios.defaults.headers.common['Authorization'] = AUTH_TOKEN;</span><br><span class="line">axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded';</span><br></pre></td></tr></tbody></table></figure>
+<h4 id="二、axios的请求和响应拦截器"><a href="#二、axios的请求和响应拦截器" class="headerlink" title="二、axios的请求和响应拦截器"></a>二、axios的请求和响应拦截器</h4><p>1.config 指的是将来被传入的配置选项</p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">  // Add a request interceptor</span><br><span class="line">axios.interceptors.request.use(function (config) {</span><br><span class="line">    // Do something before request is sent</span><br><span class="line">    return config;</span><br><span class="line">  }, function (error) {</span><br><span class="line">    // Do something with request error</span><br><span class="line">    return Promise.reject(error);</span><br><span class="line">  });</span><br><span class="line"></span><br><span class="line">// Add a response interceptor</span><br><span class="line">axios.interceptors.response.use(function (response) {</span><br><span class="line">    // Do something with response data</span><br><span class="line">    return response;</span><br><span class="line">  }, function (error) {</span><br><span class="line">    // Do something with response error</span><br><span class="line">    return Promise.reject(error);</span><br><span class="line">  });</span><br></pre></td></tr></tbody></table></figure>
                 
             </div>
             <hr/>
@@ -600,7 +620,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://www.innerjquery.club/2021/01/01/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E7%8E%AF%E5%A2%83%E4%B8%8B%E7%9A%84js/">http://www.innerjquery.club/2021/01/01/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E7%8E%AF%E5%A2%83%E4%B8%8B%E7%9A%84js/</a>
+                    <a href="http://www.innerjquery.club/2021/03/18/axios%E7%9A%84%E9%85%8D%E7%BD%AE%E4%B8%8E%E6%8B%A6%E6%88%AA%E5%99%A8/">http://www.innerjquery.club/2021/03/18/axios%E7%9A%84%E9%85%8D%E7%BD%AE%E4%B8%8E%E6%8B%A6%E6%88%AA%E5%99%A8/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -638,8 +658,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/wx-api/">
-                                    <span class="chip bg-color">wx api</span>
+                                <a href="/tags/axios/">
+                                    <span class="chip bg-color">axios</span>
                                 </a>
                             
                         </div>
@@ -813,7 +833,7 @@
         repo: '',
         owner: '',
         admin: null,
-        id: '2021-01-01T23-41-10',
+        id: '2021-03-18T12-19-53',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -837,7 +857,7 @@
 <script src="/libs/gitment/gitment.js"></script>
 <script>
 var gitment = new Gitment({
-    id: 'Fri Jan 01 2021 23:41:10 GMT+0800',
+    id: 'Thu Mar 18 2021 12:19:53 GMT+0800',
     owner: '',
     repo: '',
     oauth: {
@@ -862,9 +882,9 @@ gitment.render('gitment-content');
 
 <script type="text/javascript">
     disqus_config = function () {
-        this.page.url = 'http://www.innerjquery.club/2021/01/01/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E7%8E%AF%E5%A2%83%E4%B8%8B%E7%9A%84js/';
-        this.page.identifier = '/2021/01/01/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E7%8E%AF%E5%A2%83%E4%B8%8B%E7%9A%84js/';
-        this.page.title = '微信小程序环境下的js';
+        this.page.url = 'http://www.innerjquery.club/2021/03/18/axios%E7%9A%84%E9%85%8D%E7%BD%AE%E4%B8%8E%E6%8B%A6%E6%88%AA%E5%99%A8/';
+        this.page.identifier = '/2021/03/18/axios%E7%9A%84%E9%85%8D%E7%BD%AE%E4%B8%8E%E6%8B%A6%E6%88%AA%E5%99%A8/';
+        this.page.title = 'axios的配置与拦截器';
     };
     let disqus_shortname = '';
 
@@ -1183,13 +1203,13 @@ gitment.render('gitment-content');
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2021/01/03/element-ui-%E7%9A%84%E7%90%86%E8%A7%A3/">
+                <a href="/2021/03/18/django%E5%AE%9E%E7%8E%B0%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E5%BC%8F/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="element ui 的理解">
+                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="django实现文件上传的几种方式">
                         
-                        <span class="card-title">element ui 的理解</span>
+                        <span class="card-title">django实现文件上传的几种方式</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1200,14 +1220,14 @@ gitment.render('gitment-content');
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-01-03
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-03-18
                         </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/js/" class="post-category">
-                                    js
+                            <a href="/categories/python/" class="post-category">
+                                    python
                                 </a>
                             
                             
@@ -1217,8 +1237,8 @@ gitment.render('gitment-content');
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/vue-ui/">
-                        <span class="chip bg-color">vue ui</span>
+                    <a href="/tags/python-hashlib%E6%A8%A1%E5%9D%97/">
+                        <span class="chip bg-color">python_hashlib模块</span>
                     </a>
                     
                 </div>
@@ -1232,13 +1252,13 @@ gitment.render('gitment-content');
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/12/31/vuex%E7%9A%84%E4%BD%BF%E7%94%A8/">
+                <a href="/2021/03/17/img%E7%9A%84%E4%B8%8A%E4%BC%A0%E3%80%81%E9%A2%84%E8%A7%88%E5%92%8CFileReader%E7%B1%BB/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="vuex的使用">
+                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="img的上传、预览和FileReader类">
                         
-                        <span class="card-title">vuex的使用</span>
+                        <span class="card-title">img的上传、预览和FileReader类</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1249,7 +1269,7 @@ gitment.render('gitment-content');
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-12-31
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-03-17
                             </span>
                         <span class="publish-author">
                             
@@ -1266,8 +1286,8 @@ gitment.render('gitment-content');
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/vue/">
-                        <span class="chip bg-color">vue</span>
+                    <a href="/tags/js-%E5%8E%9F%E7%94%9F/">
+                        <span class="chip bg-color">js 原生</span>
                     </a>
                     
                 </div>

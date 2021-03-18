@@ -6,7 +6,7 @@
   <link href="http://www.innerjquery.club/atom.xml" rel="self"/>
   
   <link href="http://www.innerjquery.club/"/>
-  <updated>2021-03-17T05:16:04.334Z</updated>
+  <updated>2021-03-18T15:57:04.307Z</updated>
   <id>http://www.innerjquery.club/</id>
   
   <author>
@@ -15,6 +15,59 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>django实现文件上传的几种方式</title>
+    <link href="http://www.innerjquery.club/2021/03/18/django%E5%AE%9E%E7%8E%B0%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E5%BC%8F/"/>
+    <id>http://www.innerjquery.club/2021/03/18/django%E5%AE%9E%E7%8E%B0%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E5%BC%8F/</id>
+    <published>2021-03-18T15:37:31.000Z</published>
+    <updated>2021-03-18T15:57:04.307Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h3 id=&quot;django实现文件上传的几种方式&quot;&gt;&lt;a href=&quot;#django实现文件上传的几种方式&quot; class=&quot;headerlink&quot; title=&quot;django实现文件上传的几种方式&quot;&gt;&lt;/a&gt;django实现文件上传的几种方式&lt;/h3&gt;&lt;h4</summary>
+        
+      
+    
+    
+    
+    <category term="python" scheme="http://www.innerjquery.club/categories/python/"/>
+    
+    
+    <category term="python_hashlib模块" scheme="http://www.innerjquery.club/tags/python-hashlib%E6%A8%A1%E5%9D%97/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>axios的配置与拦截器</title>
+    <link href="http://www.innerjquery.club/2021/03/18/axios%E7%9A%84%E9%85%8D%E7%BD%AE%E4%B8%8E%E6%8B%A6%E6%88%AA%E5%99%A8/"/>
+    <id>http://www.innerjquery.club/2021/03/18/axios%E7%9A%84%E9%85%8D%E7%BD%AE%E4%B8%8E%E6%8B%A6%E6%88%AA%E5%99%A8/</id>
+    <published>2021-03-18T04:19:53.000Z</published>
+    <updated>2021-03-18T04:36:16.011Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h4 id=&quot;一、简单用法&quot;&gt;&lt;a href=&quot;#一、简单用法&quot; class=&quot;headerlink&quot; title=&quot;一、简单用法&quot;&gt;&lt;/a&gt;一、简单用法&lt;/h4&gt;&lt;ol&gt;
+&lt;li&gt;发起get请求&lt;/li&gt;
+&lt;/ol&gt;
+&lt;figure class=&quot;highlight</summary>
+        
+      
+    
+    
+    
+    <category term="js" scheme="http://www.innerjquery.club/categories/js/"/>
+    
+    
+    <category term="axios" scheme="http://www.innerjquery.club/tags/axios/"/>
+    
+  </entry>
   
   <entry>
     <title>img的上传、预览和FileReader类</title>
@@ -46,7 +99,7 @@
     <link href="http://www.innerjquery.club/2021/03/14/web%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E9%A2%98/"/>
     <id>http://www.innerjquery.club/2021/03/14/web%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E9%A2%98/</id>
     <published>2021-03-14T13:01:12.000Z</published>
-    <updated>2021-03-15T10:32:50.741Z</updated>
+    <updated>2021-03-18T05:14:51.520Z</updated>
     
     
       
@@ -468,56 +521,6 @@
     
     
     <category term="vue ui" scheme="http://www.innerjquery.club/tags/vue-ui/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>微信小程序环境下的js</title>
-    <link href="http://www.innerjquery.club/2021/01/01/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E7%8E%AF%E5%A2%83%E4%B8%8B%E7%9A%84js/"/>
-    <id>http://www.innerjquery.club/2021/01/01/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E7%8E%AF%E5%A2%83%E4%B8%8B%E7%9A%84js/</id>
-    <published>2021-01-01T15:41:10.000Z</published>
-    <updated>2021-03-13T03:33:40.261Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;1.json文件里不能注释，非主页面json文件可以覆盖app.json文件&lt;br&gt;                     页面里的配置内容只可以设置window下的一些配置&lt;br&gt;       </summary>
-        
-      
-    
-    
-    
-    <category term="js" scheme="http://www.innerjquery.club/categories/js/"/>
-    
-    
-    <category term="wx api" scheme="http://www.innerjquery.club/tags/wx-api/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>vuex的使用</title>
-    <link href="http://www.innerjquery.club/2020/12/31/vuex%E7%9A%84%E4%BD%BF%E7%94%A8/"/>
-    <id>http://www.innerjquery.club/2020/12/31/vuex%E7%9A%84%E4%BD%BF%E7%94%A8/</id>
-    <published>2020-12-31T14:24:30.000Z</published>
-    <updated>2021-03-13T03:31:41.589Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;（两个指令的区别）&lt;br&gt;    vue add vuex:该方法添加插件会改变原有项目结构，即对新添加的插件进行初始化操作；&lt;br&gt;    npm install vuex</summary>
-        
-      
-    
-    
-    
-    <category term="js" scheme="http://www.innerjquery.club/categories/js/"/>
-    
-    
-    <category term="vue" scheme="http://www.innerjquery.club/tags/vue/"/>
     
   </entry>
   
