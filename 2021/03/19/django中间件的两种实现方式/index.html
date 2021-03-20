@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="django实现文件上传的几种方式, f_x_y">
+    <meta name="keywords" content="django中间件的两种实现方式, f_x_y">
     <meta name="description" content="熟练使用CTRL+C和CTRL+V">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>django实现文件上传的几种方式 | f_x_y</title>
+    <title>django中间件的两种实现方式 | f_x_y</title>
     <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="/mypng.icon.ico">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -401,12 +401,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/11.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/15.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">django实现文件上传的几种方式</h1>
+                    <h1 class="description center-align post-title">django中间件的两种实现方式</h1>
                 </div>
             </div>
         </div>
@@ -522,8 +522,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/python-hashlib%E6%A8%A1%E5%9D%97/">
-                                <span class="chip bg-color">python_hashlib模块</span>
+                            <a href="/tags/python-django-middleware/">
+                                <span class="chip bg-color">python_django_middleware</span>
                             </a>
                         
                     </div>
@@ -547,7 +547,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-03-18
+                    2021-03-19
                 </div>
                 
 
@@ -556,7 +556,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    862
+                    503
                 </div>
                 
 
@@ -573,42 +573,19 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="django实现文件上传的几种方式"><a href="#django实现文件上传的几种方式" class="headerlink" title="django实现文件上传的几种方式"></a>django实现文件上传的几种方式</h3><h4 id="方式一、通过Django的Form方式上传文件"><a href="#方式一、通过Django的Form方式上传文件" class="headerlink" title="方式一、通过Django的Form方式上传文件"></a>方式一、通过Django的Form方式上传文件</h4><ol>
-<li><p>前台html创建Form，根据格式要求完善form内标签属性；提交后台后，后台获取前台传来的数据进行处理：文件路径保存至数据库，文件内容保存至本地文件夹中；后台处理完成后刷新前台页面。</p>
+                <h3 id="中间件的两种实现方式"><a href="#中间件的两种实现方式" class="headerlink" title="中间件的两种实现方式"></a>中间件的两种实现方式</h3><ol>
+<li><p>什么是中间件：<br>Django中的中间件是一个轻量级、底层的插件系统，可以介入Django的请求和响应处理过程，修改Django的输入或输出。中间件的设计为开发者提供了一种无侵入式的开发方式，增加了Django框架的健壮性。<br>我们可以使用中间件，在Django处理视图的不同阶段对输入或输出进行干预。</p>
+<p><img src="https://img-blog.csdnimg.cn/20190413162356225.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2Nhcmw5NTI3MQ==,size_16,color_FFFFFF,t_70" alt="middlewareas"></p>
 </li>
-<li><p>静态html页面设置：写一个form表单，三个关键标签：text、file、submit，分别存新的文件名、文件内容、提交按钮，由于是文件上传因此form中enctype需要设置成multipart/form-data。</p>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;form action="/upload.html" method="post" enctype="multipart/form-data"&gt;</span><br><span class="line">  &lt;input type="text" name="fileName"&gt;</span><br><span class="line">  &lt;input type="file" name="fileContent"&gt;</span><br><span class="line">  &lt;input type="submit" value="提交"&gt;</span><br><span class="line">&lt;/form&gt;</span><br></pre></td></tr></tbody></table></figure>
-<p>3、views后台设置：</p>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">  from django.shortcuts import render,redirect</span><br><span class="line">import os</span><br><span class="line"> </span><br><span class="line">def Upload(request):</span><br><span class="line">   if request.method=="GET":</span><br><span class="line">      </span><br><span class="line">        return render(request,"upload.html")</span><br><span class="line">    elif request.method=="POST":</span><br><span class="line">        # 获取普通input标签值，即文件名</span><br><span class="line">        filname=request.POST.get('fileName')</span><br><span class="line">        # 获取file类型的input标签值，即文件内容</span><br><span class="line">        file=request.FILES.get('fileContent')</span><br><span class="line"> </span><br><span class="line">        # 获取文件后缀名</span><br><span class="line">        postfix=file.name.split('.')[1]</span><br><span class="line">        # 设置本地文件路径</span><br><span class="line">        file_path=os.path.join('static',filname+'.'+postfix)</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line">        # 将上传的文件写入本地目录</span><br><span class="line">        f=open(file_path,"wb")</span><br><span class="line">        for chunk in file.chunks():</span><br><span class="line">            f.write(chunk)</span><br><span class="line">        f.close()</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line">        return redirect("upload.html")</span><br></pre></td></tr></tbody></table></figure></li>
-<li><p>配置文件</p>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">from Upload import views</span><br><span class="line"> </span><br><span class="line">urlpatterns = [</span><br><span class="line">  </span><br><span class="line">    path('upload.html',views.Upload),</span><br><span class="line">]</span><br></pre></td></tr></tbody></table></figure></li>
-<li><p>原理：</p>
-<ul>
-<li>当Get请求时，即浏览器打开该网页时，显示上传页面；</li>
-<li>当POST请求时，即点击“提交”按钮时：</li>
-</ul>
-<ul>
-<li>获取界面传过来的新的文件名及文件内容。</li>
-<li>分块读取文件内容，并写入到本地目录。</li>
-</ul>
-</li>
-<li><p>页面上动态显示刚刚上传的图片，需做如下改造：</p>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">新建数据库表，用来存储图片路径</span><br><span class="line">class image(models.Model):</span><br><span class="line">  # 路径</span><br><span class="line">  file_Path=models.CharField(max_length=32)</span><br><span class="line"></span><br><span class="line">在上传成功时将文件路径保存至数据库，即在views的视图方法的POST中的保存文件后面添加代码：</span><br><span class="line"></span><br><span class="line"> models.image.objects.create(file_Path=file_path)</span><br><span class="line"></span><br><span class="line">页面刷新时展现图片，即在视图方法的GET中读取数据库中添加的图片路径，并将其返给html页面：</span><br><span class="line"> if request.method=="GET":</span><br><span class="line">      # 获取所有图片</span><br><span class="line">      imgs=models.image.objects.all()</span><br><span class="line">      return render(request,"upload.html",{"imgs":imgs})</span><br><span class="line">  html页面中增加:</span><br><span class="line">  &lt;div class="imgs"&gt;</span><br><span class="line">    { % for obj in imgs % }</span><br><span class="line">        &lt;img src="{{ obj.file_Path }}"&gt;</span><br><span class="line">    { % endfor % }</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">  由于Django对静态文件浏览的限制，需要在配置中添加：</span><br><span class="line">  STATIC_URL = '/static/'</span><br><span class="line"> </span><br><span class="line">  STATICFILES_DIRS = [</span><br><span class="line">      os.path.join(BASE_DIR,"static"),</span><br><span class="line">  ]</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
-
+<li><p>如何定义我们的中间件：</p>
 </li>
 </ol>
-<h4 id="方式二、通过ajax"><a href="#方式二、通过ajax" class="headerlink" title="方式二、通过ajax"></a>方式二、通过ajax</h4><ol>
-<li><p>前端处理：</p>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;input type="file" name="img" id="img1"&gt;</span><br><span class="line">&lt;p&gt;&lt;input type="button" value="上传图片" id="upload1"&gt;&lt;/p&gt;</span><br></pre></td></tr></tbody></table></figure></li>
-<li><p>利用formdata表单数据对象添加数据：</p>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">document.querySelector('#upload1').addEventListener('click',function(e){</span><br><span class="line">      e.preventDefault()</span><br><span class="line">      imgele =  document.querySelector('#img1')</span><br><span class="line">      img = imgele.files[0]</span><br><span class="line">      // console.log(img.name)</span><br><span class="line">      var formdata = new FormData();</span><br><span class="line">      formdata.append('myfiles',img)</span><br><span class="line">      console.log(formdata)</span><br><span class="line">      axios.post('http://localhost:8000/app/img/upload',formdata).then(function(result){</span><br><span class="line">        console.log(result)</span><br><span class="line">      }).catch(function(error){</span><br><span class="line">        console.log(error)</span><br><span class="line">      })</span><br><span class="line">    })</span><br></pre></td></tr></tbody></table></figure></li>
-<li><p>FormData对象的作用(formdata本质就是一个js对象)<br>a、模拟HTML表单，相当于将HTML表单映射为表单对象，自动将表单对象中的数据拼接成请求参数的格式<br>b、异步上传二进制文件（比如图片、视频和音频）<br>FormData对象与ajax有关<br>FormData对象不能用于get请求<br>formData.get(key)<br>formData.set(key,value)<br>formData.delete(key)<br>formData.append(key,value)<br>var formData=new FormData()<br>formData.append(key,value)</p>
-</li>
-<li><p>django后端处理：</p>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">def imgss(request):</span><br><span class="line">print('*' * 50)</span><br><span class="line"># print(request.POST.get('myfiles'))</span><br><span class="line">img = request.FILES['myfiles']</span><br><span class="line">print('*' * 50)</span><br><span class="line">with open("upload/imgs/"+img.name,'ab') as fp:</span><br><span class="line">  for chunk in img.chunks():</span><br><span class="line">          fp.write(chunk)</span><br><span class="line">return HttpResponse("is ok")</span><br></pre></td></tr></tbody></table></figure>
-</li>
-</ol>
-
+<h4 id="1-通过闭包函数定义我们的中间件"><a href="#1-通过闭包函数定义我们的中间件" class="headerlink" title="1. 通过闭包函数定义我们的中间件"></a>1. 通过闭包函数定义我们的中间件</h4>  <figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">def simple_middleware(get_response):</span><br><span class="line">    # 此处编写的代码仅在Django第一次配置和初始化的时候执行一次。</span><br><span class="line"></span><br><span class="line">    def middleware(request):</span><br><span class="line">        # 此处编写的代码会在每个请求处理视图前被调用。</span><br><span class="line"></span><br><span class="line">        response = get_response(request)</span><br><span class="line"></span><br><span class="line">        # 此处编写的代码会在每个请求处理视图之后被调用。</span><br><span class="line"></span><br><span class="line">        return response</span><br><span class="line"></span><br><span class="line">    return middleware</span><br></pre></td></tr></tbody></table></figure>
+<p>  根据代码：需要定义一个中间件的工厂函数 simple_middleware，然后返回一个可以被调用的中间件 middleware<br>  中间件工厂函数 simple_middleware 需要接收一个可以调用的 get_response 对象<br>  返回的中间件也是一个可以被调用的对象，并且像视图一样需要接收一个request对象参数，返回一个response对象。<br>  例如，在users应用模块中新建一个middleware.py文件</p>
+  <figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">def my_middleware(get_response):</span><br><span class="line">  print('init 被调用')</span><br><span class="line">  def middleware(request):</span><br><span class="line">      print('before request 被调用')</span><br><span class="line">      response = get_response(request)</span><br><span class="line">      print('after response 被调用')</span><br><span class="line">      return response</span><br><span class="line">  return middleware</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
+<p>  定义好中间件后，需要在settings.py 文件中添加注册中间件</p>
+  <figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">MIDDLEWARE = [</span><br><span class="line">  'django.middleware.security.SecurityMiddleware',</span><br><span class="line">  'django.contrib.sessions.middleware.SessionMiddleware',</span><br><span class="line">  'django.middleware.common.CommonMiddleware',</span><br><span class="line">  # 'django.middleware.csrf.CsrfViewMiddleware',</span><br><span class="line">  'django.contrib.auth.middleware.AuthenticationMiddleware',</span><br><span class="line">  'django.contrib.messages.middleware.MessageMiddleware',</span><br><span class="line">  'django.middleware.clickjacking.XFrameOptionsMiddleware',</span><br><span class="line">  'users.middleware.my_middleware',  # 添加中间件</span><br><span class="line">]</span><br></pre></td></tr></tbody></table></figure>
+<h4 id="1-通过闭包函数定义我们的中间件-1"><a href="#1-通过闭包函数定义我们的中间件-1" class="headerlink" title="1. 通过闭包函数定义我们的中间件"></a>1. 通过闭包函数定义我们的中间件</h4>  <figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">lass SimpleMiddleware:</span><br><span class="line">    def __init__(self, get_response):</span><br><span class="line">        self.get_response = get_response</span><br><span class="line">        # One-time configuration and initialization.</span><br><span class="line"></span><br><span class="line">    def __call__(self, request):</span><br><span class="line">        </span><br><span class="line">        # 视图函数请求之前做一些事情</span><br><span class="line"></span><br><span class="line">        response = self.get_response(request)</span><br><span class="line"></span><br><span class="line">        # 视图函数响应之后做一些事情</span><br><span class="line">        return response</span><br></pre></td></tr></tbody></table></figure>
                 
             </div>
             <hr/>
@@ -634,7 +611,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://www.innerjquery.club/2021/03/18/django%E5%AE%9E%E7%8E%B0%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E5%BC%8F/">http://www.innerjquery.club/2021/03/18/django%E5%AE%9E%E7%8E%B0%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E5%BC%8F/</a>
+                    <a href="http://www.innerjquery.club/2021/03/19/django%E4%B8%AD%E9%97%B4%E4%BB%B6%E7%9A%84%E4%B8%A4%E7%A7%8D%E5%AE%9E%E7%8E%B0%E6%96%B9%E5%BC%8F/">http://www.innerjquery.club/2021/03/19/django%E4%B8%AD%E9%97%B4%E4%BB%B6%E7%9A%84%E4%B8%A4%E7%A7%8D%E5%AE%9E%E7%8E%B0%E6%96%B9%E5%BC%8F/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -672,8 +649,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/python-hashlib%E6%A8%A1%E5%9D%97/">
-                                    <span class="chip bg-color">python_hashlib模块</span>
+                                <a href="/tags/python-django-middleware/">
+                                    <span class="chip bg-color">python_django_middleware</span>
                                 </a>
                             
                         </div>
@@ -847,7 +824,7 @@
         repo: '',
         owner: '',
         admin: null,
-        id: '2021-03-18T23-37-31',
+        id: '2021-03-19T12-53-46',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -871,7 +848,7 @@
 <script src="/libs/gitment/gitment.js"></script>
 <script>
 var gitment = new Gitment({
-    id: 'Thu Mar 18 2021 23:37:31 GMT+0800',
+    id: 'Fri Mar 19 2021 12:53:46 GMT+0800',
     owner: '',
     repo: '',
     oauth: {
@@ -896,9 +873,9 @@ gitment.render('gitment-content');
 
 <script type="text/javascript">
     disqus_config = function () {
-        this.page.url = 'http://www.innerjquery.club/2021/03/18/django%E5%AE%9E%E7%8E%B0%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E5%BC%8F/';
-        this.page.identifier = '/2021/03/18/django%E5%AE%9E%E7%8E%B0%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E5%BC%8F/';
-        this.page.title = 'django实现文件上传的几种方式';
+        this.page.url = 'http://www.innerjquery.club/2021/03/19/django%E4%B8%AD%E9%97%B4%E4%BB%B6%E7%9A%84%E4%B8%A4%E7%A7%8D%E5%AE%9E%E7%8E%B0%E6%96%B9%E5%BC%8F/';
+        this.page.identifier = '/2021/03/19/django%E4%B8%AD%E9%97%B4%E4%BB%B6%E7%9A%84%E4%B8%A4%E7%A7%8D%E5%AE%9E%E7%8E%B0%E6%96%B9%E5%BC%8F/';
+        this.page.title = 'django中间件的两种实现方式';
     };
     let disqus_shortname = '';
 
@@ -1213,9 +1190,10 @@ gitment.render('gitment-content');
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2021/03/19/django%E4%B8%AD%E9%97%B4%E4%BB%B6%E7%9A%84%E4%B8%A4%E7%A7%8D%E5%AE%9E%E7%8E%B0%E6%96%B9%E5%BC%8F/">
                     <div class="card-image">
@@ -1233,9 +1211,9 @@ gitment.render('gitment-content');
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-03-19
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-03-19
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -1248,6 +1226,7 @@ gitment.render('gitment-content');
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -1266,13 +1245,13 @@ gitment.render('gitment-content');
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/03/18/axios%E7%9A%84%E9%85%8D%E7%BD%AE%E4%B8%8E%E6%8B%A6%E6%88%AA%E5%99%A8/">
+                <a href="/2021/03/18/django%E5%AE%9E%E7%8E%B0%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E5%BC%8F/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="axios的配置与拦截器">
+                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="django实现文件上传的几种方式">
                         
-                        <span class="card-title">axios的配置与拦截器</span>
+                        <span class="card-title">django实现文件上传的几种方式</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1289,8 +1268,8 @@ gitment.render('gitment-content');
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/js/" class="post-category">
-                                    js
+                            <a href="/categories/python/" class="post-category">
+                                    python
                                 </a>
                             
                             
@@ -1300,8 +1279,8 @@ gitment.render('gitment-content');
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/axios/">
-                        <span class="chip bg-color">axios</span>
+                    <a href="/tags/python-hashlib%E6%A8%A1%E5%9D%97/">
+                        <span class="chip bg-color">python_hashlib模块</span>
                     </a>
                     
                 </div>

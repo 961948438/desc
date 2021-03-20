@@ -6,7 +6,7 @@
   <link href="http://www.innerjquery.club/atom.xml" rel="self"/>
   
   <link href="http://www.innerjquery.club/"/>
-  <updated>2021-03-18T15:57:04.307Z</updated>
+  <updated>2021-03-19T05:04:14.012Z</updated>
   <id>http://www.innerjquery.club/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>django中间件的两种实现方式</title>
+    <link href="http://www.innerjquery.club/2021/03/19/django%E4%B8%AD%E9%97%B4%E4%BB%B6%E7%9A%84%E4%B8%A4%E7%A7%8D%E5%AE%9E%E7%8E%B0%E6%96%B9%E5%BC%8F/"/>
+    <id>http://www.innerjquery.club/2021/03/19/django%E4%B8%AD%E9%97%B4%E4%BB%B6%E7%9A%84%E4%B8%A4%E7%A7%8D%E5%AE%9E%E7%8E%B0%E6%96%B9%E5%BC%8F/</id>
+    <published>2021-03-19T04:53:46.000Z</published>
+    <updated>2021-03-19T05:04:14.012Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h3 id=&quot;中间件的两种实现方式&quot;&gt;&lt;a href=&quot;#中间件的两种实现方式&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="python" scheme="http://www.innerjquery.club/categories/python/"/>
+    
+    
+    <category term="python_django_middleware" scheme="http://www.innerjquery.club/tags/python-django-middleware/"/>
+    
+  </entry>
   
   <entry>
     <title>django实现文件上传的几种方式</title>
@@ -493,34 +518,6 @@
     
     
     <category term="vue" scheme="http://www.innerjquery.club/tags/vue/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>element ui 的理解</title>
-    <link href="http://www.innerjquery.club/2021/01/03/element-ui-%E7%9A%84%E7%90%86%E8%A7%A3/"/>
-    <id>http://www.innerjquery.club/2021/01/03/element-ui-%E7%9A%84%E7%90%86%E8%A7%A3/</id>
-    <published>2021-01-03T15:39:46.000Z</published>
-    <updated>2021-03-13T03:33:27.921Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;hr&gt;
-&lt;p&gt;好处：对深入vue底层源码和ui组件库的开发有一定的帮助&lt;/p&gt;
-&lt;p&gt;1.通过自定事件总栈深入理解vue事件总栈&lt;/p&gt;
-&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td</summary>
-        
-      
-    
-    
-    
-    <category term="js" scheme="http://www.innerjquery.club/categories/js/"/>
-    
-    
-    <category term="vue ui" scheme="http://www.innerjquery.club/tags/vue-ui/"/>
     
   </entry>
   
