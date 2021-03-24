@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="spider爬取财经所有股票信息, f_x_y">
+    <meta name="keywords" content="django彻底解决跨域, f_x_y">
     <meta name="description" content="熟练使用CTRL+C和CTRL+V">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>spider爬取财经所有股票信息 | f_x_y</title>
+    <title>django彻底解决跨域 | f_x_y</title>
     <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="/mypng.icon.ico">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -401,12 +401,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/2.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/20.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">spider爬取财经所有股票信息</h1>
+                    <h1 class="description center-align post-title">django彻底解决跨域</h1>
                 </div>
             </div>
         </div>
@@ -522,8 +522,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/python-%E7%88%AC%E8%99%AB/">
-                                <span class="chip bg-color">python 爬虫</span>
+                            <a href="/tags/python-django/">
+                                <span class="chip bg-color">python_django</span>
                             </a>
                         
                     </div>
@@ -534,8 +534,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/spider/" class="post-category">
-                                spider
+                            <a href="/categories/python/" class="post-category">
+                                python
                             </a>
                         
                     </div>
@@ -547,7 +547,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-05-24
+                    2020-06-25
                 </div>
                 
 
@@ -556,7 +556,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    279
+                    14
                 </div>
                 
 
@@ -573,7 +573,8 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="一、爬取所有股票信息"><a href="#一、爬取所有股票信息" class="headerlink" title="一、爬取所有股票信息"></a>一、爬取所有股票信息</h3><h4 id="1-依赖selenium、xpath"><a href="#1-依赖selenium、xpath" class="headerlink" title="1.依赖selenium、xpath"></a>1.依赖selenium、xpath</h4><figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">from logging import exception</span><br><span class="line">from selenium import webdriver</span><br><span class="line">import time</span><br><span class="line">import io,sys</span><br><span class="line">sys.stdout = io.TextIOWrapper(sys.stdout.buffer,encoding='gb18030')</span><br><span class="line"></span><br><span class="line">class Domain(object):</span><br><span class="line"></span><br><span class="line">  def __init__(self):</span><br><span class="line">    self.chrome_driver =  'C:\\Users\\dd\Desktop\\chromedriver.exe'</span><br><span class="line">    self.driver =  webdriver.Chrome(self.chrome_driver)</span><br><span class="line"></span><br><span class="line">  @staticmethod</span><br><span class="line">  def sleep_time(num):</span><br><span class="line">    time.sleep(num)</span><br><span class="line"></span><br><span class="line">  def login(self):</span><br><span class="line">    self.driver.set_window_size(1920,1680)</span><br><span class="line">    self.driver.get('http://vip.stock.finance.sina.com.cn/mkt/#stock_hs_up')</span><br><span class="line">    time.sleep(0.5)</span><br><span class="line">    self.totalpate  = self.driver.find_element_by_xpath('//div[@id="list_pages_top2"]/a[last()-1]')</span><br><span class="line">    headtr =self.driver.find_element_by_xpath('//*[@id="tbl_wrap"]//thead//tr')</span><br><span class="line">    headcontent = []</span><br><span class="line">    headcontent.append(headtr.find_element_by_xpath('.//th[1]/a').text)</span><br><span class="line">    headcontent.append(headtr.find_element_by_xpath('.//th[2]').text)</span><br><span class="line">    tdalist = headtr.find_elements_by_xpath('.//td/a')</span><br><span class="line">    for tda in tdalist:</span><br><span class="line">      headcontent.append(tda.text)</span><br><span class="line">    headcontent.append('\n')</span><br><span class="line">    with open("ggupiao.csv",mode='a',encoding='utf-8') as f:</span><br><span class="line">      f.write(",".join(headcontent))</span><br><span class="line"></span><br><span class="line">    while True:      </span><br><span class="line">      alltrlist =self.driver.find_elements_by_xpath('//*[@id="tbl_wrap"]//tbody//tr')</span><br><span class="line">      for tr in alltrlist:</span><br><span class="line">        print(f'to scrapy {alltrlist.index(tr)}')</span><br><span class="line">        listcontent = []</span><br><span class="line">        try:</span><br><span class="line">          listcontent.append(tr.find_element_by_xpath('.//th[1]/a').text)</span><br><span class="line">        except Exception:</span><br><span class="line">          listcontent.append('暂未获取到代码')</span><br><span class="line">        tdalist = tr.find_elements_by_xpath('.//td')</span><br><span class="line">        try:</span><br><span class="line">          listcontent.append(tr.find_element_by_xpath('.//th[2]/a/a').text)</span><br><span class="line">        except Exception:</span><br><span class="line">          listcontent.append('暂未获取到名称')</span><br><span class="line">        tdalist = tr.find_elements_by_xpath('.//td')</span><br><span class="line"></span><br><span class="line">        for tda in tdalist:</span><br><span class="line"></span><br><span class="line">          listcontent.append(tda.text)</span><br><span class="line">        listcontent.append('\n')</span><br><span class="line">        with open("ggupiao.csv",mode='a',encoding='utf-8') as f:</span><br><span class="line">          f.write(",".join(listcontent))</span><br><span class="line">      try:</span><br><span class="line">        self.driver.find_element_by_xpath('//div[@id="list_pages_top2"]/a[text()="下一页"]').click()</span><br><span class="line">      except Exception:</span><br><span class="line">        print('找不到元素')</span><br><span class="line">        return</span><br><span class="line">        </span><br><span class="line">  def run(self):</span><br><span class="line">    self.login()</span><br><span class="line"></span><br><span class="line">if __name__  == "__main__":</span><br><span class="line">  browser =  Domain()</span><br><span class="line">  browser.run()</span><br></pre></td></tr></tbody></table></figure>
+                <h4 id="详情查看如下："><a href="#详情查看如下：" class="headerlink" title="详情查看如下："></a>详情查看如下：</h4><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/zhu6201976/article/details/84677213">https://blog.csdn.net/zhu6201976/article/details/84677213</a></p>
+
                 
             </div>
             <hr/>
@@ -599,7 +600,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://www.innerjquery.club/2020/05/24/python%E7%88%AC%E8%99%AB%E5%B0%8F%E5%AE%89%E5%88%97/">http://www.innerjquery.club/2020/05/24/python%E7%88%AC%E8%99%AB%E5%B0%8F%E5%AE%89%E5%88%97/</a>
+                    <a href="http://www.innerjquery.club/2020/06/25/django%E5%BD%BB%E5%BA%95%E8%A7%A3%E5%86%B3%E8%B7%A8%E5%9F%9F/">http://www.innerjquery.club/2020/06/25/django%E5%BD%BB%E5%BA%95%E8%A7%A3%E5%86%B3%E8%B7%A8%E5%9F%9F/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -637,8 +638,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/python-%E7%88%AC%E8%99%AB/">
-                                    <span class="chip bg-color">python 爬虫</span>
+                                <a href="/tags/python-django/">
+                                    <span class="chip bg-color">python_django</span>
                                 </a>
                             
                         </div>
@@ -812,7 +813,7 @@
         repo: '',
         owner: '',
         admin: null,
-        id: '2020-05-24T20-24-41',
+        id: '2020-06-25T00-24-48',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -836,7 +837,7 @@
 <script src="/libs/gitment/gitment.js"></script>
 <script>
 var gitment = new Gitment({
-    id: 'Sun May 24 2020 20:24:41 GMT+0800',
+    id: 'Thu Jun 25 2020 00:24:48 GMT+0800',
     owner: '',
     repo: '',
     oauth: {
@@ -861,9 +862,9 @@ gitment.render('gitment-content');
 
 <script type="text/javascript">
     disqus_config = function () {
-        this.page.url = 'http://www.innerjquery.club/2020/05/24/python%E7%88%AC%E8%99%AB%E5%B0%8F%E5%AE%89%E5%88%97/';
-        this.page.identifier = '/2020/05/24/python%E7%88%AC%E8%99%AB%E5%B0%8F%E5%AE%89%E5%88%97/';
-        this.page.title = 'spider爬取财经所有股票信息';
+        this.page.url = 'http://www.innerjquery.club/2020/06/25/django%E5%BD%BB%E5%BA%95%E8%A7%A3%E5%86%B3%E8%B7%A8%E5%9F%9F/';
+        this.page.identifier = '/2020/06/25/django%E5%BD%BB%E5%BA%95%E8%A7%A3%E5%86%B3%E8%B7%A8%E5%9F%9F/';
+        this.page.title = 'django彻底解决跨域';
     };
     let disqus_shortname = '';
 
@@ -1182,13 +1183,13 @@ gitment.render('gitment-content');
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/06/25/django%E5%BD%BB%E5%BA%95%E8%A7%A3%E5%86%B3%E8%B7%A8%E5%9F%9F/">
+                <a href="/2020/06/30/test/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="django彻底解决跨域">
+                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="ERROR!">
                         
-                        <span class="card-title">django彻底解决跨域</span>
+                        <span class="card-title">ERROR!</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1199,27 +1200,15 @@ gitment.render('gitment-content');
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-06-25
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-06-30
                         </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/python/" class="post-category">
-                                    python
-                                </a>
-                            
+                            <i class="fas fa-user fa-fw"></i>
+                            xiangyou fu
                             
                         </span>
                     </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/python-django/">
-                        <span class="chip bg-color">python_django</span>
-                    </a>
-                    
                 </div>
                 
             </div>
@@ -1231,13 +1220,13 @@ gitment.render('gitment-content');
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/03/23/multopprocesssing%E6%A8%A1%E5%9D%97/">
+                <a href="/2020/05/24/python%E7%88%AC%E8%99%AB%E5%B0%8F%E5%AE%89%E5%88%97/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="python的多任务进程">
+                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="spider爬取财经所有股票信息">
                         
-                        <span class="card-title">python的多任务进程</span>
+                        <span class="card-title">spider爬取财经所有股票信息</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1248,14 +1237,14 @@ gitment.render('gitment-content');
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-03-23
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-05-24
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/python/" class="post-category">
-                                    python
+                            <a href="/categories/spider/" class="post-category">
+                                    spider
                                 </a>
                             
                             
@@ -1265,8 +1254,8 @@ gitment.render('gitment-content');
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/python-multopprocesssing%E6%A8%A1%E5%9D%97/">
-                        <span class="chip bg-color">python_multopprocesssing模块</span>
+                    <a href="/tags/python-%E7%88%AC%E8%99%AB/">
+                        <span class="chip bg-color">python 爬虫</span>
                     </a>
                     
                 </div>
