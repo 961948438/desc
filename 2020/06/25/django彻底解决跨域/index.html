@@ -556,7 +556,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    14
+                    1.1k
                 </div>
                 
 
@@ -574,7 +574,57 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h4 id="详情查看如下："><a href="#详情查看如下：" class="headerlink" title="详情查看如下："></a>详情查看如下：</h4><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/zhu6201976/article/details/84677213">https://blog.csdn.net/zhu6201976/article/details/84677213</a></p>
-
+<h4 id="补充在跨域请求下可以访问cookie但是无法设置cookies"><a href="#补充在跨域请求下可以访问cookie但是无法设置cookies" class="headerlink" title="补充在跨域请求下可以访问cookie但是无法设置cookies"></a>补充在跨域请求下可以访问cookie但是无法设置cookies</h4><p>  参考链接：<a target="_blank" rel="noopener" href="https://blog.csdn.net/kevinfan2011/article/details/90111854">https://blog.csdn.net/kevinfan2011/article/details/90111854</a><br>  浏览器接受到设置cookies的响应之后无法做出处理，这时候需要前后端都做出处理：<br>  同时在此访问同网站时无法携带cookie的问题<br>  1.前端配置axios.defaults.withCredentials=true<br>  2.后端配置响应的cookies支持：<br>  response[‘Access-Control-Allow-Origin’] = ‘<a target="_blank" rel="noopener" href="http://localhost:3000'">http://localhost:3000'</a><br>  response[‘Access-Control-Allow-Credentials’] = True</p>
+<h4 id="熟悉django中session（session对象-set-expiry-过期time-）和cookies对象下的属性和方法"><a href="#熟悉django中session（session对象-set-expiry-过期time-）和cookies对象下的属性和方法" class="headerlink" title="熟悉django中session（session对象.set_expiry(过期time)）和cookies对象下的属性和方法"></a>熟悉django中session（session对象.set_expiry(过期time)）和cookies对象下的属性和方法</h4><h4 id="利用oauth完成我们的认证信息"><a href="#利用oauth完成我们的认证信息" class="headerlink" title="利用oauth完成我们的认证信息"></a>利用oauth完成我们的认证信息</h4><h4 id="注意有可能我们的django框架拿不到contenttype-”application-json”的请求数据"><a href="#注意有可能我们的django框架拿不到contenttype-”application-json”的请求数据" class="headerlink" title="注意有可能我们的django框架拿不到contenttype=”application/json”的请求数据"></a>注意有可能我们的django框架拿不到contenttype=”application/json”的请求数据</h4><ul>
+<li>此时我们需要利用序列化工具json.dumps(request.body)方法；</li>
+<li>当然了如果内容类型为urlencode就可以直接获取到</li>
+</ul>
+<h4 id="组件的更新机制当前组件发生变化只会影响当前组件和子组件极其后代组件的更新调用render函数"><a href="#组件的更新机制当前组件发生变化只会影响当前组件和子组件极其后代组件的更新调用render函数" class="headerlink" title="组件的更新机制当前组件发生变化只会影响当前组件和子组件极其后代组件的更新调用render函数"></a>组件的更新机制当前组件发生变化只会影响当前组件和子组件极其后代组件的更新调用render函数</h4><h4 id="使用纯组件"><a href="#使用纯组件" class="headerlink" title="使用纯组件"></a>使用纯组件</h4><h4 id="纯组件内部对比使用的是浅层对比，非浅层可能检测不到"><a href="#纯组件内部对比使用的是浅层对比，非浅层可能检测不到" class="headerlink" title="纯组件内部对比使用的是浅层对比，非浅层可能检测不到"></a>纯组件内部对比使用的是浅层对比，非浅层可能检测不到</h4><ul>
+<li>如果又非浅层数据修改的需求就需要使用assign或者使用扩展运算符；引用类型应该创建一个新数据；</li>
+</ul>
+<h4 id="js也是一样，变量存储的数据在内存中的地址，没有小数据池，"><a href="#js也是一样，变量存储的数据在内存中的地址，没有小数据池，" class="headerlink" title="js也是一样，变量存储的数据在内存中的地址，没有小数据池，"></a>js也是一样，变量存储的数据在内存中的地址，没有小数据池，</h4><h4 id="render方法返回的产物是虚拟dom，是为了新旧虚拟dom进行diff算法比较；"><a href="#render方法返回的产物是虚拟dom，是为了新旧虚拟dom进行diff算法比较；" class="headerlink" title="render方法返回的产物是虚拟dom，是为了新旧虚拟dom进行diff算法比较；"></a>render方法返回的产物是虚拟dom，是为了新旧虚拟dom进行diff算法比较；</h4><h4 id="虚拟dom存在可以使得我们的程序脱离浏览器，只要能够运行js的环境我们程序就能运行；"><a href="#虚拟dom存在可以使得我们的程序脱离浏览器，只要能够运行js的环境我们程序就能运行；" class="headerlink" title="虚拟dom存在可以使得我们的程序脱离浏览器，只要能够运行js的环境我们程序就能运行；"></a>虚拟dom存在可以使得我们的程序脱离浏览器，只要能够运行js的环境我们程序就能运行；</h4><ul>
+<li>为跨平台提供了条件；react为面向虚拟dom开发；</li>
+</ul>
+<h4 id="Router路由分发器是一个容器组件，通常要它来包裹整个应用；"><a href="#Router路由分发器是一个容器组件，通常要它来包裹整个应用；" class="headerlink" title="Router路由分发器是一个容器组件，通常要它来包裹整个应用；"></a>Router路由分发器是一个容器组件，通常要它来包裹整个应用；</h4><ul>
+<li><p>路由器有两种,一种是hashrouter，和browserrouter(使用h5里面的history Api来实现的)</p>
+</li>
+<li><p>路由的执行过程：</p>
+<ul>
+<li>点击link路由入口组件，修改了浏览器地址栏中的url</li>
+<li>react路由监听到地址栏中的url的变化。</li>
+<li>react路由内部遍历所有的route组件，使用路由规则和路径名进行匹配；</li>
+<li>当路由规则path能够匹配到地址栏中的pathname就展route组件的内容；</li>
+</ul>
+</li>
+<li></li>
+</ul>
+<h4 id="默认路由：默认路由的的路径就是-（模糊匹配的存在可能导致多个组件被渲染）"><a href="#默认路由：默认路由的的路径就是-（模糊匹配的存在可能导致多个组件被渲染）" class="headerlink" title="默认路由：默认路由的的路径就是/（模糊匹配的存在可能导致多个组件被渲染）"></a>默认路由：默认路由的的路径就是/（模糊匹配的存在可能导致多个组件被渲染）</h4><ul>
+<li>比如 /first 时，默认路由和/first对应组件都会被匹配成功：</li>
+<li>模糊匹配规则只要pathname以path开头就会匹配成功，不一定要完全一样，<ul>
+<li>比如/a/b的pathname（url中的或者link的to属性的值）和/a的path(route中的path属性的值)<br>就能匹配成功</li>
+</ul>
+</li>
+<li>精确匹配就是pathname和path要一摸一样就是精确匹配<br>给我们的路由添加exact属性，切记不要随意添加exact属性，可能会影响子路由；</li>
+<li>通常情况下给我们的默认路由添加精确匹配属性是非常推荐的，其他情况下不建议添加我们的<br>exact属性</li>
+</ul>
+<h4 id="路由的匹配模式，模糊匹配（默认匹配模式）和精确匹配；"><a href="#路由的匹配模式，模糊匹配（默认匹配模式）和精确匹配；" class="headerlink" title="路由的匹配模式，模糊匹配（默认匹配模式）和精确匹配；"></a>路由的匹配模式，模糊匹配（默认匹配模式）和精确匹配；</h4><h4 id="django框架如何根据已有的数据库表生成模型类"><a href="#django框架如何根据已有的数据库表生成模型类" class="headerlink" title="django框架如何根据已有的数据库表生成模型类"></a>django框架如何根据已有的数据库表生成模型类</h4><h4 id="react的重定向组件redirect的用法："><a href="#react的重定向组件redirect的用法：" class="headerlink" title="react的重定向组件redirect的用法："></a>react的重定向组件redirect的用法：</h4><ul>
+<li>&lt;Route exact path=’/‘ render={()=&gt;<redirect to="/home"></redirect>}&gt;</li>
+</ul>
+<h4 id="antd组件中的留白组件WingBlank的取舍："><a href="#antd组件中的留白组件WingBlank的取舍：" class="headerlink" title="antd组件中的留白组件WingBlank的取舍："></a>antd组件中的留白组件WingBlank的取舍：</h4><h4 id="如何手动分发一个原生事件：window-dispatchEvent-new-Event-‘resize’"><a href="#如何手动分发一个原生事件：window-dispatchEvent-new-Event-‘resize’" class="headerlink" title="如何手动分发一个原生事件：window.dispatchEvent(new Event(‘resize’));"></a>如何手动分发一个原生事件：window.dispatchEvent(new Event(‘resize’));</h4><h4 id="在脚手架工具中使用sass工具、安装yarn-add-node-sass即可"><a href="#在脚手架工具中使用sass工具、安装yarn-add-node-sass即可" class="headerlink" title="在脚手架工具中使用sass工具、安装yarn add node-sass即可"></a>在脚手架工具中使用sass工具、安装yarn add node-sass即可</h4><h4 id="经常遇到的额文字和图标基线不一致的问题：可以通过flex布局解决"><a href="#经常遇到的额文字和图标基线不一致的问题：可以通过flex布局解决" class="headerlink" title="经常遇到的额文字和图标基线不一致的问题：可以通过flex布局解决"></a>经常遇到的额文字和图标基线不一致的问题：可以通过flex布局解决</h4><ul>
+<li>display: flex;align-items: center;</li>
+</ul>
+<h4 id="h5中2的地理位置api，通过"><a href="#h5中2的地理位置api，通过" class="headerlink" title="h5中2的地理位置api，通过"></a>h5中2的地理位置api，通过</h4><ul>
+<li>navigator.gelocation.getcurrentpostion((position)=&gt;console.log(position))</li>
+<li>position表示当前的位置信息</li>
+<li>他会返回一个地理包含地理坐标和时间错的对象，我们从坐标中获取到我们的信息；</li>
+<li>latitude和longitude分别表示经纬度</li>
+<li>定位的方式有wifi、gps、mac等，具体使用什么定位视设备而定</li>
+<li>实际开发过程中使用的是百度地图api、高德地图api</li>
+</ul>
+<h4 id="具体使用方法在百度api中查看"><a href="#具体使用方法在百度api中查看" class="headerlink" title="具体使用方法在百度api中查看"></a>具体使用方法在百度api中查看</h4><ul>
+<li>注意：在脚手架中相关的方法window.BMapGL.Map/Point是挂载在window上的，我们必须通过<br>window来获取</li>
+</ul>
+<h4 id="闪烁问题"><a href="#闪烁问题" class="headerlink" title="闪烁问题"></a>闪烁问题</h4>
                 
             </div>
             <hr/>
